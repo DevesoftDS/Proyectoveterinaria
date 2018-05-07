@@ -26,12 +26,10 @@ namespace CapaDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-<<<<<<< HEAD
+
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EDISON\\SQLEXPRESS;Initial Catalog=dbveterinaria;Persist Security Info" +
             "=True;User ID=sa;Password=123")]
-=======
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP\\SOTO;Initial Catalog=bdveterinaria;User ID=marade;Password=soto")]
->>>>>>> origin/master
+
         public string cn {
             get {
                 return ((string)(this["cn"]));
