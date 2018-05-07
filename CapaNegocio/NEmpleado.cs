@@ -86,7 +86,7 @@ namespace CapaNegocio
             }
         }
 
-        public void ListarBusquedaCliente(DataGridView dgv, string text)
+        public void ListarBusquedaEmpleado(DataGridView dgv, string text)
         {
             var tabla = BuscarEmpleado(text);
             ListarGriv(dgv, tabla);

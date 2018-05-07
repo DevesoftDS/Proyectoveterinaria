@@ -46,6 +46,7 @@
     <Compile Include="NCliente.cs" />
     <Compile Include="NEmpleado.cs" />
     <Compile Include="NPresentacion.cs" />
+    <Compile Include="NUsusario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

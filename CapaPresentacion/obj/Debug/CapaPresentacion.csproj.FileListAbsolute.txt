@@ -66,3 +66,5 @@ C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPrese
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmVenta.resources
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuario.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListUsuario.resources

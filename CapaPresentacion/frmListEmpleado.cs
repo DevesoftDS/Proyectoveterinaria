@@ -74,12 +74,12 @@ namespace CapaPresentacion
                     DialogResult rspta = MessageBox.Show("Desea crear cuenta de usuario?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (DialogResult.Yes == rspta)
                     {
-                        frmEmpleado frmEmpleado = new frmEmpleado();
-                        frmEmpleado.Show();
+                        frmUsuario frmUser = new frmUsuario();
+                        frmUser.Show();
                         var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
-                        
-                        frmEmpleado.MiFormEmpleado.txtCorreo.Text = tabla.Rows[0]["correo"].ToString();
 
+                        frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
+                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
                     }
                 }
 
@@ -108,7 +108,8 @@ namespace CapaPresentacion
 
                     frmEmpleado.MiFormEmpleado.idEmpleado = idEmpleado;
                     frmEmpleado.MiFormEmpleado._IsNew = false;
-                }
+                }                
+
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Eliminar"))
                 {
                     int idempplead = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[2].Value.ToString());
@@ -165,8 +166,7 @@ namespace CapaPresentacion
                     frmEmpleado.MiFormEmpleado.txtDireccion.Enabled = false;
                     frmEmpleado.MiFormEmpleado.btnExaminar.Visible = false;
                     frmEmpleado.MiFormEmpleado.btnGuardar.Visible = false;
-                    frmEmpleado.MiFormEmpleado.btnCancelar.Visible = false;
-
+                    frmEmpleado.MiFormEmpleado.btnCancelar.Visible = false;                  
                 }
             }
         }
