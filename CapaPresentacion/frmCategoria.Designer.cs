@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -39,8 +40,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.epCategoria = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -73,6 +76,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(349, 25);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnCancelar
             // 
@@ -162,6 +166,11 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Formulario categoria";
             // 
+            // epCategoria
+            // 
+            this.epCategoria.ContainerControl = this;
+            this.epCategoria.Icon = ((System.Drawing.Icon)(resources.GetObject("epCategoria.Icon")));
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -175,10 +184,13 @@
             this.Name = "frmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCategoria";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCategoria_FormClosed);
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCategoria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,8 +198,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label btnCancelar;
         private System.Windows.Forms.Label btnGuardar;
         private System.Windows.Forms.Label label3;
@@ -195,5 +205,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ErrorProvider epCategoria;
+        internal System.Windows.Forms.TextBox txtDescripcion;
+        internal System.Windows.Forms.TextBox txtNombre;
     }
 }

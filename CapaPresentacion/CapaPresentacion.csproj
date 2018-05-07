@@ -301,6 +301,7 @@
     <Content Include="imgAplicacion\almacen.png" />
     <Content Include="imgAplicacion\Arrowhead down-WF.png" />
     <Content Include="imgAplicacion\articulo.png" />
+    <Content Include="imgAplicacion\art_image.png" />
     <Content Include="imgAplicacion\back_frm.png" />
     <Content Include="imgAplicacion\Caduceus.png" />
     <Content Include="imgAplicacion\Cancel.png" />
@@ -313,6 +314,8 @@
     <Content Include="imgAplicacion\empleado.png" />
     <Content Include="imgAplicacion\Help - 02.png" />
     <Content Include="imgAplicacion\Home.png" />
+    <Content Include="imgAplicacion\imageres_98.ico" />
+    <Content Include="imgAplicacion\imageres_99.ico" />
     <Content Include="imgAplicacion\list.png" />
     <Content Include="imgAplicacion\Maximize-WF.png" />
     <Content Include="imgAplicacion\Menu.png" />

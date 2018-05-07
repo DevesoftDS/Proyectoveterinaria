@@ -17,6 +17,8 @@ namespace CapaDatos
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
+        //public string BuscarCategoria { get; set; }
+
         // para hacer el filtro
         public string TextoBuscar { get; set; }
 
@@ -24,21 +26,27 @@ namespace CapaDatos
         {
 
         }
+        public DCategoria(int idcategoria)
+        {
+            this.IdCategoria = idcategoria;
+
+        }
         public DCategoria(string nombre, string descripcion)
         {
             this.Nombre = nombre;
             this.Descripcion = descripcion;
         }
-        public DCategoria(int idCategoria, string nombre, string descripcion)
+        public DCategoria(string nombre, string descripcion, int idCategoria)
         {
-            this.IdCategoria = idCategoria;
             this.Nombre = nombre;
             this.Descripcion = descripcion;
+            this.IdCategoria = idCategoria;
         }
 
-        public string Insertar1(DCategoria categoria)
+        // metodo insertar
+        public int Insertar(DCategoria categoria)
         {
-            string rpta = "";
+            int rpta = 0;
             string cadena = "sp_insertar_categoria";
             SqlConnection cn = new SqlConnection();
 
@@ -54,14 +62,15 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al registrar categoria";
+                    rpta = cmd.ExecuteNonQuery();
                        
                 }
 
             }
             catch (Exception ex)
             {
-                rpta = ex.Message;
+                string error = ex.Message;
+                return rpta;
                 throw;
             }
             finally
@@ -71,10 +80,12 @@ namespace CapaDatos
             return rpta;
         }
 
-        // metodo insertar
-        public bool Insertar(DCategoria categoria)
+
+        // metodo editar
+        public int Actualizar(DCategoria categoria)
         {
-            string cadena = "sp_insertar_categoria";
+            int r = 0;
+            string cadena = "sp_modificar_categoria";
             SqlConnection cn = new SqlConnection();
             try
             {
@@ -86,17 +97,55 @@ namespace CapaDatos
                 {
                     cmd.Parameters.AddWithValue("@nombre", categoria.Nombre);
                     cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion);
+                    cmd.Parameters.AddWithValue("@idcategoria", categoria.IdCategoria);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    int r = cmd.ExecuteNonQuery();
-                    if (r == 1) return true;
+                    r = cmd.ExecuteNonQuery();
+
                 }
 
             }
             catch (Exception ex)
             {
+                string error = ex.Message;
+                return r;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return r;
+        }
+        // metodo eliminar
+        public bool Eliminar(DCategoria categoria)
+        {
+            int r = 0;
+            string cadena = "sp_eliminar_categoria";
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                // code here
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(cadena, cn))
+                {
+                    cmd.Parameters.AddWithValue("@id", categoria.IdCategoria);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    r = cmd.ExecuteNonQuery();
+                    if (r == 1)
+                        return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
                 return false;
-                throw;                
+                throw;
             }
             finally
             {
@@ -104,87 +153,91 @@ namespace CapaDatos
             }
             return false;
         }
-        // metodo editar
-        public string Editar(DCategoria categoria)
-        {
-            string r = "";
-            string cadena = "sp_insertar_categoria";
-            SqlConnection cn = new SqlConnection();
-            try
-            {
-                // code here
-                cn.ConnectionString = Conexion.conectar;
-                cn.Open();
-
-                using (SqlCommand cmd = new SqlCommand(cadena, cn))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", categoria.Nombre);
-                    cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    r = cmd.ExecuteNonQuery().ToString();
-                    if (int.Parse(r) == 1) r = "Ok";
-                    else r = "Error al insertar categoria";
-                }
-
-            }
-            catch (Exception ex)
-            {
-                r = ex.Message;
-                throw;
-            }
-            finally
-            {
-                if (cn.State == ConnectionState.Open) cn.Close();
-            }
-            return r;
-        }
-        // metodo eliminar
-        public string Eliminar(DCategoria categoria)
-        {
-            string r = "";
-            string cadena = "sp_insertar_categoria";
-            SqlConnection cn = new SqlConnection();
-            try
-            {
-                // code here
-                cn.ConnectionString = Conexion.conectar;
-                cn.Open();
-
-                using (SqlCommand cmd = new SqlCommand(cadena, cn))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", categoria.Nombre);
-                    cmd.Parameters.AddWithValue("@descripcion", categoria.Descripcion);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    //r = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al insertar categoria";
-                    r = cmd.ExecuteNonQuery().ToString();
-                    if (int.Parse(r) == 1) r = "Ok";
-                    else r = "Error al insertar categoria";
-                }
-
-            }
-            catch (Exception ex)
-            {
-                r = ex.Message;
-                throw;
-            }
-            finally
-            {
-                if (cn.State == ConnectionState.Open) cn.Close();
-            }
-            return r;
-        }
         // metodo listar
         public DataTable Listar()
         {
+            string cadena = "sp_listar_categoria";
             DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
             return tabla;
         }
         // metodo buscar por nombre de categoria
-        public DataTable BuscarNombre(DCategoria Categoria)
+        public DataTable BuscarNombre(DCategoria categoria)
         {
+            string cadena = "sp_buscar_categoria_por_nombre";
             DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@nombre", categoria.Nombre);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
+        }
+
+        //metodo buscar por codigo
+        public DataTable BuscarPorCodigo(DCategoria categoria)
+        {
+            string cadena = "sp_buscar_categoria_por_codigo";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@id", categoria.IdCategoria);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
             return tabla;
         }
 
