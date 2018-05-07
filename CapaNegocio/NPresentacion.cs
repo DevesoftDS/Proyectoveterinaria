@@ -32,7 +32,7 @@ namespace CapaNegocio
             presentacion.Idpresentacion = id;
             return presentacion.Actualizar(presentacion);
         }
-        // metodo para listar categoria
+        // metodo para listar presentacion
         public static DataTable Listar()
         {
             return new DPresentacion().Listar();

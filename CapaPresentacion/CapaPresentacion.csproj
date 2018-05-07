@@ -282,6 +282,7 @@
     <Content Include="imgAplicacion\almacen.png" />
     <Content Include="imgAplicacion\Arrowhead down-WF.png" />
     <Content Include="imgAplicacion\articulo.png" />
+    <Content Include="imgAplicacion\art_image.png" />
     <Content Include="imgAplicacion\back_frm.png" />
     <Content Include="imgAplicacion\Caduceus.png" />
     <Content Include="imgAplicacion\Cancel.png" />
