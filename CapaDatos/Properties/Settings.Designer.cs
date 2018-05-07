@@ -26,7 +26,7 @@ namespace CapaDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP\\SOTO;Initial Catalog=Facturas313;User ID=marade;Password=soto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HP\\SOTO;Initial Catalog=bdveterinaria;User ID=marade;Password=soto")]
         public string cn {
             get {
                 return ((string)(this["cn"]));

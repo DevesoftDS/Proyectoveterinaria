@@ -294,6 +294,8 @@
     <Content Include="imgAplicacion\empleado.png" />
     <Content Include="imgAplicacion\Help - 02.png" />
     <Content Include="imgAplicacion\Home.png" />
+    <Content Include="imgAplicacion\imageres_98.ico" />
+    <Content Include="imgAplicacion\imageres_99.ico" />
     <Content Include="imgAplicacion\list.png" />
     <Content Include="imgAplicacion\Maximize-WF.png" />
     <Content Include="imgAplicacion\Menu.png" />
