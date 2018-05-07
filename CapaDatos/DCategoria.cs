@@ -211,6 +211,7 @@ namespace CapaDatos
             return tabla;
         }
 
+        //metodo buscar por codigo
         public DataTable BuscarPorCodigo(DCategoria categoria)
         {
             string cadena = "sp_buscar_categoria_por_codigo";

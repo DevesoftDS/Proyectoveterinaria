@@ -82,7 +82,7 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int rpta = 0;
+            //int rpta = 0;
             try
             {
                 if (txtNombre.Text.Equals(""))
@@ -101,6 +101,7 @@ namespace CapaPresentacion
                         Limpiar();
                         txtNombre.Focus();
                         objtNC.ListarDataGridViewCategoria(frmListCategoria.MyForm.dgvPresentacion);
+                        _myFormCategoria = this;
                     }
                     else
                     {
@@ -110,6 +111,7 @@ namespace CapaPresentacion
                         txtNombre.Focus();
                         objtNC.ListarDataGridViewCategoria(frmListCategoria.MyForm.dgvPresentacion);
                         isNew = true;
+                        _myFormCategoria = this;
                     }
                 }
             }

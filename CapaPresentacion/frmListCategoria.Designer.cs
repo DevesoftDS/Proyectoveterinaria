@@ -32,15 +32,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvPresentacion = new System.Windows.Forms.DataGridView();
-            this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnNuevoCategoria = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarCategoria = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNuevoCategoria = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresentacion)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.dgvPresentacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPresentacion.BackgroundColor = System.Drawing.Color.White;
             this.dgvPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPresentacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPresentacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -85,46 +86,10 @@
             this.dgvPresentacion.Location = new System.Drawing.Point(3, 3);
             this.dgvPresentacion.Name = "dgvPresentacion";
             this.dgvPresentacion.ReadOnly = true;
+            this.dgvPresentacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvPresentacion.Size = new System.Drawing.Size(824, 436);
             this.dgvPresentacion.TabIndex = 0;
             this.dgvPresentacion.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPresentacion_CellMouseDoubleClick);
-            // 
-            // txtBuscarCategoria
-            // 
-            this.txtBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarCategoria.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscarCategoria.Name = "txtBuscarCategoria";
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(349, 25);
-            this.txtBuscarCategoria.TabIndex = 12;
-            this.txtBuscarCategoria.TextChanged += new System.EventHandler(this.txtBuscarCategoria_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(6, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Buscar categoria";
-            // 
-            // btnNuevoCategoria
-            // 
-            this.btnNuevoCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(214)))));
-            this.btnNuevoCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoCategoria.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCategoria.Image")));
-            this.btnNuevoCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(533, 22);
-            this.btnNuevoCategoria.Name = "btnNuevoCategoria";
-            this.btnNuevoCategoria.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoCategoria.TabIndex = 13;
-            this.btnNuevoCategoria.Text = "Nuevo";
-            this.btnNuevoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoCategoria.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
             // 
             // Column1
             // 
@@ -168,6 +133,43 @@
             this.Column4.HeaderText = "IdCategoria";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // txtBuscarCategoria
+            // 
+            this.txtBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscarCategoria.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscarCategoria.Name = "txtBuscarCategoria";
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(349, 25);
+            this.txtBuscarCategoria.TabIndex = 12;
+            this.txtBuscarCategoria.TextChanged += new System.EventHandler(this.txtBuscarCategoria_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Buscar categoria";
+            // 
+            // btnNuevoCategoria
+            // 
+            this.btnNuevoCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(214)))));
+            this.btnNuevoCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoCategoria.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCategoria.Image")));
+            this.btnNuevoCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(533, 22);
+            this.btnNuevoCategoria.Name = "btnNuevoCategoria";
+            this.btnNuevoCategoria.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoCategoria.TabIndex = 13;
+            this.btnNuevoCategoria.Text = "Nuevo";
+            this.btnNuevoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoCategoria.Click += new System.EventHandler(this.btnNuevoCategoria_Click);
             // 
             // frmListCategoria
             // 

@@ -78,8 +78,8 @@ namespace CapaPresentacion
             this.dgvPresentacion.DefaultCellStyle.Font = new Font("Arial", 9);
             this.dgvPresentacion.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvPresentacion.DefaultCellStyle.BackColor = Color.White;
-            this.dgvPresentacion.DefaultCellStyle.SelectionForeColor = Color.Yellow;
-            this.dgvPresentacion.DefaultCellStyle.SelectionBackColor = Color.Black;
+            this.dgvPresentacion.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvPresentacion.DefaultCellStyle.SelectionBackColor = Color.Orange;
         }
 
         private void txtBuscarCategoria_TextChanged(object sender, EventArgs e)
