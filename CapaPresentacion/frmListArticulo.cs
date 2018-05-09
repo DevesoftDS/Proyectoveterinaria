@@ -46,6 +46,7 @@ namespace CapaPresentacion
         private void btnNuevoArticulo_Click(object sender, EventArgs e)
         {
             new frmArticulo().ShowDialog();
+            this.dgvArticulo.Refresh();
         }
 
         private void frmListArticulo_Load(object sender, EventArgs e)
@@ -140,6 +141,7 @@ namespace CapaPresentacion
                     }
                 }
             }
+            //finish
         }
     }
 }

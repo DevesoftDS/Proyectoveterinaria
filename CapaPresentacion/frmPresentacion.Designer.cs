@@ -37,12 +37,12 @@
             this.btnGuardar = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pBarraTitulo = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.epPresentation = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPresentation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +93,7 @@
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -133,16 +134,17 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Nombre";
             // 
-            // panel1
+            // pBarraTitulo
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 40);
-            this.panel1.TabIndex = 9;
+            this.pBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
+            this.pBarraTitulo.Controls.Add(this.btnClose);
+            this.pBarraTitulo.Controls.Add(this.label7);
+            this.pBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pBarraTitulo.Name = "pBarraTitulo";
+            this.pBarraTitulo.Size = new System.Drawing.Size(835, 40);
+            this.pBarraTitulo.TabIndex = 9;
+            this.pBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
             // btnClose
             // 
@@ -176,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 494);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pBarraTitulo);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -186,8 +188,8 @@
             this.Load += new System.EventHandler(this.frmPresentacion_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pBarraTitulo.ResumeLayout(false);
+            this.pBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPresentation)).EndInit();
             this.ResumeLayout(false);
 
@@ -200,7 +202,7 @@
         private System.Windows.Forms.Label btnGuardar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pBarraTitulo;
         private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ErrorProvider epPresentation;

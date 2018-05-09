@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CapaNegocio
 {
@@ -19,7 +20,7 @@ namespace CapaNegocio
         public static bool Insertar(string nombre, string descripcion)
         {
             DPresentacion presentacion = new DPresentacion();
-            presentacion.Nombre = nombre;
+            presentacion.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             presentacion.Descripcion = descripcion;
             return presentacion.Insertar(presentacion);
         }
@@ -27,7 +28,7 @@ namespace CapaNegocio
         public static bool Actualizar(string nombre, string descripcion, int id)
         {
             DPresentacion presentacion = new DPresentacion();
-            presentacion.Nombre = nombre;
+            presentacion.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             presentacion.Descripcion = descripcion;
             presentacion.Idpresentacion = id;
             return presentacion.Actualizar(presentacion);

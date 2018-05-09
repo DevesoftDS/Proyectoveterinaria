@@ -149,5 +149,10 @@ namespace CapaPresentacion
             AbrirFormHija(new frmListIngresoArticulos());
             this.barraSubMenu.Controls.Clear();
         }
+
+        private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MyForm = null;
+        }
     }
 }

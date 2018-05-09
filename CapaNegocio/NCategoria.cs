@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CapaNegocio
 {
@@ -17,7 +18,7 @@ namespace CapaNegocio
         public static int Insertar(string nombre, string descripcion)
         {
             DCategoria categoria = new DCategoria();
-            categoria.Nombre = nombre;
+            categoria.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             categoria.Descripcion = descripcion;
             return categoria.Insertar(categoria);
         }
@@ -25,7 +26,7 @@ namespace CapaNegocio
         public static int Actualizar(string nombre, string descripcion, int idcategoria)
         {
             DCategoria categoria = new DCategoria();
-            categoria.Nombre = nombre;
+            categoria.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             categoria.Descripcion = descripcion;
             categoria.IdCategoria = idcategoria;
             return categoria.Actualizar(categoria);
