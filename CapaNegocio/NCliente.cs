@@ -23,7 +23,7 @@ namespace CapaNegocio
             objCliente.Sexo = sexo;
             objCliente.Telefono = telefono;
             objCliente.Correo = correo;
-            objCliente.Direccion = correo;
+            objCliente.Direccion = direccion;
             objCliente.Foto = foto;
             return objCliente.InsertarCliente(objCliente);
         }
@@ -37,7 +37,7 @@ namespace CapaNegocio
             objCliente.Sexo = sexo;
             objCliente.Telefono = telefono;
             objCliente.Correo = correo;
-            objCliente.Direccion = correo;
+            objCliente.Direccion = direccion;
             objCliente.Foto = foto;
             return objCliente.ActualzarCliente(objCliente);
         }

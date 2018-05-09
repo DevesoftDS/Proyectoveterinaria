@@ -89,6 +89,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 40);
             this.panel1.TabIndex = 20;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // cboSexo
             // 
@@ -134,6 +135,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(203, 25);
             this.txtTelefono.TabIndex = 21;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtDni
             // 
@@ -145,6 +147,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(203, 25);
             this.txtDni.TabIndex = 18;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtApellidos
             // 
@@ -266,6 +269,7 @@
             // 
             this.pbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbFoto.BackgroundImage")));
             this.pbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbFoto.Image = ((System.Drawing.Image)(resources.GetObject("pbFoto.Image")));
             this.pbFoto.Location = new System.Drawing.Point(593, 95);
             this.pbFoto.Name = "pbFoto";
             this.pbFoto.Size = new System.Drawing.Size(177, 191);
@@ -327,6 +331,7 @@
             // epEmpleado
             // 
             this.epEmpleado.ContainerControl = this;
+            this.epEmpleado.Icon = ((System.Drawing.Icon)(resources.GetObject("epEmpleado.Icon")));
             // 
             // frmEmpleado
             // 

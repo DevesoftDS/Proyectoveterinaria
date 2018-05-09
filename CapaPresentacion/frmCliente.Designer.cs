@@ -186,6 +186,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(203, 25);
             this.txtDni.TabIndex = 3;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtTelefono
             // 
@@ -197,6 +198,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(379, 25);
             this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCorreo
             // 
@@ -228,6 +230,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(838, 40);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnClose
             // 
@@ -246,9 +249,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label8.Location = new System.Drawing.Point(349, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 18);
+            this.label8.Size = new System.Drawing.Size(136, 18);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Datos del Cliente";
+            this.label8.Text = "Formulario cliente";
             // 
             // btnCancelar
             // 
@@ -328,6 +331,7 @@
             // epCliente
             // 
             this.epCliente.ContainerControl = this;
+            this.epCliente.Icon = ((System.Drawing.Icon)(resources.GetObject("epCliente.Icon")));
             // 
             // frmCliente
             // 

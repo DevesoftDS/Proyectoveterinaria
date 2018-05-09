@@ -75,8 +75,8 @@ namespace CapaNegocio
                 for (int i = 0; i < numRow; i++)
                 {
                     int codigoUser = int.Parse(tabla.Rows[i]["idusuario"].ToString());
-                    string personal = tabla.Rows[i]["personal"].ToString();
-                    string usuario = tabla.Rows[i]["usuario"].ToString();
+                    string personal = tabla.Rows[i]["nombres"].ToString() + " " +tabla.Rows[i]["apellidos"].ToString();
+                    string usuario = tabla.Rows[i]["username"].ToString();
                     string password = DSeguridad.Encriptar(tabla.Rows[i]["pasword"].ToString());
                     string tipo = tabla.Rows[i]["tipo"].ToString();
                     int idempleado = int.Parse(tabla.Rows[i]["idempleado"].ToString());

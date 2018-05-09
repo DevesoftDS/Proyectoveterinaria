@@ -74,8 +74,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@sexo", empleado.Sexo);
                     cmd.Parameters.AddWithValue("@telefono", empleado.Telefono);
                     cmd.Parameters.AddWithValue("@correo", empleado.Correo);
-                    cmd.Parameters.AddWithValue("direccion", empleado.Direccion);
-                    cmd.Parameters.AddWithValue("foto", empleado.Foto);
+                    cmd.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    cmd.Parameters.AddWithValue("@foto", empleado.Foto);
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al Registrar empleado";
                 }
@@ -110,8 +110,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@sexo", empleado.Sexo);
                     cmd.Parameters.AddWithValue("@telefono", empleado.Telefono);
                     cmd.Parameters.AddWithValue("@correo", empleado.Correo);
-                    cmd.Parameters.AddWithValue("direccion", empleado.Direccion);
-                    cmd.Parameters.AddWithValue("foto", empleado.Foto);
+                    cmd.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    cmd.Parameters.AddWithValue("@foto", empleado.Foto);
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al modificar  empleado";
                 }

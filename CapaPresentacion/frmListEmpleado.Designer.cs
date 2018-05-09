@@ -31,11 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListEmpleado));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crearCuenta = new System.Windows.Forms.DataGridViewLinkColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +40,13 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crearCuenta = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnNuevoEmpleado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.dgvEmpleado);
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 453);
+            this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 23;
             // 
             // dgvEmpleado
@@ -71,11 +71,11 @@
             this.dgvEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmpleado.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.item,
-            this.crearCuenta,
             this.codigo,
             this.nombres,
             this.apellidos,
@@ -84,16 +84,115 @@
             this.telefono,
             this.correo,
             this.Direccion,
+            this.crearCuenta,
             this.Editar,
             this.Eliminar,
             this.Ver});
             this.dgvEmpleado.Location = new System.Drawing.Point(3, 3);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
-            this.dgvEmpleado.RowHeadersVisible = false;
-            this.dgvEmpleado.Size = new System.Drawing.Size(824, 443);
+            this.dgvEmpleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvEmpleado.Size = new System.Drawing.Size(824, 431);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmpleado_CellMouseDoubleClick);
+            // 
+            // item
+            // 
+            this.item.HeaderText = "#";
+            this.item.Name = "item";
+            this.item.ReadOnly = true;
+            this.item.Width = 50;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Visible = false;
+            this.codigo.Width = 60;
+            // 
+            // nombres
+            // 
+            this.nombres.HeaderText = "Nombres";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            this.nombres.Width = 150;
+            // 
+            // apellidos
+            // 
+            this.apellidos.HeaderText = "Apellidos";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            this.apellidos.Width = 200;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "Dni";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 150;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 60;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 120;
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Visible = false;
+            this.correo.Width = 250;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Visible = false;
+            this.Direccion.Width = 200;
+            // 
+            // crearCuenta
+            // 
+            this.crearCuenta.HeaderText = "Crear Cuenta";
+            this.crearCuenta.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(137)))), ((int)(((byte)(16)))));
+            this.crearCuenta.Name = "crearCuenta";
+            this.crearCuenta.ReadOnly = true;
+            this.crearCuenta.Width = 150;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(173)))), ((int)(((byte)(226)))));
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 150;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 150;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "Ver";
+            this.Ver.LinkColor = System.Drawing.Color.Green;
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 150;
             // 
             // panel2
             // 
@@ -108,7 +207,7 @@
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(143, 28);
+            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(431, 25);
             this.txtBuscar.TabIndex = 25;
@@ -124,97 +223,6 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Buscar empleado";
             // 
-            // item
-            // 
-            this.item.HeaderText = "#";
-            this.item.Name = "item";
-            this.item.ReadOnly = true;
-            this.item.Width = 50;
-            // 
-            // crearCuenta
-            // 
-            this.crearCuenta.HeaderText = "Crear Cuenta";
-            this.crearCuenta.Name = "crearCuenta";
-            this.crearCuenta.ReadOnly = true;
-            this.crearCuenta.Width = 130;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Visible = false;
-            this.codigo.Width = 60;
-            // 
-            // nombres
-            // 
-            this.nombres.HeaderText = "Nombres";
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            this.nombres.Width = 250;
-            // 
-            // apellidos
-            // 
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 300;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "Dni";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.Name = "sexo";
-            this.sexo.ReadOnly = true;
-            this.sexo.Width = 50;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            this.telefono.Width = 120;
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 250;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Width = 300;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 80;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 80;
-            // 
-            // Ver
-            // 
-            this.Ver.HeaderText = "Ver";
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Width = 80;
-            // 
             // btnNuevoEmpleado
             // 
             this.btnNuevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -224,7 +232,7 @@
             this.btnNuevoEmpleado.ForeColor = System.Drawing.Color.White;
             this.btnNuevoEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmpleado.Image")));
             this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(641, 23);
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(636, 23);
             this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
             this.btnNuevoEmpleado.Size = new System.Drawing.Size(147, 34);
             this.btnNuevoEmpleado.TabIndex = 26;
@@ -265,7 +273,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dgvEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn item;
-        private System.Windows.Forms.DataGridViewLinkColumn crearCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
@@ -274,6 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewLinkColumn crearCuenta;
         private System.Windows.Forms.DataGridViewLinkColumn Editar;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;

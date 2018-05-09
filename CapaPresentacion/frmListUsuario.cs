@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -54,14 +55,40 @@ namespace CapaPresentacion
 
         #endregion
 
+        private void estiloDgv()
+        {
+            this.dgvUsuario.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvUsuario.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvUsuario.DefaultCellStyle.BackColor = Color.White;
+            this.dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 231, 117);
+        }
         private void frmListUsuario_Load(object sender, EventArgs e)
         {
             NUsusario objUser = new NUsusario();
             objUser.ListadoDgv(dgvUsuario);
+            estiloDgv();
+
+            dgvUsuario.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;            
+            dgvUsuario.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvUsuario.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvUsuario.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvUsuario.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+
+            dgvUsuario.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
+            dgvUsuario.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvUsuario.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvUsuario.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvUsuario.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvUsuario.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
         }
+
+        
 
         private void dgvUsuario_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            string sexo = "";
 
             if (e.RowIndex != -1)
             {
@@ -99,6 +126,9 @@ namespace CapaPresentacion
                         frmUsuario.MiFormUsuario.txtPassword.Text = tabla.Rows[0]["pasword"].ToString();
                         frmUsuario.MiFormUsuario.cboTipo.SelectedItem = tabla.Rows[0]["tipo"].ToString();
                         frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
+
+                        dgvUsuario.Refresh();
+
                 }
 
                 if (dgvUsuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Eliminar"))
@@ -122,25 +152,52 @@ namespace CapaPresentacion
 
                 if (dgvUsuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Ver"))
                 {
-                    string estado = "";
-                    string personal = dgvUsuario.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    string usuario = dgvUsuario.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    string pass = dgvUsuario.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    string tipo = dgvUsuario.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    string captura = dgvUsuario.Rows[e.RowIndex].Cells[7].Value.ToString();
-                    if (captura.Equals("Desactivar")) estado = "Activo";
-                    else estado = "Inactivo";
+                    
                     DialogResult rspta = MessageBox.Show("Desea Desencripar la contraseña", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (DialogResult.Yes == rspta)
                     {
-                        string desencripatado = NUsusario.DesencriptarPass(pass);
+                        int idUser = Convert.ToInt32(dgvUsuario.Rows[e.RowIndex].Cells[1].Value.ToString());
 
-                        MessageBox.Show("Personal: " + personal + "\n" +
-                                        "Usuario: " + usuario + "\n" +
-                                        "Contraseña: " + desencripatado + "\n" +
-                                        "Tipo de Usuario: " + tipo + "\n" +
-                                        "Estado: " + estado + "\n"
-                                        , "Informacion del Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        frmPerfil perfil = new frmPerfil();
+                        perfil.Show();
+
+                        var tabla = NUsusario.BuscarUsuarioId(idUser);
+                        frmPerfil.MiFormPerfil.lblUsuario.Text = tabla.Rows[0]["username"].ToString();                         
+                        frmPerfil.MiFormPerfil.lblPassword.Text = tabla.Rows[0]["pasword"].ToString();
+                        frmPerfil.MiFormPerfil.lblTipo.Text = tabla.Rows[0]["tipo"].ToString();
+                        string captura = tabla.Rows[0]["estado"].ToString();
+                        frmPerfil.MiFormPerfil.lblEstadoUser.Visible = true;
+                        if (captura=="1")
+                        {
+                            frmPerfil.MiFormPerfil.lblEstadoUser.Text = "Activo";
+                            frmPerfil.MiFormPerfil.lblEstadoUser.ForeColor = Color.Green;
+                        }
+                        else
+                        {
+                            frmPerfil.MiFormPerfil.lblEstadoUser.Text = "Inactivo";
+                            frmPerfil.MiFormPerfil.lblEstadoUser.ForeColor = Color.Red;
+                        }
+                        frmPerfil.MiFormPerfil.lblNombre.Text = tabla.Rows[0]["nombres"].ToString();
+                        frmPerfil.MiFormPerfil.lblApellidos.Text = tabla.Rows[0]["apellidos"].ToString();
+                        frmPerfil.MiFormPerfil.lblDni.Text = tabla.Rows[0]["dni"].ToString();
+                        sexo = tabla.Rows[0]["sexo"].ToString();
+                        if (sexo == "M") frmPerfil.MiFormPerfil.lblSexo.Text = "Masculino";
+                        else frmPerfil.MiFormPerfil.lblSexo.Text = "Femenino";
+                        frmPerfil.MiFormPerfil.lblTelefono.Text = tabla.Rows[0]["telefono"].ToString();
+                        frmPerfil.MiFormPerfil.lblCorreo.Text = tabla.Rows[0]["correo"].ToString();
+                        frmPerfil.MiFormPerfil.lblDireccion.Text = tabla.Rows[0]["direccion"].ToString();
+                        byte[] img = (byte[])tabla.Rows[0]["foto"];
+                        var ms = new MemoryStream(img);
+                        frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
+                        frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Usuario";
+                        frmPerfil.MiFormPerfil.label9.Visible = true;
+                        frmPerfil.MiFormPerfil.lblTipo.Visible = true;
+                        frmPerfil.MiFormPerfil.label11.Visible = true;
+                        frmPerfil.MiFormPerfil.label12.Visible = true;
+                        frmPerfil.MiFormPerfil.lblUsuario.Visible = true;
+                        frmPerfil.MiFormPerfil.lblPassword.Visible = true;
+                        
                     }
                 }
             }

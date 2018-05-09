@@ -53,12 +53,37 @@ namespace CapaPresentacion
         {
             frmCliente frmCliente = new frmCliente();
             frmCliente.ShowDialog();
+            dgvCliente.Refresh();
+
         }
 
+        private void estiloDgv()
+        {
+            this.dgvCliente.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvCliente.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvCliente.DefaultCellStyle.BackColor = Color.White;
+            this.dgvCliente.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvCliente.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 231, 117);
+        }
         private void frmListCliente_Load(object sender, EventArgs e)
         {
             NCliente objCliente = new NCliente();
             objCliente.ListadoDgv(dgvCliente);
+            estiloDgv();
+
+            dgvCliente.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvCliente.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvCliente.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvCliente.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvCliente.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+
+            dgvCliente.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvCliente.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -113,6 +138,7 @@ namespace CapaPresentacion
                             dgvCliente.Rows.RemoveAt(e.RowIndex);
                             NCliente objCliente = new NCliente();
                             objCliente.ListadoDgv(dgvCliente);
+                            dgvCliente.Refresh();
                         }
                         else MessageBox.Show("error");
 
@@ -126,36 +152,24 @@ namespace CapaPresentacion
                     int idCliente = Convert.ToInt32(dgvCliente.Rows[e.RowIndex].Cells[1].Value.ToString());
 
 
-                    frmCliente frmCliente = new frmCliente();
-                    frmCliente.Show();
+                    frmPerfil perfil = new frmPerfil();
+                    perfil.Show();
 
                     var tabla = NCliente.BuscarClienteId(idCliente);
 
-                    frmCliente.MiFormCliente.txtNombres.Text = tabla.Rows[0]["nombres"].ToString();
-                    frmCliente.MiFormCliente.txtApellidos.Text = tabla.Rows[0]["apellidos"].ToString();
-                    frmCliente.MiFormCliente.txtDni.Text = tabla.Rows[0]["dni"].ToString();
+                    frmPerfil.MiFormPerfil.lblNombre.Text = tabla.Rows[0]["nombres"].ToString();
+                    frmPerfil.MiFormPerfil.lblApellidos.Text = tabla.Rows[0]["apellidos"].ToString();
+                    frmPerfil.MiFormPerfil.lblDni.Text = tabla.Rows[0]["dni"].ToString();
                     sexo = tabla.Rows[0]["sexo"].ToString();
-                    if (sexo == "M") frmCliente.MiFormCliente.cboSexo.SelectedItem = "Masculino";
-                    else frmCliente.MiFormCliente.cboSexo.SelectedItem = "Femenino";
-                    frmCliente.MiFormCliente.txtTelefono.Text = tabla.Rows[0]["telefono"].ToString();
-                    frmCliente.MiFormCliente.txtCorreo.Text = tabla.Rows[0]["correo"].ToString();
-                    frmCliente.MiFormCliente.txtDireccion.Text = tabla.Rows[0]["direccion"].ToString();
+                    if (sexo == "M") frmPerfil.MiFormPerfil.lblSexo.Text = "Masculino";
+                    else frmPerfil.MiFormPerfil.lblSexo.Text = "Femenino";
+                    frmPerfil.MiFormPerfil.lblTelefono.Text = tabla.Rows[0]["telefono"].ToString();
+                    frmPerfil.MiFormPerfil.lblCorreo.Text = tabla.Rows[0]["correo"].ToString();
+                    frmPerfil.MiFormPerfil.lblDireccion.Text = tabla.Rows[0]["direccion"].ToString();
                     byte[] img = (byte[])tabla.Rows[0]["foto"];
                     var ms = new MemoryStream(img);
-                    frmCliente.MiFormCliente.pbFoto.Image = Image.FromStream(ms);
-
-                    frmCliente.MiFormCliente.idCliente = idCliente;
-                    frmCliente.MiFormCliente._IsNew = true;
-                    frmCliente.MiFormCliente.txtNombres.Enabled = false;
-                    frmCliente.MiFormCliente.txtApellidos.Enabled = false;
-                    frmCliente.MiFormCliente.txtDni.Enabled = false;
-                    frmCliente.MiFormCliente.cboSexo.Enabled = false;
-                    frmCliente.MiFormCliente.txtTelefono.Enabled = false;
-                    frmCliente.MiFormCliente.txtCorreo.Enabled = false;
-                    frmCliente.MiFormCliente.txtDireccion.Enabled = false;
-                    frmCliente.MiFormCliente.btnExaminar.Visible = false;
-                    frmCliente.MiFormCliente.btnGuardar.Visible = false;
-                    frmCliente.MiFormCliente.btnCancelar.Visible = false;
+                    frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
+                    frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Cliente";
 
                 }
             }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Security.Permissions;
+using System.Runtime.InteropServices;
+
 namespace CapaPresentacion
 {
     public partial class frmUsuario : Form
@@ -43,6 +46,44 @@ namespace CapaPresentacion
         {
             _miFormUsuario = null;
         }
+        #endregion
+        #region shadown
+        private const int CS_DROPSHADOW = 0x00020000;
+        protected override CreateParams CreateParams
+        {
+            [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true)]
+            get
+            {
+                CreateParams parameters = base.CreateParams;
+
+                if (DropShadowSupported)
+                {
+                    parameters.ClassStyle = (parameters.ClassStyle | CS_DROPSHADOW);
+                }
+
+                return parameters;
+            }
+        }
+
+        /// <summary>
+        /// Gets indicator if drop shadow is supported
+        /// </summary>
+        public static bool DropShadowSupported
+        {
+            get
+            {
+                OperatingSystem system = Environment.OSVersion;
+                bool runningNT = system.Platform == PlatformID.Win32NT;
+
+                return runningNT && system.Version.CompareTo(new Version(5, 1, 0, 0)) >= 0;
+            }
+        }
+        #endregion
+        #region remove
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
         public int _idUsuario = 0;
         public int _idEmpleado = 0;
@@ -150,6 +191,7 @@ namespace CapaPresentacion
                 CrearCuentaUsuario();
                 NUsusario objUser = new NUsusario();
                 objUser.ListadoDgv(frmListUsuario.MiFormLisUsuario.dgvUsuario);
+                frmListUsuario.MiFormLisUsuario.dgvUsuario.Refresh();
                 Limpiar();
             }
             else
@@ -158,6 +200,7 @@ namespace CapaPresentacion
                 NUsusario objUser = new NUsusario();
                 objUser.ListadoDgv(frmListUsuario.MiFormLisUsuario.dgvUsuario);
                 Limpiar();
+                frmListUsuario.MiFormLisUsuario.dgvUsuario.Refresh();
             }
 
             
@@ -167,6 +210,12 @@ namespace CapaPresentacion
         {
             if (checkBox1.Checked) txtPassword.UseSystemPasswordChar = false;
             else txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

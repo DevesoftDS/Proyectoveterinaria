@@ -34,17 +34,15 @@
             this.btnClose = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.epUsuario = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epUsuario)).BeginInit();
@@ -52,7 +50,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.BackColor = System.Drawing.Color.Green;
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -60,6 +58,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(641, 40);
             this.panel2.TabIndex = 2;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // btnClose
             // 
@@ -85,12 +84,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cboTipo);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsuario);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -99,6 +96,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(641, 325);
             this.panel1.TabIndex = 3;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 9F);
+            this.checkBox1.Location = new System.Drawing.Point(452, 110);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(43, 19);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "&Ver";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cboTipo
             // 
@@ -111,7 +120,7 @@
             "Vendedor",
             "Almacenero",
             "Invitado"});
-            this.cboTipo.Location = new System.Drawing.Point(259, 136);
+            this.cboTipo.Location = new System.Drawing.Point(222, 135);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(272, 25);
             this.cboTipo.TabIndex = 3;
@@ -120,16 +129,16 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPassword.Location = new System.Drawing.Point(259, 104);
+            this.txtPassword.Location = new System.Drawing.Point(222, 104);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(216, 25);
+            this.txtPassword.Size = new System.Drawing.Size(224, 25);
             this.txtPassword.TabIndex = 2;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUsuario.Location = new System.Drawing.Point(259, 72);
+            this.txtUsuario.Location = new System.Drawing.Point(222, 72);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(272, 25);
             this.txtUsuario.TabIndex = 1;
@@ -140,43 +149,26 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(128, 139);
+            this.label6.Location = new System.Drawing.Point(91, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 18);
             this.label6.TabIndex = 4;
             this.label6.Text = "Tipo";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Teal;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(344, 217);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(187, 45);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Teal;
+            this.btnGuardar.BackColor = System.Drawing.Color.Green;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(128, 217);
+            this.btnGuardar.Location = new System.Drawing.Point(180, 217);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(187, 45);
+            this.btnGuardar.Size = new System.Drawing.Size(280, 45);
             this.btnGuardar.TabIndex = 6;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Crear cuenta";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -185,7 +177,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(128, 107);
+            this.label2.Location = new System.Drawing.Point(91, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 7;
@@ -196,7 +188,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(128, 75);
+            this.label1.Location = new System.Drawing.Point(91, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 18);
             this.label1.TabIndex = 8;
@@ -205,31 +197,6 @@
             // epUsuario
             // 
             this.epUsuario.ContainerControl = this;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Teal;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Image = global::CapaPresentacion.Properties.Resources.presentacion;
-            this.label3.Location = new System.Drawing.Point(500, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 25);
-            this.label3.TabIndex = 9;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.checkBox1.Location = new System.Drawing.Point(481, 106);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 22);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "&Ver";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // frmUsuario
             // 
@@ -262,12 +229,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ErrorProvider epUsuario;
         public System.Windows.Forms.ComboBox cboTipo;
         public System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.TextBox txtUsuario;
-        public System.Windows.Forms.Label btnCancelar;
         public System.Windows.Forms.Label btnGuardar;
         private System.Windows.Forms.CheckBox checkBox1;
     }

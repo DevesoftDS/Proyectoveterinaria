@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using System.Globalization;
+using System.Security.Permissions;
+using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
@@ -49,6 +51,45 @@ namespace CapaPresentacion
         {
             _miFormEmpleado = null;
         }
+        #endregion
+
+        #region shadown
+        private const int CS_DROPSHADOW = 0x00020000;
+        protected override CreateParams CreateParams
+        {
+            [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true)]
+            get
+            {
+                CreateParams parameters = base.CreateParams;
+
+                if (DropShadowSupported)
+                {
+                    parameters.ClassStyle = (parameters.ClassStyle | CS_DROPSHADOW);
+                }
+
+                return parameters;
+            }
+        }
+
+        /// <summary>
+        /// Gets indicator if drop shadow is supported
+        /// </summary>
+        public static bool DropShadowSupported
+        {
+            get
+            {
+                OperatingSystem system = Environment.OSVersion;
+                bool runningNT = system.Platform == PlatformID.Win32NT;
+
+                return runningNT && system.Version.CompareTo(new Version(5, 1, 0, 0)) >= 0;
+            }
+        }
+        #endregion
+        #region remove
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
 
         public int idEmpleado = 0;
@@ -143,8 +184,9 @@ namespace CapaPresentacion
                 if (rpta == "Ok")
                 {
                     MessageBox.Show(rpta + "--- Registrado");
+                    Limpiar();
                 }
-                else MessageBox.Show(rpta);
+                else MessageBox.Show(rpta+"--Error");
 
             }
 
@@ -205,8 +247,9 @@ namespace CapaPresentacion
                 if (rpta == "Ok")
                 {
                     MessageBox.Show(rpta + "---Actualizado");
+                    Limpiar();
                 }
-                else MessageBox.Show("error");
+                else MessageBox.Show("Error");
 
             }
         }
@@ -229,15 +272,15 @@ namespace CapaPresentacion
             {
                 InsertarEmpleado();
                 NEmpleado objEmpleado = new NEmpleado();
-                objEmpleado.ListadoDgv(frmListEmpleado.MiFormListEmpleado.dgvEmpleado);
-                Limpiar();
+                objEmpleado.ListadoDgv(frmListEmpleado.MiFormListEmpleado.dgvEmpleado);                
             }
             else
             {
                 ActualizarEmpleado();
                 NEmpleado objEmpleado = new NEmpleado();
                 objEmpleado.ListadoDgv(frmListEmpleado.MiFormListEmpleado.dgvEmpleado);
-                Limpiar();
+                frmListEmpleado.MiFormListEmpleado.dgvEmpleado.Refresh();
+
 
             }
         }
@@ -245,6 +288,36 @@ namespace CapaPresentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsSeparator(e.KeyChar) || char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsSeparator(e.KeyChar) || char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

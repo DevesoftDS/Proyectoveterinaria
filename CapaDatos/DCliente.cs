@@ -77,8 +77,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@sexo", cliente.Sexo);
                     cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
                     cmd.Parameters.AddWithValue("@correo", cliente.Correo);
-                    cmd.Parameters.AddWithValue("direccion", cliente.Direccion);
-                    cmd.Parameters.AddWithValue("foto", cliente.Foto);
+                    cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@foto", cliente.Foto);
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al Registrar el Cliente";
                 }

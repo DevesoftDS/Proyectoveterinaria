@@ -20,7 +20,7 @@ namespace CapaNegocio
             objEmpleado.Sexo = sexo;
             objEmpleado.Telefono = telefono;
             objEmpleado.Correo = correo;
-            objEmpleado.Direccion = correo;
+            objEmpleado.Direccion = direccion;
             objEmpleado.Foto = foto;
             return objEmpleado.InsertarEmpleado(objEmpleado);
         }
@@ -34,7 +34,7 @@ namespace CapaNegocio
             objEmpleado.Sexo = sexo;
             objEmpleado.Telefono = telefono;
             objEmpleado.Correo = correo;
-            objEmpleado.Direccion = correo;
+            objEmpleado.Direccion = direccion;
             objEmpleado.Foto = foto;
             return objEmpleado.ActualzarEmpleado(objEmpleado);
         }
@@ -81,7 +81,7 @@ namespace CapaNegocio
                     string correo = tabla.Rows[i]["correo"].ToString();
                     string direccion = tabla.Rows[i]["direccion"].ToString();
 
-                    dgv.Rows.Add(i + 1,"Crear Cuenta" ,codigo, nombre, apellido, dni, sexo, telefono, correo, direccion, "Editar", "Eliminar", "Ver");
+                    dgv.Rows.Add(i + 1,codigo, nombre, apellido, dni, sexo, telefono, correo, direccion, "Crear cuenta", "Editar", "Eliminar", "Ver");
                 }
             }
         }
