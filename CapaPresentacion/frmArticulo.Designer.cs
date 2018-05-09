@@ -47,13 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pBarraTitulo = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.epArticulo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.pBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,7 @@
             // 
             this.pbImagen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbImagen.BackgroundImage")));
             this.pbImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbImagen.Image = ((System.Drawing.Image)(resources.GetObject("pbImagen.Image")));
             this.pbImagen.Location = new System.Drawing.Point(309, 248);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(177, 191);
@@ -271,16 +272,17 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Codigo";
             // 
-            // panel2
+            // pBarraTitulo
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 40);
-            this.panel2.TabIndex = 1;
+            this.pBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
+            this.pBarraTitulo.Controls.Add(this.btnClose);
+            this.pBarraTitulo.Controls.Add(this.label7);
+            this.pBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pBarraTitulo.Name = "pBarraTitulo";
+            this.pBarraTitulo.Size = new System.Drawing.Size(834, 40);
+            this.pBarraTitulo.TabIndex = 1;
+            this.pBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
             // btnClose
             // 
@@ -314,7 +316,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 657);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pBarraTitulo);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -326,8 +328,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pBarraTitulo.ResumeLayout(false);
+            this.pBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epArticulo)).EndInit();
             this.ResumeLayout(false);
 
@@ -343,7 +345,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label btnCancelar;
         private System.Windows.Forms.Label btnGuardar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pBarraTitulo;
         private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label btnExaminar;

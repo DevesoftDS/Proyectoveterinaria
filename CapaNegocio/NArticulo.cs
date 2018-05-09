@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaDatos;
 using System.Data;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace CapaNegocio
 {
@@ -18,7 +19,7 @@ namespace CapaNegocio
         {
             DArticulo objArt = new DArticulo();
             objArt.Codigo = codigo;
-            objArt.Nombre = nombre;
+            objArt.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             objArt.IdCategoria = idcategoria;
             objArt.IdPresentacion = idpresentacion;
             objArt.Neto = neto;
@@ -31,7 +32,7 @@ namespace CapaNegocio
         {
             DArticulo objArt = new DArticulo();
             objArt.Codigo = codigo;
-            objArt.Nombre = nombre;
+            objArt.Nombre = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(nombre);
             objArt.IdCategoria = idcategoria;
             objArt.IdPresentacion = idpresentacion;
             objArt.Neto = neto;
@@ -107,7 +108,7 @@ namespace CapaNegocio
                     string codigo = tabla.Rows[i]["codigo"].ToString();
                     string nombre = tabla.Rows[i]["nombre"].ToString();
                     string categoria = tabla.Rows[i]["categoria"].ToString();
-                    string presentacion = tabla.Rows[i]["presentacion"].ToString() + " " + tabla.Rows[i]["neto"].ToString();
+                    string presentacion = tabla.Rows[i]["neto"].ToString() + " " + tabla.Rows[i]["presentacion"].ToString();
                     string idarticulo = tabla.Rows[i]["idarticulo"].ToString();
 
                     dgv.Rows.Add(

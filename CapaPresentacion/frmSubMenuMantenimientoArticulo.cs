@@ -25,16 +25,19 @@ namespace CapaPresentacion
         private void btnArticulos_Click(object sender, EventArgs e)
         {
             frmHome.MyForm.AbrirFormHija(new frmListArticulo());
+            frmListArticulo.MyFormListArt.dgvArticulo.Refresh();
         }
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             frmHome.MyForm.AbrirFormHija(new frmListCategoria());
+            frmListCategoria.MyForm.dgvPresentacion.Refresh();
         }
 
         private void btnPresentacion_Click(object sender, EventArgs e)
         {
             frmHome.MyForm.AbrirFormHija(new frmListPresentacion());
+            frmPresentacion.MyFormPresentation.Refresh();
         }
     }
 }

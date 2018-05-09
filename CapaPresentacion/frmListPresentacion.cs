@@ -45,6 +45,7 @@ namespace CapaPresentacion
         private void btnNuevoPresentacion_Click(object sender, EventArgs e)
         {
             new frmPresentacion().ShowDialog();
+            this.dgvPresentacion.Refresh();
         }
 
         private void frmListPresentacion_Load(object sender, EventArgs e)

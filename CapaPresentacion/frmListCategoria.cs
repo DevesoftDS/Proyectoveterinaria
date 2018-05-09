@@ -48,6 +48,7 @@ namespace CapaPresentacion
         private void btnNuevoCategoria_Click(object sender, EventArgs e)
         {
             new frmCategoria().ShowDialog();
+            this.dgvPresentacion.Refresh();
             //frmCategoria.MyFormCategoria.isNew = false;
         }
 
