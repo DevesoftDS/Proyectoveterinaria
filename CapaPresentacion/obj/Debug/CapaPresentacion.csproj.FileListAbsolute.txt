@@ -32,6 +32,44 @@ C:\Users\Telesforo Soto\Documents\Visual Studio 2015\Projects\ProyectoVeterinari
 C:\Users\Telesforo Soto\Documents\Visual Studio 2015\Projects\ProyectoVeterinario\CapaPresentacion\obj\Debug\CapaPresentacion.frmVenta.resources
 C:\Users\Telesforo Soto\Documents\Visual Studio 2015\Projects\ProyectoVeterinario\CapaPresentacion\bin\Debug\CapaDatos.dll
 C:\Users\Telesforo Soto\Documents\Visual Studio 2015\Projects\ProyectoVeterinario\CapaPresentacion\bin\Debug\CapaDatos.pdb
+<<<<<<< HEAD
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.csprojResolveAssemblyReference.cache
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.Form1.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmArticulo.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmCliente.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmEmpleado.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmHome.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmIngresoArticulos.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListArticulo.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListCategoria.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListCliente.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListEmpleado.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListIngresoArticulos.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListPresentacion.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListProveedor.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListVenta.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmMenuInicio.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmMenuMantenimiento.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmMenuVentas.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmPresentacion.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmProveedor.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmSubMenuMantenimientoArticulo.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmVenta.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuario.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListUsuario.resources
+=======
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
@@ -66,3 +104,4 @@ C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\C
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmVenta.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.Cache
+>>>>>>> origin/master

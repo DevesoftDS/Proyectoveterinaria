@@ -44,8 +44,14 @@
     <Compile Include="Class1.cs" />
     <Compile Include="NArticulo.cs" />
     <Compile Include="NCategoria.cs" />
+    <Compile Include="NCliente.cs" />
+    <Compile Include="NEmpleado.cs" />
     <Compile Include="NPresentacion.cs" />
+<<<<<<< HEAD
     <Compile Include="NProveedor.cs" />
+=======
+    <Compile Include="NUsusario.cs" />
+>>>>>>> origin/master
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -100,6 +100,7 @@
             this.pUsuario.Name = "pUsuario";
             this.pUsuario.Size = new System.Drawing.Size(246, 120);
             this.pUsuario.TabIndex = 0;
+            this.pUsuario.Click += new System.EventHandler(this.pUsuario_Click);
             // 
             // label8
             // 

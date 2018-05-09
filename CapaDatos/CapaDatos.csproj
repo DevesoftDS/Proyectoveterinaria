@@ -45,9 +45,16 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DArticulo.cs" />
     <Compile Include="DCategoria.cs" />
+    <Compile Include="DCliente.cs" />
     <Compile Include="DConexion.cs" />
+    <Compile Include="DEmpleado.cs" />
     <Compile Include="DPresentacion.cs" />
+<<<<<<< HEAD
     <Compile Include="DProveedor.cs" />
+=======
+    <Compile Include="DSeguridad.cs" />
+    <Compile Include="DUsuario.cs" />
+>>>>>>> origin/master
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
