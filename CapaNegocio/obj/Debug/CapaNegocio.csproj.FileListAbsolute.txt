@@ -5,7 +5,6 @@ c:\users\telesforo soto\documents\visual studio 2015\Projects\ProyectoVeterinari
 c:\users\telesforo soto\documents\visual studio 2015\Projects\ProyectoVeterinario\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
 c:\users\telesforo soto\documents\visual studio 2015\Projects\ProyectoVeterinario\CapaNegocio\obj\Debug\CapaNegocio.dll
 c:\users\telesforo soto\documents\visual studio 2015\Projects\ProyectoVeterinario\CapaNegocio\obj\Debug\CapaNegocio.pdb
-
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaNegocio\bin\Debug\CapaNegocio.dll
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaNegocio\bin\Debug\CapaNegocio.pdb
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaNegocio\bin\Debug\CapaDatos.dll

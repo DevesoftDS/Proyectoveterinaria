@@ -122,7 +122,7 @@ namespace CapaPresentacion
 
                         frmUsuario.MiFormUsuario._isNew = false;   
                         frmUsuario.MiFormUsuario._idUsuario = idUser;                       
-                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["usuario"].ToString();
+                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["username"].ToString();
                         frmUsuario.MiFormUsuario.txtPassword.Text = tabla.Rows[0]["pasword"].ToString();
                         frmUsuario.MiFormUsuario.cboTipo.SelectedItem = tabla.Rows[0]["tipo"].ToString();
                         frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
