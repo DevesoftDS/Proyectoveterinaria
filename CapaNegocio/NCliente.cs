@@ -41,21 +41,18 @@ namespace CapaNegocio
             objCliente.Foto = foto;
             return objCliente.ActualzarCliente(objCliente);
         }
-
         public static string EliminarCliente(int idCliente)
         {
             DCliente objCliente = new DCliente();
             objCliente.IdCliente = idCliente;
             return objCliente.EliminarCliente(objCliente);
         }
-
         public static DataTable BuscarClienteId(int idCliente)
         {
             DCliente objCliente = new DCliente();
             objCliente.IdCliente = idCliente;
             return objCliente.BuscarClienteId(objCliente);
         }
-
         public static DataTable ListarCliente()
         {
             return new DCliente().ListarCliente();
@@ -65,10 +62,7 @@ namespace CapaNegocio
             DCliente objCliente = new DCliente();
             objCliente.TextoBuscar = textoBuscar;
             return objCliente.BuscarCliente(objCliente);
-        } 
-        
-               
-
+        }                      
         public static void ListarGriv(DataGridView dgv , DataTable tabla)
         {
             int numRow = tabla.Rows.Count;
@@ -90,7 +84,6 @@ namespace CapaNegocio
                 }
             }
         }
-
         public void ListarBusquedaCliente(DataGridView dgv, string text)
         {
             var tabla = BuscarCliente(text);

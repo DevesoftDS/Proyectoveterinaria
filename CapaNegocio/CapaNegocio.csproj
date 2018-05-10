@@ -46,12 +46,12 @@
     <Compile Include="NCategoria.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NEmpleado.cs" />
+    <Compile Include="NEspecie.cs" />
+    <Compile Include="NMascota.cs" />
     <Compile Include="NPresentacion.cs" />
-
     <Compile Include="NProveedor.cs" />
-
+    <Compile Include="NRaza.cs" />
     <Compile Include="NUsusario.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

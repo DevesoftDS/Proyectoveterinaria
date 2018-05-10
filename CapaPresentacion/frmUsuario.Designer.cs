@@ -168,7 +168,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(280, 45);
             this.btnGuardar.TabIndex = 6;
-            this.btnGuardar.Text = "Crear cuenta";
+            this.btnGuardar.Text = "Guardar cuenta";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 

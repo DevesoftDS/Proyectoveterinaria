@@ -58,5 +58,11 @@ namespace CapaPresentacion
             frmHome.MyForm.AbrirFormHija(new frmListUsuario());
             frmHome.MyForm.barraSubMenu.Controls.Clear();
         }
+
+        private void pPaciente_Click(object sender, EventArgs e)
+        {
+            frmHome.MyForm.AbrirFormHija(new frmListMascota());
+            frmHome.MyForm.barraSubMenu.Controls.Clear();
+        }
     }
 }

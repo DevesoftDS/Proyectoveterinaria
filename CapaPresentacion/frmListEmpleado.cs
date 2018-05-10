@@ -100,16 +100,16 @@ namespace CapaPresentacion
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Crear cuenta"))
                 {
                     int idempplead = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString());
-                    DialogResult rspta = MessageBox.Show("Desea crear cuenta de usuario?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                    if (DialogResult.Yes == rspta)
-                    {
-                        frmUsuario frmUser = new frmUsuario();
-                        frmUser.Show();
-                        var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
+                    /* DialogResult rspta = MessageBox.Show("Desea crear cuenta de usuario?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                     if (DialogResult.Yes == rspta)
+                     {*/
+                    frmUsuario frmUser = new frmUsuario();
+                    frmUser.Show();
+                    var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
 
-                        frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
-                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
-                    }
+                    frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
+                    frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
+                    //}
                 }
 
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Editar"))
@@ -162,7 +162,7 @@ namespace CapaPresentacion
                 }
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Ver"))
                 {
-
+                   
                     int idEmpleado = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString());
 
 
@@ -170,22 +170,28 @@ namespace CapaPresentacion
                     perfil.Show();
 
                     var tabla = NEmpleado.BuscarEmpleadoId(idEmpleado);
-
-                    frmPerfil.MiFormPerfil.lblNombre.Text = tabla.Rows[0]["nombres"].ToString();
-                    frmPerfil.MiFormPerfil.lblApellidos.Text = tabla.Rows[0]["apellidos"].ToString();
-                    frmPerfil.MiFormPerfil.lblDni.Text = tabla.Rows[0]["dni"].ToString();
                     sexo = tabla.Rows[0]["sexo"].ToString();
-                    if (sexo == "M") frmPerfil.MiFormPerfil.lblSexo.Text = "Masculino";
-                    else frmPerfil.MiFormPerfil.lblSexo.Text = "Femenino";
-                    frmPerfil.MiFormPerfil.lblTelefono.Text = tabla.Rows[0]["telefono"].ToString();
-                    frmPerfil.MiFormPerfil.lblCorreo.Text = tabla.Rows[0]["correo"].ToString();
-                    frmPerfil.MiFormPerfil.lblDireccion.Text = tabla.Rows[0]["direccion"].ToString();
-                    byte[] img = (byte[])tabla.Rows[0]["foto"];
-                    var ms = new MemoryStream(img);
-                    frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
-                    frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Empleado";                   
+                    if (sexo == "M") sexo = "Masculino";
+                    else sexo = "Femenino";
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Nombre:     " + tabla.Rows[0]["nombres"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Apellidos:  " + tabla.Rows[0]["apellidos"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Dni:        " + tabla.Rows[0]["dni"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Sexo:       " + sexo);
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Teléfono:   " + tabla.Rows[0]["telefono"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Correo:     " + tabla.Rows[0]["correo"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Dirección:  " + tabla.Rows[0]["direccion"].ToString());
 
-                                      
+                     byte[] img = (byte[])tabla.Rows[0]["foto"];
+                     var ms = new MemoryStream(img);
+                     frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
+                     frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Empleado";
+                   
                 }
             }
         }

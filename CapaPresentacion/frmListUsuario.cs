@@ -122,7 +122,7 @@ namespace CapaPresentacion
 
                         frmUsuario.MiFormUsuario._isNew = false;   
                         frmUsuario.MiFormUsuario._idUsuario = idUser;                       
-                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["usuario"].ToString();
+                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["username"].ToString();
                         frmUsuario.MiFormUsuario.txtPassword.Text = tabla.Rows[0]["pasword"].ToString();
                         frmUsuario.MiFormUsuario.cboTipo.SelectedItem = tabla.Rows[0]["tipo"].ToString();
                         frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
@@ -153,9 +153,9 @@ namespace CapaPresentacion
                 if (dgvUsuario.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Ver"))
                 {
                     
-                    DialogResult rspta = MessageBox.Show("Desea Desencripar la contraseña", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                    if (DialogResult.Yes == rspta)
-                    {
+                   //DialogResult rspta = MessageBox.Show("Desea Desencripar la contraseña", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                   // if (DialogResult.Yes == rspta)
+                   // {
                         int idUser = Convert.ToInt32(dgvUsuario.Rows[e.RowIndex].Cells[1].Value.ToString());
 
 
@@ -163,12 +163,32 @@ namespace CapaPresentacion
                         perfil.Show();
 
                         var tabla = NUsusario.BuscarUsuarioId(idUser);
-                        frmPerfil.MiFormPerfil.lblUsuario.Text = tabla.Rows[0]["username"].ToString();                         
-                        frmPerfil.MiFormPerfil.lblPassword.Text = tabla.Rows[0]["pasword"].ToString();
-                        frmPerfil.MiFormPerfil.lblTipo.Text = tabla.Rows[0]["tipo"].ToString();
+                        sexo = tabla.Rows[0]["sexo"].ToString();
+                        if (sexo == "M") sexo = "Masculino";
+                        else sexo = "Femenino";
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Nombre:     " + tabla.Rows[0]["nombres"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Apellidos:  " + tabla.Rows[0]["apellidos"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Dni:        " + tabla.Rows[0]["dni"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Sexo:       " + sexo);
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Teléfono:   " + tabla.Rows[0]["telefono"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Correo:     " + tabla.Rows[0]["correo"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Dirección:  " + tabla.Rows[0]["direccion"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Usuario:    " + tabla.Rows[0]["username"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Password:   " + tabla.Rows[0]["pasword"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("TipoUser:   " + tabla.Rows[0]["tipo"].ToString());
+
                         string captura = tabla.Rows[0]["estado"].ToString();
                         frmPerfil.MiFormPerfil.lblEstadoUser.Visible = true;
-                        if (captura=="1")
+                        if (captura == "1")
                         {
                             frmPerfil.MiFormPerfil.lblEstadoUser.Text = "Activo";
                             frmPerfil.MiFormPerfil.lblEstadoUser.ForeColor = Color.Green;
@@ -178,27 +198,13 @@ namespace CapaPresentacion
                             frmPerfil.MiFormPerfil.lblEstadoUser.Text = "Inactivo";
                             frmPerfil.MiFormPerfil.lblEstadoUser.ForeColor = Color.Red;
                         }
-                        frmPerfil.MiFormPerfil.lblNombre.Text = tabla.Rows[0]["nombres"].ToString();
-                        frmPerfil.MiFormPerfil.lblApellidos.Text = tabla.Rows[0]["apellidos"].ToString();
-                        frmPerfil.MiFormPerfil.lblDni.Text = tabla.Rows[0]["dni"].ToString();
-                        sexo = tabla.Rows[0]["sexo"].ToString();
-                        if (sexo == "M") frmPerfil.MiFormPerfil.lblSexo.Text = "Masculino";
-                        else frmPerfil.MiFormPerfil.lblSexo.Text = "Femenino";
-                        frmPerfil.MiFormPerfil.lblTelefono.Text = tabla.Rows[0]["telefono"].ToString();
-                        frmPerfil.MiFormPerfil.lblCorreo.Text = tabla.Rows[0]["correo"].ToString();
-                        frmPerfil.MiFormPerfil.lblDireccion.Text = tabla.Rows[0]["direccion"].ToString();
+
                         byte[] img = (byte[])tabla.Rows[0]["foto"];
                         var ms = new MemoryStream(img);
                         frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
-                        frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Usuario";
-                        frmPerfil.MiFormPerfil.label9.Visible = true;
-                        frmPerfil.MiFormPerfil.lblTipo.Visible = true;
-                        frmPerfil.MiFormPerfil.label11.Visible = true;
-                        frmPerfil.MiFormPerfil.label12.Visible = true;
-                        frmPerfil.MiFormPerfil.lblUsuario.Visible = true;
-                        frmPerfil.MiFormPerfil.lblPassword.Visible = true;
+                        frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Usuario";                                                               
                         
-                    }
+                    //}
                 }
             }
         }
