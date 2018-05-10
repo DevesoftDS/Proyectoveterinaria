@@ -154,5 +154,11 @@ namespace CapaPresentacion
         {
             MyForm = null;
         }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new frmListCita());
+            this.barraSubMenu.Controls.Clear();
+        }
     }
 }

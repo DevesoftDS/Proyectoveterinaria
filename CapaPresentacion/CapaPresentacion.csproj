@@ -64,6 +64,12 @@
     <Compile Include="frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCita.Designer.cs">
+      <DependentUpon>frmCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="frmListCategoria.Designer.cs">
       <DependentUpon>frmListCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListCita.Designer.cs">
+      <DependentUpon>frmListCita.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListCliente.cs">
       <SubType>Form</SubType>
@@ -219,6 +231,9 @@
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCita.resx">
+      <DependentUpon>frmCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCategoria.resx">
       <DependentUpon>frmListCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListCita.resx">
+      <DependentUpon>frmListCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCliente.resx">
       <DependentUpon>frmListCliente.cs</DependentUpon>

@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListEmpleado));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Label();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,14 +44,12 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.crearCuenta = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevoEmpleado = new System.Windows.Forms.Label();
+            this.idarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -84,10 +86,12 @@
             this.telefono,
             this.correo,
             this.Direccion,
+            this.area,
             this.crearCuenta,
             this.Editar,
             this.Eliminar,
-            this.Ver});
+            this.Ver,
+            this.idarea});
             this.dgvEmpleado.Location = new System.Drawing.Point(3, 3);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
@@ -95,6 +99,52 @@
             this.dgvEmpleado.Size = new System.Drawing.Size(824, 431);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmpleado_CellMouseDoubleClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 5);
+            this.panel2.TabIndex = 27;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(431, 25);
+            this.txtBuscar.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 18);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Buscar empleado";
+            // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmpleado.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmpleado.Image")));
+            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(636, 23);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoEmpleado.TabIndex = 26;
+            this.btnNuevoEmpleado.Text = "Nuevo";
+            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoEmpleado.Click += new System.EventHandler(this.btnNuevoEmpleado_Click);
             // 
             // item
             // 
@@ -162,6 +212,12 @@
             this.Direccion.Visible = false;
             this.Direccion.Width = 200;
             // 
+            // area
+            // 
+            this.area.HeaderText = "Area";
+            this.area.Name = "area";
+            this.area.ReadOnly = true;
+            // 
             // crearCuenta
             // 
             this.crearCuenta.HeaderText = "Crear Cuenta";
@@ -194,51 +250,12 @@
             this.Ver.ReadOnly = true;
             this.Ver.Width = 150;
             // 
-            // panel2
+            // idarea
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
-            this.panel2.TabIndex = 27;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(431, 25);
-            this.txtBuscar.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 18);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Buscar empleado";
-            // 
-            // btnNuevoEmpleado
-            // 
-            this.btnNuevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmpleado.Image")));
-            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(636, 23);
-            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            this.btnNuevoEmpleado.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoEmpleado.TabIndex = 26;
-            this.btnNuevoEmpleado.Text = "Nuevo";
-            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoEmpleado.Click += new System.EventHandler(this.btnNuevoEmpleado_Click);
+            this.idarea.HeaderText = "IdArea";
+            this.idarea.Name = "idarea";
+            this.idarea.ReadOnly = true;
+            this.idarea.Visible = false;
             // 
             // frmListEmpleado
             // 
@@ -281,9 +298,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn area;
         private System.Windows.Forms.DataGridViewLinkColumn crearCuenta;
         private System.Windows.Forms.DataGridViewLinkColumn Editar;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idarea;
     }
 }

@@ -53,6 +53,8 @@
             this.btnCancelar = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Label();
             this.epEmpleado = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboArea = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmpleado)).BeginInit();
@@ -333,11 +335,35 @@
             this.epEmpleado.ContainerControl = this;
             this.epEmpleado.Icon = ((System.Drawing.Icon)(resources.GetObject("epEmpleado.Icon")));
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(64, 335);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 18);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Area";
+            // 
+            // cboArea
+            // 
+            this.cboArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboArea.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboArea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboArea.FormattingEnabled = true;
+            this.cboArea.Location = new System.Drawing.Point(193, 332);
+            this.cboArea.Name = "cboArea";
+            this.cboArea.Size = new System.Drawing.Size(379, 25);
+            this.cboArea.TabIndex = 30;
+            // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.cboArea);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnExaminar);
@@ -353,6 +379,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -399,5 +426,7 @@
         public System.Windows.Forms.Label btnCancelar;
         public System.Windows.Forms.Label btnGuardar;
         private System.Windows.Forms.ErrorProvider epEmpleado;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.ComboBox cboArea;
     }
 }

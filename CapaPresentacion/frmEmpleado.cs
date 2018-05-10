@@ -97,6 +97,14 @@ namespace CapaPresentacion
         private void frmEmpleado_Load(object sender, EventArgs e)
         {
             cboSexo.SelectedIndex = 0;
+            var tabla = NArea.ListarArea();
+            if (tabla.Rows.Count > 0)
+            {
+                cboArea.DataSource = tabla;
+                cboArea.DisplayMember = "nombre";
+                cboArea.ValueMember = "idarea";
+            }
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -179,6 +187,7 @@ namespace CapaPresentacion
                 txtTelefono.Text.Trim(),
                 txtCorreo.Text.Trim().ToLower(),
                 CultureInfo.InvariantCulture.TextInfo.ToTitleCase(txtDireccion.Text).Trim(),
+                Convert.ToInt32(cboArea.SelectedValue),
                 ImageToByteArray(pbFoto.Image)
                 );
                 if (rpta == "Ok")
@@ -242,6 +251,7 @@ namespace CapaPresentacion
                 txtTelefono.Text.Trim(),
                 txtCorreo.Text.Trim().ToLower(),
                 CultureInfo.InvariantCulture.TextInfo.ToTitleCase(txtDireccion.Text).Trim(),
+                Convert.ToInt32(cboArea.SelectedValue),
                 ImageToByteArray(pbFoto.Image)
                 );
                 if (rpta == "Ok")

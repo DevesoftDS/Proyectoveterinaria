@@ -18,6 +18,7 @@ namespace CapaDatos
         public string Telefono { get; set; }
         public string Correo { get; set; }
         public string Direccion { get; set; }
+        public int IdArea { get; set; }
         public byte[] Foto { get; set; }
 
         public string TextoBuscar { get; set; }
@@ -28,7 +29,7 @@ namespace CapaDatos
         {
             this.IdEmpleado = idEmpleado;
         }
-        public DEmpleado(string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, byte[] foto)
+        public DEmpleado(string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion,int idArea, byte[] foto)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -37,9 +38,10 @@ namespace CapaDatos
             this.Telefono = telefono;
             this.Correo = correo;
             this.Direccion = direccion;
+            this.IdArea = idArea;
             this.Foto = foto;
         }
-        public DEmpleado(int idEmpleado, string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, byte[] foto) : this(idEmpleado)
+        public DEmpleado(int idEmpleado, string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion,int idArea, byte[] foto) : this(idEmpleado)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -48,6 +50,7 @@ namespace CapaDatos
             this.Telefono = telefono;
             this.Correo = correo;
             this.Direccion = direccion;
+            this.IdArea = idArea;
             this.Foto = foto;
         }
 
@@ -75,6 +78,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@telefono", empleado.Telefono);
                     cmd.Parameters.AddWithValue("@correo", empleado.Correo);
                     cmd.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    cmd.Parameters.AddWithValue("@idarea", empleado.IdArea);
                     cmd.Parameters.AddWithValue("@foto", empleado.Foto);
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al Registrar empleado";
@@ -111,6 +115,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@telefono", empleado.Telefono);
                     cmd.Parameters.AddWithValue("@correo", empleado.Correo);
                     cmd.Parameters.AddWithValue("@direccion", empleado.Direccion);
+                    cmd.Parameters.AddWithValue("@idarea", empleado.IdArea);
                     cmd.Parameters.AddWithValue("@foto", empleado.Foto);
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al modificar  empleado";

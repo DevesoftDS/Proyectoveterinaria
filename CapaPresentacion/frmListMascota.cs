@@ -111,8 +111,8 @@ namespace CapaPresentacion
                     frmMascota.MiFormMascota.txtEdad.Text = tabla.Rows[0]["edad"].ToString();
                     frmMascota.MiFormMascota.txtPeso.Text = tabla.Rows[0]["peso"].ToString();
                     frmMascota.MiFormMascota.cboSexo.SelectedItem = tabla.Rows[0]["sexo"].ToString();
-                    frmMascota.MiFormMascota.cboEspecie.SelectedItem = tabla.Rows[0]["especie"].ToString();
-                    frmMascota.MiFormMascota.cboRaza.SelectedItem = tabla.Rows[0]["raza"].ToString();
+                    frmMascota.MiFormMascota.cboEspecie.SelectedValue = tabla.Rows[0]["idespecie"].ToString();
+                    frmMascota.MiFormMascota.cboRaza.SelectedValue= tabla.Rows[0]["idraza"].ToString();
                     frmMascota.MiFormMascota.txtDescripcion.Text = tabla.Rows[0]["descripcion"].ToString();
                     byte[] img = (byte[])tabla.Rows[0]["imagen"];
                     var ms = new MemoryStream(img);

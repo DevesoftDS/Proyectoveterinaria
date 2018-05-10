@@ -59,16 +59,16 @@ namespace CapaPresentacion
             dgvEmpleado.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvEmpleado.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvEmpleado.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             dgvEmpleado.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvEmpleado.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleado.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvEmpleado.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
 
@@ -131,12 +131,14 @@ namespace CapaPresentacion
                     frmEmpleado.MiFormEmpleado.txtTelefono.Text = tabla.Rows[0]["telefono"].ToString();
                     frmEmpleado.MiFormEmpleado.txtCorreo.Text = tabla.Rows[0]["correo"].ToString();
                     frmEmpleado.MiFormEmpleado.txtDireccion.Text = tabla.Rows[0]["direccion"].ToString();
+                    frmEmpleado.MiFormEmpleado.cboArea.SelectedValue = tabla.Rows[0]["idarea"].ToString();
                     byte[] img = (byte[])tabla.Rows[0]["foto"];
                     var ms = new MemoryStream(img);
                     frmEmpleado.MiFormEmpleado.pbFoto.Image = Image.FromStream(ms);
 
                     frmEmpleado.MiFormEmpleado.idEmpleado = idEmpleado;
                     frmEmpleado.MiFormEmpleado._IsNew = false;
+                    frmEmpleado.MiFormEmpleado.cboArea.Enabled = true;
                 }                
 
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Eliminar"))
@@ -186,8 +188,10 @@ namespace CapaPresentacion
                     frmPerfil.MiFormPerfil.listDatos.Items.Add("Correo:     " + tabla.Rows[0]["correo"].ToString());
                     frmPerfil.MiFormPerfil.listDatos.Items.Add("");
                     frmPerfil.MiFormPerfil.listDatos.Items.Add("Dirección:  " + tabla.Rows[0]["direccion"].ToString());
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Area:       " + tabla.Rows[0]["area"].ToString());
 
-                     byte[] img = (byte[])tabla.Rows[0]["foto"];
+                    byte[] img = (byte[])tabla.Rows[0]["foto"];
                      var ms = new MemoryStream(img);
                      frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
                      frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Empleado";

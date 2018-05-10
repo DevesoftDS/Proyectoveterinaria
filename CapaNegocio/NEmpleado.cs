@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class NEmpleado
     {
-        public static string InsertarEmpleado(string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, byte[] foto)
+        public static string InsertarEmpleado(string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, int idArea,byte[] foto)
         {
             DEmpleado objEmpleado = new DEmpleado();
             objEmpleado.Nombre = nombre;
@@ -21,10 +21,12 @@ namespace CapaNegocio
             objEmpleado.Telefono = telefono;
             objEmpleado.Correo = correo;
             objEmpleado.Direccion = direccion;
+            objEmpleado.IdArea = idArea;
             objEmpleado.Foto = foto;
+
             return objEmpleado.InsertarEmpleado(objEmpleado);
         }
-        public static string ModificarEmpleado(int idempleado, string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, byte[] foto)
+        public static string ModificarEmpleado(int idempleado, string nombre, string apellido, string dni, string sexo, string telefono, string correo, string direccion, int idArea,byte[] foto)
         {
             DEmpleado objEmpleado = new DEmpleado();
             objEmpleado.IdEmpleado = idempleado;
@@ -35,6 +37,7 @@ namespace CapaNegocio
             objEmpleado.Telefono = telefono;
             objEmpleado.Correo = correo;
             objEmpleado.Direccion = direccion;
+            objEmpleado.IdArea = idArea;
             objEmpleado.Foto = foto;
             return objEmpleado.ActualzarEmpleado(objEmpleado);
         }
@@ -72,7 +75,7 @@ namespace CapaNegocio
                 dgv.Rows.Clear();
                 for (int i = 0; i < numRow; i++)
                 {
-                    int codigo = int.Parse(tabla.Rows[i]["codigo"].ToString());
+                    int codigo = int.Parse(tabla.Rows[i]["idempleado"].ToString());
                     string nombre = tabla.Rows[i]["nombres"].ToString();
                     string apellido = tabla.Rows[i]["apellidos"].ToString();
                     string dni = tabla.Rows[i]["dni"].ToString();
@@ -80,8 +83,10 @@ namespace CapaNegocio
                     string telefono = tabla.Rows[i]["telefono"].ToString();
                     string correo = tabla.Rows[i]["correo"].ToString();
                     string direccion = tabla.Rows[i]["direccion"].ToString();
+                    string area = tabla.Rows[i]["area"].ToString();
+                    int idarea = Convert.ToInt32(tabla.Rows[i]["idarea"].ToString());                    
 
-                    dgv.Rows.Add(i + 1,codigo, nombre, apellido, dni, sexo, telefono, correo, direccion, "Crear cuenta", "Editar", "Eliminar", "Ver");
+                    dgv.Rows.Add(i + 1,codigo, nombre, apellido, dni, sexo, telefono, correo, direccion, area,"Crear cuenta", "Editar", "Eliminar", "Ver",idarea);
                 }
             }
         }

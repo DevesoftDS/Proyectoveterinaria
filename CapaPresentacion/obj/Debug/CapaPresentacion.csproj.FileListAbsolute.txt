@@ -107,3 +107,5 @@ C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\C
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuario.resources
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmMascota.resources
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListMascota.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmCita.resources
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListCita.resources
