@@ -68,7 +68,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@username", usuario.UserName);
                     cmd.Parameters.AddWithValue("@pasword", usuario.Pasword);
                     cmd.Parameters.AddWithValue("@tipo", usuario.Tipo);
-                    cmd.Parameters.AddWithValue("@idempleado", usuario.IdEmpleado);
+                    cmd.Parameters.AddWithValue("@idempleado", usuario.IdEmpleado);                  
                     cmd.CommandType = CommandType.StoredProcedure;
                     rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "Error al crear Cuenta";
                 }
@@ -268,7 +268,36 @@ namespace CapaDatos
             return tabla;
 
         }
-        
+        public DataTable BuscarUsuarioIdEmpleado(DUsuario usuario)
+        {
+            string sql = "sp_buscar_usuario_idempleado";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (var da = new SqlDataAdapter(sql, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@idempleado", usuario.IdEmpleado);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                tabla = null;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open) cn.Close();
+            }
+            return tabla;
+
+        }
+
 
 
     }

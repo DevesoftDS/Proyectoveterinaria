@@ -88,6 +88,8 @@ namespace CapaPresentacion
         public int _idUsuario = 0;
         public int _idEmpleado = 0;
         public bool _isNew = true;
+        int captura_idEmpleado = 0;
+
 
         public void Limpiar()
         {
@@ -115,7 +117,7 @@ namespace CapaPresentacion
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             cboTipo.SelectedIndex = 0;
-            txtPassword.UseSystemPasswordChar =true;
+            txtPassword.UseSystemPasswordChar =true;            
         }
 
 
@@ -138,16 +140,34 @@ namespace CapaPresentacion
             {
                 if (_idEmpleado != 0)
                 {
-                    rpta = NUsusario.CrearCuentaUsuario(
-                    txtUsuario.Text.Trim(),
-                    txtPassword.Text.Trim(),
-                    cboTipo.SelectedItem.ToString().Trim(),
-                    _idEmpleado
-                    );
-                    if (rpta == "Ok") MessageBox.Show(rpta + "--Se creó su cuenta");
-                    else MessageBox.Show("Error");
+                    /*var tabla = NUsusario.BuscarUsuarioIdEmpleado(_idEmpleado);
+                    int captura_idEmpleado = Convert.ToInt32(tabla.Rows[0]["idempleado"].ToString());
+                    string captura_Tipo = tabla.Rows[0]["tipo"].ToString();*/
+                    var tabla = NUsusario.BuscarUsuarioIdEmpleado(_idEmpleado);
+                    
+                    if (tabla.Rows.Count!=0)
+                    {
+                        captura_idEmpleado = Convert.ToInt32(tabla.Rows[0]["idempleado"].ToString());
+                    }
+                    
+                    if (_idEmpleado == captura_idEmpleado)
+                    {
+                        MessageBox.Show("ya tiene cuenta");
+                    }                                      
+                    else 
+                    {
+                        rpta = NUsusario.CrearCuentaUsuario(
+                        txtUsuario.Text.Trim(),
+                        txtPassword.Text.Trim(),
+                        cboTipo.SelectedItem.ToString().Trim(),
+                        _idEmpleado
+                          );
+                        if (rpta == "Ok") { MessageBox.Show(rpta + "--Se creó su cuenta"); Limpiar(); }
+                        else MessageBox.Show("Error ya tiene cuenta con el tipo de usuario");
+                    }                    
+                    
                 }
-                else MessageBox.Show("Error");
+                else MessageBox.Show("Error al crear cuenta");
 
             }
         }
@@ -177,10 +197,10 @@ namespace CapaPresentacion
                     cboTipo.SelectedItem.ToString().Trim(),
                     _idEmpleado
                     );
-                    if (rpta == "Ok") MessageBox.Show(rpta + "--Se actualizó su cuenta");
-                    else MessageBox.Show("Error");
+                    if (rpta == "Ok") { MessageBox.Show(rpta + "--Se actualizó su cuenta"); Limpiar(); }
+                    else MessageBox.Show("Error ya cuenta con cuenta con tipo de usuario");
                 }
-                else MessageBox.Show("Error");
+                else MessageBox.Show("Error al actualizar");
 
             }
         }
@@ -191,15 +211,13 @@ namespace CapaPresentacion
                 CrearCuentaUsuario();
                 NUsusario objUser = new NUsusario();
                 objUser.ListadoDgv(frmListUsuario.MiFormLisUsuario.dgvUsuario);
-                frmListUsuario.MiFormLisUsuario.dgvUsuario.Refresh();
-                Limpiar();
+                frmListUsuario.MiFormLisUsuario.dgvUsuario.Refresh();                
             }
             else
             {
                 ActualizarCuenta();
                 NUsusario objUser = new NUsusario();
                 objUser.ListadoDgv(frmListUsuario.MiFormLisUsuario.dgvUsuario);
-                Limpiar();
                 frmListUsuario.MiFormLisUsuario.dgvUsuario.Refresh();
             }
 

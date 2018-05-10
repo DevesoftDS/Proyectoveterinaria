@@ -202,6 +202,7 @@
             this.pPaciente.Name = "pPaciente";
             this.pPaciente.Size = new System.Drawing.Size(246, 120);
             this.pPaciente.TabIndex = 0;
+            this.pPaciente.Click += new System.EventHandler(this.pPaciente_Click);
             // 
             // label11
             // 

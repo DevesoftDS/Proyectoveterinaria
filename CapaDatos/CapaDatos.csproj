@@ -49,9 +49,17 @@
     <Compile Include="DConexion.cs" />
     <Compile Include="DDetalleIngresoArticulo.cs" />
     <Compile Include="DEmpleado.cs" />
+
     <Compile Include="DIngresoArticulo.cs" />
     <Compile Include="DPresentacion.cs" />
     <Compile Include="DProveedor.cs" />
+
+    <Compile Include="DEspecie.cs" />
+    <Compile Include="DMascota.cs" />
+    <Compile Include="DPresentacion.cs" />
+    <Compile Include="DProveedor.cs" />
+    <Compile Include="DRaza.cs" />
+
     <Compile Include="DSeguridad.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

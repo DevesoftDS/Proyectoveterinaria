@@ -124,6 +124,12 @@
     <Compile Include="frmListIngresoArticulos.Designer.cs">
       <DependentUpon>frmListIngresoArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListMascota.Designer.cs">
+      <DependentUpon>frmListMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListPresentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="frmListVenta.Designer.cs">
       <DependentUpon>frmListVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMascota.Designer.cs">
+      <DependentUpon>frmMascota.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuInicio.cs">
       <SubType>Form</SubType>
@@ -243,6 +255,9 @@
     <EmbeddedResource Include="frmListIngresoArticulos.resx">
       <DependentUpon>frmListIngresoArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListMascota.resx">
+      <DependentUpon>frmListMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListPresentacion.resx">
       <DependentUpon>frmListPresentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmListVenta.resx">
       <DependentUpon>frmListVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMascota.resx">
+      <DependentUpon>frmMascota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuInicio.resx">
       <DependentUpon>frmMenuInicio.cs</DependentUpon>

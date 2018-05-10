@@ -52,7 +52,12 @@ namespace CapaNegocio
             objUser.IdUsuario = idUsuario;
             return objUser.BuscarUsuarioId(objUser);
         }
-
+        public static DataTable BuscarUsuarioIdEmpleado(int idempleado)
+        {
+            DUsuario objUser = new DUsuario();
+            objUser.IdEmpleado = idempleado;
+            return objUser.BuscarUsuarioIdEmpleado(objUser);
+        }
         public static DataTable ListarUsuario()
         {
             return new DUsuario().ListarUsuario();
