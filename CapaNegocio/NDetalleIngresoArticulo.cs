@@ -11,8 +11,7 @@ namespace CapaNegocio
     {
         DDetalleIngresoArticulo objDDIA = new DDetalleIngresoArticulo();
 
-        public static bool Insertar(int idingreso, int idarticulo, decimal preciocompra, 
-            decimal precioventa, int stockinicial, int stockactual, DateTime fechaproduccion, DateTime fechavencimiento)
+        public static bool Insertar(int idingreso, int idarticulo, decimal preciocompra, decimal precioventa, int stockinicial, int stockactual, DateTime fechaproduccion, DateTime fechavencimiento)
         {
             DDetalleIngresoArticulo objDDI = new DDetalleIngresoArticulo();
             objDDI.IdIngresoArticulo = idingreso;
