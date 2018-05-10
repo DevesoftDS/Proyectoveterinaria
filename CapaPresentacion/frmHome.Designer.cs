@@ -330,6 +330,7 @@
             this.btnServicios.Text = "Servicios";
             this.toolTip1.SetToolTip(this.btnServicios, "Servicios de la clinica");
             this.btnServicios.UseVisualStyleBackColor = false;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
             // 
             // btnMenu
             // 

@@ -7,7 +7,7 @@ using CapaDatos;
 using System.Windows.Forms;
 using System.Data;
 using System.IO;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace CapaNegocio
 {

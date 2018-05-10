@@ -42,22 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="NArea.cs" />
     <Compile Include="NArticulo.cs" />
     <Compile Include="NCategoria.cs" />
+    <Compile Include="NCita.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NDetalleIngresoArticulo.cs" />
     <Compile Include="NEmpleado.cs" />
-
     <Compile Include="NIngresoArticulo.cs" />
-    <Compile Include="NPresentacion.cs" />
-    <Compile Include="NProveedor.cs" />
-
     <Compile Include="NEspecie.cs" />
     <Compile Include="NMascota.cs" />
     <Compile Include="NPresentacion.cs" />
     <Compile Include="NProveedor.cs" />
     <Compile Include="NRaza.cs" />
-
+    <Compile Include="NServicio.cs" />
     <Compile Include="NUsusario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
