@@ -115,3 +115,4 @@ C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPrese
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListCita.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmCita.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListCita.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.FrmListadoArticuloIngreso.resources

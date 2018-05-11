@@ -100,6 +100,12 @@
     <Compile Include="FrmListadoArticulo.Designer.cs">
       <DependentUpon>FrmListadoArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoArticuloIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoArticuloIngreso.Designer.cs">
+      <DependentUpon>FrmListadoArticuloIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoArticulo.resx">
       <DependentUpon>FrmListadoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoArticuloIngreso.resx">
+      <DependentUpon>FrmListadoArticuloIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListArticulo.resx">
       <DependentUpon>frmListArticulo.cs</DependentUpon>

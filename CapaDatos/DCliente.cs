@@ -245,5 +245,33 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable BuscarClienteDni(DCliente cliente)
+        {
+            string sql = "sp_buscar_cliente_por_dni";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (var da = new SqlDataAdapter(sql, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@dni", cliente.Dni);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception ex)
+            {
+                tabla = null;
+                ex.Message.ToString();
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open) cn.Close();
+            }
+            return tabla;
+        }
+
     }
 }
