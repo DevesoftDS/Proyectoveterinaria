@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using System.Security.Permissions;
+using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
@@ -42,6 +44,46 @@ namespace CapaPresentacion
                 _myformListaAI = value;
             }
         }
+
+        #region shadown
+        private const int CS_DROPSHADOW = 0x00020000;
+        protected override CreateParams CreateParams
+        {
+            [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true)]
+            get
+            {
+                CreateParams parameters = base.CreateParams;
+
+                if (DropShadowSupported)
+                {
+                    parameters.ClassStyle = (parameters.ClassStyle | CS_DROPSHADOW);
+                }
+
+                return parameters;
+            }
+        }
+
+        /// <summary>
+        /// Gets indicator if drop shadow is supported
+        /// </summary>
+        public static bool DropShadowSupported
+        {
+            get
+            {
+                OperatingSystem system = Environment.OSVersion;
+                bool runningNT = system.Platform == PlatformID.Win32NT;
+
+                return runningNT && system.Version.CompareTo(new Version(5, 1, 0, 0)) >= 0;
+            }
+        }
+        #endregion
+
+        #region movefrm
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int Wparam, int lParam);
+        #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -160,6 +202,12 @@ namespace CapaPresentacion
                 //}
 
             }
+        }
+
+        private void pBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

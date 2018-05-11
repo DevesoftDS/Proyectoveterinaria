@@ -145,6 +145,7 @@
             this.pBarraTitulo.Name = "pBarraTitulo";
             this.pBarraTitulo.Size = new System.Drawing.Size(875, 40);
             this.pBarraTitulo.TabIndex = 47;
+            this.pBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
             // btnClose
             // 
