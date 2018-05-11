@@ -26,6 +26,8 @@ namespace CapaDatos
         public decimal Total { get; set; }
         public int IdUsuario { get; set; }
 
+        public string Dato { get; set; }
+
         public DVenta()
         {
 
@@ -94,6 +96,63 @@ namespace CapaDatos
                 if (cn.State == ConnectionState.Open) cn.Close();
             }
             return ultimoid;
+        }
+
+        public DataTable Listar()
+        {
+            string cadena = "sp_listar_venta";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
+        }
+
+        public DataTable BuscarVentaCorrelativoDni(DVenta venta)
+        {
+            string cadena = "sp_buscar_venta_correlativo_dni";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@dato", venta.Dato);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
         }
     }
 }

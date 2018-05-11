@@ -14,6 +14,9 @@ namespace CapaPresentacion
     public partial class frmVenta : Form
     {
         NCliente objNC = new NCliente();
+        NVenta objNV = new NVenta();
+
+        public int IdVenta { get; set; }
 
         public bool _isNew = true;
         //public int idArticulo = 0;
@@ -370,6 +373,7 @@ namespace CapaPresentacion
                         }
                         mensajeYes("Venta registrado correctamente");
                         LimpiarVenta();
+                        objNV.ListarDataGridViewVenta(frmListVenta.MyFormListVenta.dgvVenta);
                     }
                 }
             }
