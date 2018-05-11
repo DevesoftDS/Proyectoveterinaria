@@ -746,6 +746,7 @@
             this.btnFacturar.TabIndex = 65;
             this.btnFacturar.Text = "Facturar";
             this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // epVenta
             // 

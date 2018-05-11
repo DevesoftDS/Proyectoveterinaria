@@ -414,6 +414,7 @@ namespace CapaPresentacion
                         mensajeYes("Venta registrado correctamente");
                         LimpiarVenta();
                         objNV.ListarDataGridViewVenta(frmListVenta.MyFormListVenta.dgvVenta);
+                        IdVenta = ultimo_id;
                     }
                 }
             }
@@ -458,6 +459,15 @@ namespace CapaPresentacion
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            int id_venta = IdVenta;
+            var frm = new frmComprobante();
+            frm.IdVenta = id_venta;
+            frm.Show();
+            
         }
     }
 }
