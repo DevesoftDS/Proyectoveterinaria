@@ -87,7 +87,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(247, 84);
+            this.label6.Location = new System.Drawing.Point(226, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 1;
@@ -151,11 +151,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 57);
+            this.label1.Location = new System.Drawing.Point(66, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 50);
+            this.label1.Size = new System.Drawing.Size(176, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SOFTVET";
+            this.label1.Text = "SOFVET";
             // 
             // panel2
             // 
