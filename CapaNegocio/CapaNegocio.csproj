@@ -44,12 +44,14 @@
     <Compile Include="Class1.cs" />
     <Compile Include="NArea.cs" />
     <Compile Include="NArticulo.cs" />
+    <Compile Include="NBoleta.cs" />
     <Compile Include="NCategoria.cs" />
     <Compile Include="NCita.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NDetalleIngresoArticulo.cs" />
     <Compile Include="NDetalleVenta.cs" />
     <Compile Include="NEmpleado.cs" />
+    <Compile Include="NFactura.cs" />
     <Compile Include="NIngresoArticulo.cs" />
     <Compile Include="NEspecie.cs" />
     <Compile Include="NMascota.cs" />

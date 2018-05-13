@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DArea.cs" />
     <Compile Include="DArticulo.cs" />
+    <Compile Include="DBoleta.cs" />
     <Compile Include="DCategoria.cs" />
     <Compile Include="DCita.cs" />
     <Compile Include="DCliente.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="DDetalleIngresoArticulo.cs" />
     <Compile Include="DDetalleVenta.cs" />
     <Compile Include="DEmpleado.cs" />
+    <Compile Include="DFactura.cs" />
     <Compile Include="DIngresoArticulo.cs" />
     <Compile Include="DEspecie.cs" />
     <Compile Include="DMascota.cs" />

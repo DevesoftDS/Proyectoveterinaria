@@ -187,7 +187,9 @@ namespace CapaPresentacion
                 if (num_filas > 0)
                 {
                     frmVenta.MyFormVenta.idDAIngreso = idingreso;
-                    frmVenta.MyFormVenta.txtArticulo.Text = dgvArticulo.Rows[e.RowIndex].Cells[1].Value.ToString()+" "+ dgvArticulo.Rows[e.RowIndex].Cells[2].Value.ToString() + " " + dgvArticulo.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    frmVenta.MyFormVenta.txtArticulo.Text = dgvArticulo.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    frmVenta.MyFormVenta.txtCategoria.Text = dgvArticulo.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    frmVenta.MyFormVenta.txtPresentacion.Text = dgvArticulo.Rows[e.RowIndex].Cells[3].Value.ToString();
                     frmVenta.MyFormVenta.txtPrecio.Text = dgvArticulo.Rows[e.RowIndex].Cells[5].Value.ToString();
                     frmVenta.MyFormVenta.txtStock.Text = dgvArticulo.Rows[e.RowIndex].Cells[4].Value.ToString();
 

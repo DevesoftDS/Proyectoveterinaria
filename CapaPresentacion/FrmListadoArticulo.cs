@@ -146,13 +146,16 @@ namespace CapaPresentacion
             {
                 DataTable tabla = new DataTable();
 
-                int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[7].Value);
+                int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[8].Value);
                 tabla = NArticulo.BuscarCodigo(idarticulo);
                 int numFilas = tabla.Rows.Count;
                 if (numFilas == 1)
                 {
                     frmIngresoArticulos.MyformIngresoArt.IdArticulo = idarticulo;
                     frmIngresoArticulos.MyformIngresoArt.txtArticulo.Text = tabla.Rows[0]["nombre"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtCategoria.Text = tabla.Rows[0]["categoria"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtNeto.Text = tabla.Rows[0]["neto"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtPresentacion.Text = tabla.Rows[0]["presentacion"].ToString();
                     this.Close();
                 }
             }

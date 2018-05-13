@@ -40,6 +40,12 @@ namespace CapaNegocio
             return new DIngresoArticulo().Listar();
         }
 
+        public static string GenerarCodigoIngreso()
+        {
+            return new DIngresoArticulo().GeneradorCodigoIngreso();
+        }
+
+
         public static DataTable BuscarCodigo(int id)
         {
             DIngresoArticulo objDIA = new DIngresoArticulo();

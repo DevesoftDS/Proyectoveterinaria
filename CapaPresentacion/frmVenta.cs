@@ -42,7 +42,6 @@ namespace CapaPresentacion
             cboComprobante.Items.Add("Factura");
             cboComprobante.Items.Add("Boleta");
             cboComprobante.Items.Add("Ticket");
-            cboComprobante.Items.Add("Otro");
         }
 
         private static frmVenta _myFormVenta;
@@ -95,6 +94,9 @@ namespace CapaPresentacion
             }
         }
         #endregion
+
+
+
         #region movefrm
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -112,8 +114,8 @@ namespace CapaPresentacion
             txtCliente.Text = string.Empty;
             txtRazonSocial.Text = string.Empty;
             txtRuc.Text = string.Empty;
-            txtSerie.Text = "0023";
-            txtCorrelativo.Text = "0000234";
+            txtSerie.Text = "";
+            txtCorrelativo.Text = "";
             cboComprobante.SelectedIndex = 1;
             txtSubTotal.Text = string.Empty;
             txtIGV.Text = string.Empty;
@@ -155,6 +157,7 @@ namespace CapaPresentacion
         private void frmVenta_Load(object sender, EventArgs e)
         {
             estiloDgv();
+            txtSerie.Text = "0001";
             dgvDetalleventa.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvDetalleventa.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvDetalleventa.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
@@ -249,11 +252,11 @@ namespace CapaPresentacion
         {
             int num_filas = dgvDetalleventa.Rows.Count;
 
-            string articulo = txtArticulo.Text.Trim();
+            string articulo = txtArticulo.Text.Trim()+" - "+ txtArticulo.Text.Trim() + " - " + txtArticulo.Text.Trim();
             int cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
             decimal precio = Convert.ToDecimal(txtPrecio.Text.Trim());
             decimal descuento = Convert.ToDecimal(txtDescuento.Text.Trim());
-            string f_vencimiento = txtFvencimiento.Text.Trim();
+            string f_vencimiento = txtPresentacion.Text.Trim();
             int iddingresoarticulo = idDAIngreso;
 
             dgvDetalleventa.Rows.Add(
@@ -276,22 +279,23 @@ namespace CapaPresentacion
                     idCliente = Convert.ToInt32(tabla.Rows[0]["idcliente"].ToString());
                 }
                 else
-                    MessageBox.Show("Error cliente no existe en la BD", "Error...!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error cliente no existe en la BD - pulse ( + ) agregar nuevo cliente", "Error...!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            //MessageBox.Show("Error cliente no existe en la BD", "Error...!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
 
         }
 
         private void cboComprobante_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string codigo = NBoleta.GenerarCodigoBoleta();
+            string codigo_factura = NFactura.GenerarCodigoFactura();
             if (cboComprobante.Text.Equals("Factura"))
             {
                 lblRazonSocial.Visible = true;
                 lblRuc.Visible = true;
                 txtRazonSocial.Visible = true;
                 txtRuc.Visible = true;
+                txtCorrelativo.Text = codigo_factura;
             }
             else
             {
@@ -299,7 +303,10 @@ namespace CapaPresentacion
                 lblRuc.Visible = false;
                 txtRazonSocial.Visible = false;
                 txtRuc.Visible = false;
+
+                txtCorrelativo.Text = codigo;
             }
+            txtSerie.Text = "0001";
         }
 
         private void frmVenta_FormClosed(object sender, FormClosedEventArgs e)
@@ -371,7 +378,7 @@ namespace CapaPresentacion
             subtotal = total - Convert.ToDecimal(txtIGV.Text);
             txtSubTotal.Text = subtotal.ToString();
         }
-
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -381,13 +388,14 @@ namespace CapaPresentacion
                     epVenta.SetError(txtSerie, "verifica el numero de serie - para poder hacer la venta");
                     epVenta.SetError(txtCorrelativo, "verifica el numero de correlativo - para poder hacer la venta");
                 }
-                else if (string.IsNullOrEmpty(txtDocumento.Text) && string.IsNullOrEmpty(txtCliente.Text))
+                else if (string.IsNullOrEmpty(txtCliente.Text) && idCliente == 0)
                 {
-                    epVenta.SetError(btnNuevoCliente, "Buscar cliente por DNI, O agregar nuevo cliente");
+                    epVenta.SetError(txtCliente, "Campo vacio - buscar por DNI al cliente o agregar nuevo para hacer la venta");
                 }
                 else if (dgvDetalleventa.Rows.Count == 0)
                 {
-                    epVenta.SetError(btnBuscarArticulo, "Ingrese al menos un producto para poder hacer la venta");
+                    MessageBox.Show("Caja de productos vacio - ingrese al menos un producto para realizar la venta","Sistema veterinaria", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    epVenta.SetError(btnBuscarArticulo, "Buscar articulo a vender");
                 }
                 else
                 {
@@ -411,11 +419,25 @@ namespace CapaPresentacion
                                 idventa, iddia, cantidad, precio, descuento
                                 );
                         }
+                        if (cboComprobante.Text == "Boleta")
+                        {
+                            bool rpta = NBoleta.insertarBoleta(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
+                        }
+                        else
+                        {
+                            bool rpta = NFactura.insertarFactura(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
+                        }
+
                         mensajeYes("Venta registrado correctamente");
                         LimpiarVenta();
                         objNV.ListarDataGridViewVenta(frmListVenta.MyFormListVenta.dgvVenta);
                         IdVenta = ultimo_id;
+                        string codigo = NBoleta.GenerarCodigoBoleta();
+                        txtSerie.Text = "0001";
+                        txtCorrelativo.Text = codigo;
+
                     }
+
                 }
             }
             catch (Exception ex)
@@ -423,6 +445,8 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message,"Error ....!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
+
+            
         }
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -466,8 +490,9 @@ namespace CapaPresentacion
             int id_venta = IdVenta;
             var frm = new frmComprobante();
             frm.IdVenta = id_venta;
-            frm.Show();
-            
+            frm.Show();         
         }
+
+
     }
 }

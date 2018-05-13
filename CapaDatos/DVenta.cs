@@ -47,6 +47,7 @@ namespace CapaDatos
             this.IdUsuario = idUsuario;
         }
 
+
         // metodo insertar venta
         public int Insertar(DVenta venta)
         {
@@ -153,6 +154,7 @@ namespace CapaDatos
                     cn.Close();
             }
             return tabla;
-        }
+        }    
+        
     }
 }

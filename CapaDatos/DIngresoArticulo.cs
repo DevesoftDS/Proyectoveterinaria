@@ -209,5 +209,46 @@ namespace CapaDatos
             return false;
         }
 
+        //------------------------------- codigo ingreso ----------------
+        public string GeneradorCodigoIngreso()
+        {
+            SqlConnection cn = new SqlConnection();
+            SqlDataReader dr;
+            SqlCommand cmd = new SqlCommand();
+            string codigo = "";
+
+            cn.ConnectionString = Conexion.conectar;
+            cn.Open();
+            cmd.Connection = cn;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.CommandText = "sp_generador_codigo_ingreso";
+
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows == false)
+            {
+                codigo = "0000001";
+            }
+            else
+            {
+                int cant = 1;
+                while (dr.Read())
+                {
+                    cant = cant + 1;
+
+                }
+                String ceros = "";
+                int i;
+                String Ct = cant.ToString();
+                for (i = 1; i <= 6 - Ct.Length; i++)
+                { ceros = "0" + ceros; }
+                codigo = "0" + ceros + cant.ToString();
+            }
+            dr.Close();
+            cn.Close();
+            return codigo;
+        }
+
+
     }
 }

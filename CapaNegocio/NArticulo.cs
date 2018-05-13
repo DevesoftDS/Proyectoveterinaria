@@ -109,10 +109,11 @@ namespace CapaNegocio
                     string nombre = tabla.Rows[i]["nombre"].ToString();
                     string categoria = tabla.Rows[i]["categoria"].ToString();
                     string presentacion = tabla.Rows[i]["neto"].ToString() + " " + tabla.Rows[i]["presentacion"].ToString();
+                    string descripcion = tabla.Rows[i]["descripcion"].ToString();
                     string idarticulo = tabla.Rows[i]["idarticulo"].ToString();
 
                     dgv.Rows.Add(
-                        i + 1, codigo, nombre, categoria, presentacion, "Editar", "Eliminar", idarticulo
+                        i + 1, codigo, nombre, categoria, presentacion, descripcion, "Editar", "Eliminar", idarticulo
                         );
                 }
             }

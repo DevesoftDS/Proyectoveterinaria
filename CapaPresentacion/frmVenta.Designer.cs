@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtArticulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFvencimiento = new System.Windows.Forms.Label();
+            this.txtPresentacion = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -85,6 +85,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.btnFacturar = new System.Windows.Forms.Label();
             this.epVenta = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ttVenta = new System.Windows.Forms.ToolTip(this.components);
+            this.txtCategoria = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleventa)).BeginInit();
@@ -100,11 +103,12 @@
             this.btnBuscarArticulo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarArticulo.ForeColor = System.Drawing.Color.White;
             this.btnBuscarArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarArticulo.Image")));
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(477, 21);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(505, 21);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
             this.btnBuscarArticulo.Size = new System.Drawing.Size(29, 25);
             this.btnBuscarArticulo.TabIndex = 50;
             this.btnBuscarArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ttVenta.SetToolTip(this.btnBuscarArticulo, "Buscar articulos para la venta");
             this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click);
             // 
             // label14
@@ -126,6 +130,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarArticulo);
             this.groupBox1.Controls.Add(this.txtDescuento);
             this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label26);
@@ -133,7 +138,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtArticulo);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtFvencimiento);
+            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(this.txtPresentacion);
             this.groupBox1.Controls.Add(this.txtStock);
             this.groupBox1.Controls.Add(this.txtPrecio);
             this.groupBox1.Location = new System.Drawing.Point(43, 184);
@@ -155,6 +161,7 @@
             this.btnQuitar.Size = new System.Drawing.Size(47, 43);
             this.btnQuitar.TabIndex = 52;
             this.btnQuitar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ttVenta.SetToolTip(this.btnQuitar, "Quitar articulo de la tabla");
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
@@ -170,13 +177,14 @@
             this.btnAgregar.Size = new System.Drawing.Size(47, 43);
             this.btnAgregar.TabIndex = 50;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ttVenta.SetToolTip(this.btnAgregar, "Agregar articulo a la tabla");
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtDescuento
             // 
             this.txtDescuento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDescuento.Location = new System.Drawing.Point(480, 75);
+            this.txtDescuento.Location = new System.Drawing.Point(413, 101);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(141, 25);
@@ -203,19 +211,19 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(321, 106);
+            this.label25.Location = new System.Drawing.Point(298, 52);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(142, 18);
+            this.label25.Size = new System.Drawing.Size(77, 18);
             this.label25.TabIndex = 34;
-            this.label25.Text = "Fecha vencimiento";
+            this.label25.Text = "Categoria";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label26.Location = new System.Drawing.Point(322, 78);
+            this.label26.Location = new System.Drawing.Point(298, 104);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(85, 18);
@@ -248,7 +256,7 @@
             // 
             // txtArticulo
             // 
-            this.txtArticulo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtArticulo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,7 +264,7 @@
             this.txtArticulo.Location = new System.Drawing.Point(149, 22);
             this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(314, 25);
+            this.txtArticulo.Size = new System.Drawing.Size(349, 25);
             this.txtArticulo.TabIndex = 30;
             this.txtArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -272,24 +280,23 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Artìculo";
             // 
-            // txtFvencimiento
+            // txtPresentacion
             // 
-            this.txtFvencimiento.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtFvencimiento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.txtFvencimiento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtFvencimiento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFvencimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtFvencimiento.Location = new System.Drawing.Point(480, 102);
-            this.txtFvencimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtFvencimiento.Name = "txtFvencimiento";
-            this.txtFvencimiento.Size = new System.Drawing.Size(141, 25);
-            this.txtFvencimiento.TabIndex = 30;
-            this.txtFvencimiento.Text = "26/04/2018";
-            this.txtFvencimiento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtPresentacion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPresentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPresentacion.Location = new System.Drawing.Point(413, 74);
+            this.txtPresentacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtPresentacion.Name = "txtPresentacion";
+            this.txtPresentacion.Size = new System.Drawing.Size(141, 25);
+            this.txtPresentacion.TabIndex = 30;
+            this.txtPresentacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtStock
             // 
-            this.txtStock.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtStock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtStock.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,7 +310,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtPrecio.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,11 +421,12 @@
             this.btnNuevoCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCliente.Image")));
-            this.btnNuevoCliente.Location = new System.Drawing.Point(477, 69);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(512, 69);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(29, 25);
             this.btnNuevoCliente.TabIndex = 67;
             this.btnNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ttVenta.SetToolTip(this.btnNuevoCliente, "Agregar nuevo cliente");
             this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
             // label11
@@ -426,7 +434,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(56, 72);
+            this.label11.Location = new System.Drawing.Point(55, 72);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(107, 18);
@@ -549,7 +557,7 @@
             // 
             // txtSubTotal
             // 
-            this.txtSubTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(200)))), ((int)(((byte)(49)))));
+            this.txtSubTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtSubTotal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtSubTotal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -574,7 +582,6 @@
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(146, 25);
             this.txtSerie.TabIndex = 30;
-            this.txtSerie.Text = "0023";
             this.txtSerie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.txtSerie.Click += new System.EventHandler(this.txtSerie_Click);
             // 
@@ -590,13 +597,12 @@
             this.txtCorrelativo.Name = "txtCorrelativo";
             this.txtCorrelativo.Size = new System.Drawing.Size(146, 25);
             this.txtCorrelativo.TabIndex = 30;
-            this.txtCorrelativo.Text = "0000234";
             this.txtCorrelativo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.txtCorrelativo.Click += new System.EventHandler(this.txtCorrelativo_Click);
             // 
             // txtCliente
             // 
-            this.txtCliente.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -606,7 +612,6 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(357, 25);
             this.txtCliente.TabIndex = 30;
-            this.txtCliente.Text = "Soto Gomez T.";
             this.txtCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtDocumento
@@ -615,9 +620,11 @@
             this.txtDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDocumento.Location = new System.Drawing.Point(184, 69);
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDocumento.MaxLength = 8;
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(286, 25);
+            this.txtDocumento.Size = new System.Drawing.Size(319, 25);
             this.txtDocumento.TabIndex = 1;
+            this.ttVenta.SetToolTip(this.txtDocumento, "Buscar por venta");
             this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
@@ -626,7 +633,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(55, 98);
+            this.label20.Location = new System.Drawing.Point(55, 100);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(59, 18);
@@ -673,13 +680,14 @@
             this.txtRuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtRuc.Location = new System.Drawing.Point(184, 150);
             this.txtRuc.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRuc.MaxLength = 11;
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(286, 25);
             this.txtRuc.TabIndex = 3;
             // 
             // txtIGV
             // 
-            this.txtIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(200)))), ((int)(((byte)(49)))));
+            this.txtIGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtIGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtIGV.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtIGV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -694,7 +702,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(200)))), ((int)(((byte)(49)))));
+            this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtTotal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -752,6 +760,32 @@
             // 
             this.epVenta.ContainerControl = this;
             this.epVenta.Icon = ((System.Drawing.Icon)(resources.GetObject("epVenta.Icon")));
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.txtCategoria.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCategoria.Location = new System.Drawing.Point(413, 48);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(141, 25);
+            this.txtCategoria.TabIndex = 30;
+            this.txtCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(298, 78);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(102, 18);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Presentaciòn";
             // 
             // frmVenta
             // 
@@ -842,7 +876,7 @@
         internal System.Windows.Forms.Label txtArticulo;
         internal System.Windows.Forms.ComboBox cboComprobante;
         internal System.Windows.Forms.TextBox txtDescuento;
-        internal System.Windows.Forms.Label txtFvencimiento;
+        internal System.Windows.Forms.Label txtPresentacion;
         internal System.Windows.Forms.Label txtStock;
         internal System.Windows.Forms.Label txtPrecio;
         internal System.Windows.Forms.Label txtSerie;
@@ -860,5 +894,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.ErrorProvider epVenta;
+        private System.Windows.Forms.ToolTip ttVenta;
+        private System.Windows.Forms.Label label9;
+        internal System.Windows.Forms.Label txtCategoria;
     }
 }

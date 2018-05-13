@@ -148,6 +148,9 @@ namespace CapaPresentacion
         public void LimpiarDetalleIngreso()
         {
             txtArticulo.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
+            txtNeto.Text = string.Empty;
+            txtPresentacion.Text = string.Empty;
             txtCantidad.Text = string.Empty;
             txtPrecioCompra.Text = string.Empty;
             txtPrecioVenta.Text = string.Empty;
@@ -215,11 +218,13 @@ namespace CapaPresentacion
                     mensajeYes("Ingreso insertado correctamente a la base de datos");
                     LimpiarIngreso();
                     objNIA.ListarDataGridViewIngresoArticulos(frmListIngresoArticulos.MyFormListIngreso.dgvIngresoArt);
+                    string codigo = NIngresoArticulo.GenerarCodigoIngreso();
+                    txtNumIngreso.Text = codigo;
                 }
             }
             
         }
-        public static decimal total;
+        public static decimal total = 0;
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -288,7 +293,7 @@ namespace CapaPresentacion
         private void agregarArticuloIngreso()
         {
             int num_filas = dgvIngresoArticulo.Rows.Count;
-            string articulo = txtArticulo.Text.Trim();
+            string articulo = txtArticulo.Text.Trim()+" - " + txtCategoria.Text.Trim() + " - " + txtNeto.Text.Trim() + " " + txtPresentacion.Text.Trim();
             decimal p_compra = Convert.ToDecimal(txtPrecioCompra.Text.Trim());
             decimal p_venta = Convert.ToDecimal(txtPrecioVenta.Text.Trim());
             int cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
@@ -318,6 +323,9 @@ namespace CapaPresentacion
 
         private void frmIngresoArticulos_Load(object sender, EventArgs e)
         {
+            string codigo = NIngresoArticulo.GenerarCodigoIngreso();
+            txtNumIngreso.Text = codigo;
+
             dgvIngresoArticulo.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvIngresoArticulo.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvIngresoArticulo.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
@@ -390,7 +398,7 @@ namespace CapaPresentacion
 
         private static void OnlyNumber(KeyPressEventArgs e, bool isdecimal)
         {
-            String aceptados;
+            string aceptados;
             if (!isdecimal)
             {
                 aceptados = "0123456789," + Convert.ToChar(8);

@@ -43,6 +43,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
@@ -79,6 +80,7 @@
             this.Column4,
             this.Column6,
             this.Column7,
+            this.Column9,
             this.Column8});
             this.dgvArticulo.Location = new System.Drawing.Point(3, 3);
             this.dgvArticulo.Name = "dgvArticulo";
@@ -191,6 +193,13 @@
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
             // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Descripciòn";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
             // Column8
             // 
             this.Column8.HeaderText = "Idarticulo";
@@ -238,6 +247,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
