@@ -31,6 +31,7 @@ namespace CapaPresentacion
             InitializeComponent();
             LlenarComboComprobante();
             cboComprobante.SelectedIndex = 1;
+            btnFacturar.Enabled = false;
             if (_myFormVenta == null)
             {
                 _myFormVenta = this;
@@ -132,6 +133,8 @@ namespace CapaPresentacion
             txtPrecio.Text = string.Empty;
             txtStock.Text = string.Empty;
             txtCantidad.Text = string.Empty;
+            txtCategoria.Text = string.Empty;
+            txtPresentacion.Text = string.Empty;
             txtDescuento.Text = "0,00";
 
         }
@@ -419,22 +422,23 @@ namespace CapaPresentacion
                                 idventa, iddia, cantidad, precio, descuento
                                 );
                         }
-                        if (cboComprobante.Text == "Boleta")
+                        IdVenta = ultimo_id;
+                        if (cboComprobante.Text == "Factura")
                         {
-                            bool rpta = NBoleta.insertarBoleta(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
+                            bool rpta = NFactura.insertarFactura(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
                         }
                         else
                         {
-                            bool rpta = NFactura.insertarFactura(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
+                            bool rpta = NBoleta.insertarBoleta(txtSerie.Text.Trim(), txtCorrelativo.Text.Trim(), IdVenta);
                         }
 
                         mensajeYes("Venta registrado correctamente");
                         LimpiarVenta();
                         objNV.ListarDataGridViewVenta(frmListVenta.MyFormListVenta.dgvVenta);
-                        IdVenta = ultimo_id;
                         string codigo = NBoleta.GenerarCodigoBoleta();
                         txtSerie.Text = "0001";
                         txtCorrelativo.Text = codigo;
+                        btnFacturar.Enabled = true;
 
                     }
 
@@ -490,7 +494,9 @@ namespace CapaPresentacion
             int id_venta = IdVenta;
             var frm = new frmComprobante();
             frm.IdVenta = id_venta;
-            frm.Show();         
+            frm.Show();
+            btnFacturar.Enabled = false;
+
         }
 
 

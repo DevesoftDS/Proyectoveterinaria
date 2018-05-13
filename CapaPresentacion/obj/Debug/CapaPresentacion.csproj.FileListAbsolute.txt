@@ -136,3 +136,4 @@ C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\bin\Debug\S
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\bin\Debug\stdole.dll
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmComprobante.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.FrmLogin.resources

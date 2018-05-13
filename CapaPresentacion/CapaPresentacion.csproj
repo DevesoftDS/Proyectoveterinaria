@@ -191,6 +191,12 @@
     <Compile Include="frmListVenta.Designer.cs">
       <DependentUpon>frmListVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     <EmbeddedResource Include="frmListVenta.resx">
       <DependentUpon>frmListVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMascota.resx">
       <DependentUpon>frmMascota.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,11 +412,16 @@
     <Content Include="imgAplicacion\Close-WF.png" />
     <Content Include="imgAplicacion\Doctor.png" />
     <Content Include="imgAplicacion\empleado.png" />
+    <Content Include="imgAplicacion\Facebook.png" />
+    <Content Include="imgAplicacion\Facebook2.png" />
+    <Content Include="imgAplicacion\Google Plus.png" />
+    <Content Include="imgAplicacion\Google Plus2.png" />
     <Content Include="imgAplicacion\Help - 02.png" />
     <Content Include="imgAplicacion\Home.png" />
     <Content Include="imgAplicacion\imageres_98.ico" />
     <Content Include="imgAplicacion\imageres_99.ico" />
     <Content Include="imgAplicacion\list.png" />
+    <Content Include="imgAplicacion\Lock.png" />
     <Content Include="imgAplicacion\Maximize-WF.png" />
     <Content Include="imgAplicacion\Menu.png" />
     <Content Include="imgAplicacion\Minimize-WF.png" />
@@ -426,12 +440,16 @@
     <Content Include="imgAplicacion\Settings-02.png" />
     <Content Include="imgAplicacion\Shape Square 2-WF.png" />
     <Content Include="imgAplicacion\Shopping-Bag.png" />
+    <Content Include="imgAplicacion\sofvet.jpeg" />
     <Content Include="imgAplicacion\Tools - 02.png" />
+    <Content Include="imgAplicacion\User-login2.png" />
+    <Content Include="imgAplicacion\User-login3.png" />
     <Content Include="imgAplicacion\User.png" />
     <Content Include="imgAplicacion\User2.png" />
     <Content Include="imgAplicacion\User3.png" />
     <Content Include="imgAplicacion\User4.png" />
     <Content Include="imgAplicacion\User_ini.png" />
+    <Content Include="imgAplicacion\user_login.png" />
     <Content Include="imgAplicacion\venta_infor.png" />
     <Content Include="imgAplicacion\ver_mas.png" />
   </ItemGroup>

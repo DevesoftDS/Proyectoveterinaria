@@ -95,6 +95,13 @@ namespace CapaPresentacion
                 MostrarArticulo();
         }
 
+        //public static Image ByteArrayToImage(byte[] byteArrayIn)
+        //{
+        //    MemoryStream ms = new MemoryStream(byteArrayIn);
+        //    return Image.FromStream(ms);
+        //}
+
+
         private void dgvArticulo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -116,9 +123,17 @@ namespace CapaPresentacion
                         frmArticulo.MyFormArt.cboPresentacion.SelectedValue = tabla.Rows[0]["idpresentacion"].ToString();
                         frmArticulo.MyFormArt.txtNeto.Text = tabla.Rows[0]["neto"].ToString();
                         frmArticulo.MyFormArt.txtDescripcion.Text = tabla.Rows[0]["Descripcion"].ToString();
+                        //frmArticulo.MyFormArt.ImageToByteArray(tabla.Rows[0]["imagen"]);
                         byte[] img = (byte[])tabla.Rows[0]["imagen"];
                         var ms = new MemoryStream(img);
-                        frmArticulo.MyFormArt.pbImagen.Image = Image.FromStream(ms);
+                        if (ms != null)
+                        {
+                            frmArticulo.MyFormArt.pbImagen.Image = Image.FromStream(ms);
+                        }
+                        else
+                        {
+                            frmArticulo.MyFormArt.pbImagen.Image = null;
+                        }
                         frmArticulo.MyFormArt.idArticulo = int.Parse(tabla.Rows[0]["idarticulo"].ToString());
                         frmArticulo.MyFormArt._IsNew = false;
                     }

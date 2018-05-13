@@ -109,7 +109,7 @@ namespace CapaPresentacion
             this.txtNeto.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
             this.pbImagen.Image = null;
-            //pbImagen.Image = Image.FromFile(@"C:..//imgAplicacion/photo.png");
+            //pbImagen.Image = Image.FromFile(@"C:..\\imgAplicacion\photo.png");
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace CapaPresentacion
         {
             MostrarCategoria();
 
-            var tabla = NArticulo.ListarPresentacion();
+            DataTable tabla = NArticulo.ListarPresentacion();
             if (tabla.Rows.Count > 0)
             {
                 cboPresentacion.DataSource = tabla;
@@ -139,7 +139,7 @@ namespace CapaPresentacion
 
         private void MostrarCategoria()
         {
-            var tabla = NArticulo.ListarCategoria();
+            DataTable tabla = NArticulo.ListarCategoria();
             if (tabla.Rows.Count > 0)
             {
                 cboCategoria.DataSource = tabla;
@@ -151,16 +151,23 @@ namespace CapaPresentacion
         public byte[] ImageToByteArray(Image imageIn)
         {
 
-            using (var ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
                 if (imageIn != null)
                 {
-                    imageIn.Save(ms, ImageFormat.Gif);
+                    imageIn.Save(ms, ImageFormat.Jpeg);
                 }
                 return ms.ToArray();
             }
         }
-        
+
+        //public static Image ByteArrayToImage(byte[] byteArrayIn)
+        //{
+        //    MemoryStream ms = new MemoryStream(byteArrayIn);
+        //    return Image.FromStream(ms);
+        //}
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (_IsNew)
