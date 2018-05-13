@@ -181,7 +181,7 @@
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(62)))), ((int)(((byte)(250)))));
-            this.linkLabel1.Location = new System.Drawing.Point(173, 285);
+            this.linkLabel1.Location = new System.Drawing.Point(187, 285);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(183, 20);
             this.linkLabel1.TabIndex = 3;
@@ -191,7 +191,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(89, 240);
+            this.txtPassword.Location = new System.Drawing.Point(105, 240);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(265, 28);
             this.txtPassword.TabIndex = 2;
@@ -199,7 +199,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(89, 182);
+            this.txtUsuario.Location = new System.Drawing.Point(105, 182);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(265, 28);
             this.txtUsuario.TabIndex = 1;
@@ -207,7 +207,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(59, 84);
+            this.label5.Location = new System.Drawing.Point(71, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(194, 32);
             this.label5.TabIndex = 3;
@@ -217,7 +217,7 @@
             // 
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(61, 241);
+            this.label9.Location = new System.Drawing.Point(73, 241);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 25);
             this.label9.TabIndex = 3;
@@ -226,14 +226,14 @@
             // 
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(61, 183);
+            this.label8.Location = new System.Drawing.Point(73, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 25);
             this.label8.TabIndex = 3;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(87, 217);
+            this.label4.Location = new System.Drawing.Point(103, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 3;
@@ -252,7 +252,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(87, 159);
+            this.label3.Location = new System.Drawing.Point(103, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 20);
             this.label3.TabIndex = 3;
@@ -265,7 +265,7 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(243, 369);
+            this.btnIngresar.Location = new System.Drawing.Point(214, 360);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(156, 37);
             this.btnIngresar.TabIndex = 4;

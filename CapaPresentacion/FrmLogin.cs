@@ -26,6 +26,5 @@ namespace CapaPresentacion
         {
             txtPassword.UseSystemPasswordChar = true;
         }
-
     }
 }
