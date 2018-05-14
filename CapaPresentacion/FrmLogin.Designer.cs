@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.btnGooglePlus = new System.Windows.Forms.Label();
+            this.btnFacebook = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lkblRecuperar = new System.Windows.Forms.LinkLabel();
@@ -49,6 +49,7 @@
             this.btnClose = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.txtError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,8 +62,8 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.btnGooglePlus);
+            this.panel1.Controls.Add(this.btnFacebook);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -127,25 +128,27 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "SV";
             // 
-            // label14
+            // btnGooglePlus
             // 
-            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.Location = new System.Drawing.Point(167, 386);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 51);
-            this.label14.TabIndex = 3;
+            this.btnGooglePlus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGooglePlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGooglePlus.Image = ((System.Drawing.Image)(resources.GetObject("btnGooglePlus.Image")));
+            this.btnGooglePlus.Location = new System.Drawing.Point(167, 386);
+            this.btnGooglePlus.Name = "btnGooglePlus";
+            this.btnGooglePlus.Size = new System.Drawing.Size(51, 51);
+            this.btnGooglePlus.TabIndex = 3;
+            this.btnGooglePlus.Click += new System.EventHandler(this.btnGooglePlus_Click);
             // 
-            // label13
+            // btnFacebook
             // 
-            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
-            this.label13.Location = new System.Drawing.Point(110, 386);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 51);
-            this.label13.TabIndex = 3;
+            this.btnFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFacebook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFacebook.Image = ((System.Drawing.Image)(resources.GetObject("btnFacebook.Image")));
+            this.btnFacebook.Location = new System.Drawing.Point(110, 386);
+            this.btnFacebook.Name = "btnFacebook";
+            this.btnFacebook.Size = new System.Drawing.Size(51, 51);
+            this.btnFacebook.TabIndex = 3;
+            this.btnFacebook.Click += new System.EventHandler(this.btnFacebook_Click);
             // 
             // label1
             // 
@@ -169,6 +172,7 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.txtError);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnIngresar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -198,6 +202,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(265, 27);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtUsuario
             // 
@@ -206,6 +211,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(265, 27);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label5
             // 
@@ -276,6 +282,17 @@
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // txtError
+            // 
+            this.txtError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtError.ForeColor = System.Drawing.Color.Red;
+            this.txtError.Location = new System.Drawing.Point(51, 43);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(341, 41);
+            this.txtError.TabIndex = 3;
+            this.txtError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmLogin
             // 
@@ -319,8 +336,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label btnGooglePlus;
+        private System.Windows.Forms.Label btnFacebook;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label txtError;
     }
 }

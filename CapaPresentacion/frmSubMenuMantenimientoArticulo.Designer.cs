@@ -84,7 +84,7 @@
             this.btnPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(65)))));
             this.btnPresentacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPresentacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresentacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresentacion.ForeColor = System.Drawing.Color.White;
             this.btnPresentacion.Image = ((System.Drawing.Image)(resources.GetObject("btnPresentacion.Image")));
             this.btnPresentacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,7 +101,7 @@
             this.btnCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(65)))));
             this.btnCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoria.Image")));
             this.btnCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,7 +118,7 @@
             this.btnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(59)))), ((int)(((byte)(65)))));
             this.btnArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArticulos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArticulos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.ForeColor = System.Drawing.Color.White;
             this.btnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulos.Image")));
             this.btnArticulos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

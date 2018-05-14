@@ -50,8 +50,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(214)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 5);
+            this.panel1.Size = new System.Drawing.Size(834, 6);
             this.panel1.TabIndex = 5;
             // 
             // panel2
@@ -61,9 +62,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dgvPresentacion);
-            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Location = new System.Drawing.Point(0, 85);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 453);
+            this.panel2.Size = new System.Drawing.Size(834, 439);
             this.panel2.TabIndex = 6;
             // 
             // dgvPresentacion
@@ -83,11 +85,12 @@
             this.Column5,
             this.Column6,
             this.Column4});
-            this.dgvPresentacion.Location = new System.Drawing.Point(3, 3);
+            this.dgvPresentacion.Location = new System.Drawing.Point(3, 4);
+            this.dgvPresentacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPresentacion.Name = "dgvPresentacion";
             this.dgvPresentacion.ReadOnly = true;
             this.dgvPresentacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvPresentacion.Size = new System.Drawing.Size(824, 436);
+            this.dgvPresentacion.Size = new System.Drawing.Size(824, 420);
             this.dgvPresentacion.TabIndex = 0;
             this.dgvPresentacion.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPresentacion_CellMouseDoubleClick);
             // 
@@ -136,21 +139,23 @@
             // 
             // txtBuscarCategoria
             // 
+            this.txtBuscarCategoria.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarCategoria.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscarCategoria.Location = new System.Drawing.Point(149, 33);
+            this.txtBuscarCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarCategoria.Name = "txtBuscarCategoria";
-            this.txtBuscarCategoria.Size = new System.Drawing.Size(349, 25);
+            this.txtBuscarCategoria.Size = new System.Drawing.Size(349, 27);
             this.txtBuscarCategoria.TabIndex = 12;
             this.txtBuscarCategoria.TextChanged += new System.EventHandler(this.txtBuscarCategoria_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Location = new System.Drawing.Point(6, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Buscar categoria";
             // 
@@ -159,13 +164,13 @@
             this.btnNuevoCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(214)))));
             this.btnNuevoCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevoCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoCategoria.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCategoria.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCategoria.Image")));
             this.btnNuevoCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoCategoria.Location = new System.Drawing.Point(533, 22);
+            this.btnNuevoCategoria.Location = new System.Drawing.Point(533, 26);
             this.btnNuevoCategoria.Name = "btnNuevoCategoria";
-            this.btnNuevoCategoria.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoCategoria.Size = new System.Drawing.Size(147, 40);
             this.btnNuevoCategoria.TabIndex = 13;
             this.btnNuevoCategoria.Text = "Nuevo";
             this.btnNuevoCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +178,7 @@
             // 
             // frmListCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.btnNuevoCategoria);
@@ -181,9 +186,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListCategoria";
             this.Text = "frmListCategoria";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListCategoria_FormClosed);

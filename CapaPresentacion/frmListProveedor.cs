@@ -52,7 +52,7 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvProveedor.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvProveedor.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvProveedor.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvProveedor.DefaultCellStyle.BackColor = Color.White;
             this.dgvProveedor.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -73,7 +73,7 @@ namespace CapaPresentacion
             dgvProveedor.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvProveedor.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvProveedor.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvProveedor.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
 
         private void MostarProveedor()

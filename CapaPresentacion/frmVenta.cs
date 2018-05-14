@@ -150,8 +150,8 @@ namespace CapaPresentacion
         }
         private void estiloDgv()
         {
-            this.dgvDetalleventa.DefaultCellStyle.Font = new Font("Arial", 9);
-            this.dgvDetalleventa.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.dgvDetalleventa.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            this.dgvDetalleventa.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             this.dgvDetalleventa.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvDetalleventa.DefaultCellStyle.BackColor = Color.White;
             this.dgvDetalleventa.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -255,7 +255,7 @@ namespace CapaPresentacion
         {
             int num_filas = dgvDetalleventa.Rows.Count;
 
-            string articulo = txtArticulo.Text.Trim()+" - "+ txtArticulo.Text.Trim() + " - " + txtArticulo.Text.Trim();
+            string articulo = txtArticulo.Text.Trim()+" - "+ txtCategoria.Text.Trim() + " - " + txtPresentacion.Text.Trim();
             int cantidad = Convert.ToInt32(txtCantidad.Text.Trim());
             decimal precio = Convert.ToDecimal(txtPrecio.Text.Trim());
             decimal descuento = Convert.ToDecimal(txtDescuento.Text.Trim());

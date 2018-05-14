@@ -87,8 +87,8 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvArticulo.DefaultCellStyle.Font = new Font("Arial", 9);
-            this.dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.dgvArticulo.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            this.dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             this.dgvArticulo.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvArticulo.DefaultCellStyle.BackColor = Color.White;
             this.dgvArticulo.DefaultCellStyle.SelectionForeColor = Color.Black;

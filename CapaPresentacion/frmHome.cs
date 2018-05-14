@@ -27,6 +27,7 @@ namespace CapaPresentacion
             {
                 MyForm = this;
             }
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private static frmHome _myForm;
@@ -97,9 +98,12 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        
         private void frmHome_Load(object sender, EventArgs e)
         {
             btnHome_Click(null, e);
+            lblNombreUsuario.Text ="->  "+ Program.nombres + " " + Program.apellidos;
+            lblTipoUser.Text = "->  " + Program.tipo;
         }
 
         public void AbrirFormHija(object formHija)

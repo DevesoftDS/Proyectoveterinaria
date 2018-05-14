@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="NAcceso.cs" />
     <Compile Include="NArea.cs" />
     <Compile Include="NArticulo.cs" />
     <Compile Include="NBoleta.cs" />

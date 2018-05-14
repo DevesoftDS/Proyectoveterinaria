@@ -21,6 +21,7 @@ namespace CapaPresentacion
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
             string rpta = NRecuperar.RecuperarPassword(txtrecuperar.Text.Trim());
+            txtrecuperar.Text = string.Empty;
             txtMensaje.Text = rpta;
         }
     }

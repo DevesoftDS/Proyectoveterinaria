@@ -44,12 +44,12 @@ namespace CapaDatos
                         Password = leer["pasword"].ToString();
                         EnviarEmail();
 
-                        Mensaje = "Estimado Sr(a). " + Nombres + " , la contraseña fue enviada a su correo: " + Email + " : verifique su entrada de bandeja";
+                        Mensaje = "Estimado Sr(a). " + Nombres + " , la contraseña fue enviada a su correo: " + Email + " : verifique bandeja de entrada (O_O)";
                         leer.Close();
                     }
                     else
                     {
-                        Mensaje = "No existe datos ....";
+                        Mensaje = "Datos no encontrados en la base de datos. Consulte con su administrador para poder acceder al sistema SOFVET";
                     }
                 }
             }
@@ -69,7 +69,7 @@ namespace CapaDatos
             correo.From = new MailAddress("devesoft23@gmail.com");
             correo.To.Add(Email);
             correo.Subject = ("RECUPERAR CONTRASEÑA SOFVET");
-            correo.Body = "HOLA " + Nombres + " usted solicito recuperar recuperar su contraseña - su contraseña es: " + Password + "etc ......";
+            correo.Body = "HOLA " + Nombres + " usted ha solicitado recuperar su contraseña para poder acceder al sistema, obvie y elimine este mensaje. (O_O) - SU CONTRASEÑA ES: " + Password + " Gracias el equipo de SofVet";
             correo.Priority = MailPriority.Normal;
 
             //SMTP

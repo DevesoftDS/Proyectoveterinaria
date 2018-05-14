@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DAcceso.cs" />
     <Compile Include="DArea.cs" />
     <Compile Include="DArticulo.cs" />
     <Compile Include="DBoleta.cs" />

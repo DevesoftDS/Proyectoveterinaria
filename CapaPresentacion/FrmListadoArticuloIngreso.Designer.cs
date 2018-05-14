@@ -56,9 +56,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvArticulo);
-            this.panel1.Location = new System.Drawing.Point(0, 78);
+            this.panel1.Location = new System.Drawing.Point(0, 92);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 403);
+            this.panel1.Size = new System.Drawing.Size(875, 388);
             this.panel1.TabIndex = 44;
             // 
             // dgvArticulo
@@ -79,12 +80,13 @@
             this.Column5,
             this.Column6,
             this.Column8});
-            this.dgvArticulo.Location = new System.Drawing.Point(3, 3);
+            this.dgvArticulo.Location = new System.Drawing.Point(3, 4);
+            this.dgvArticulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvArticulo.Name = "dgvArticulo";
             this.dgvArticulo.ReadOnly = true;
             this.dgvArticulo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulo.Size = new System.Drawing.Size(865, 393);
+            this.dgvArticulo.Size = new System.Drawing.Size(865, 377);
             this.dgvArticulo.TabIndex = 0;
             this.dgvArticulo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvArticulo_CellMouseDoubleClick);
             // 
@@ -137,13 +139,14 @@
             // 
             // pBarraTitulo
             // 
-            this.pBarraTitulo.BackColor = System.Drawing.Color.LimeGreen;
+            this.pBarraTitulo.BackColor = System.Drawing.Color.OliveDrab;
             this.pBarraTitulo.Controls.Add(this.btnClose);
             this.pBarraTitulo.Controls.Add(this.label8);
             this.pBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pBarraTitulo.Name = "pBarraTitulo";
-            this.pBarraTitulo.Size = new System.Drawing.Size(875, 40);
+            this.pBarraTitulo.Size = new System.Drawing.Size(875, 47);
             this.pBarraTitulo.TabIndex = 47;
             this.pBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
@@ -151,40 +154,41 @@
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(3, 3);
+            this.btnClose.Location = new System.Drawing.Point(3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 35);
+            this.btnClose.Size = new System.Drawing.Size(35, 41);
             this.btnClose.TabIndex = 9;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label8.Location = new System.Drawing.Point(339, 11);
+            this.label8.Location = new System.Drawing.Point(374, 13);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 18);
+            this.label8.Size = new System.Drawing.Size(127, 20);
             this.label8.TabIndex = 10;
             this.label8.Text = "Lista de articulos";
             // 
             // txtBuscarArt
             // 
             this.txtBuscarArt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarArt.Location = new System.Drawing.Point(128, 47);
+            this.txtBuscarArt.Location = new System.Drawing.Point(128, 55);
+            this.txtBuscarArt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarArt.Name = "txtBuscarArt";
-            this.txtBuscarArt.Size = new System.Drawing.Size(413, 25);
+            this.txtBuscarArt.Size = new System.Drawing.Size(413, 27);
             this.txtBuscarArt.TabIndex = 46;
             this.txtBuscarArt.TextChanged += new System.EventHandler(this.txtBuscarArt_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(7, 50);
+            this.label1.Location = new System.Drawing.Point(7, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 18);
+            this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 45;
             this.label1.Text = "Buscar articulo";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -193,9 +197,10 @@
             // 
             this.cboBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBuscar.FormattingEnabled = true;
-            this.cboBuscar.Location = new System.Drawing.Point(547, 47);
+            this.cboBuscar.Location = new System.Drawing.Point(547, 55);
+            this.cboBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboBuscar.Name = "cboBuscar";
-            this.cboBuscar.Size = new System.Drawing.Size(316, 25);
+            this.cboBuscar.Size = new System.Drawing.Size(209, 28);
             this.cboBuscar.TabIndex = 48;
             this.cboBuscar.Visible = false;
             this.cboBuscar.SelectedIndexChanged += new System.EventHandler(this.cboBuscar_SelectedIndexChanged);
@@ -204,7 +209,7 @@
             // 
             // FrmListadoArticuloIngreso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 480);
             this.Controls.Add(this.cboBuscar);
@@ -212,9 +217,9 @@
             this.Controls.Add(this.pBarraTitulo);
             this.Controls.Add(this.txtBuscarArt);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListadoArticuloIngreso";
             this.Text = "FrmListadoArticuloIngreso";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListadoArticuloIngreso_FormClosed);

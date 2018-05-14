@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListArticulo));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvArticulo = new System.Windows.Forms.DataGridView();
-            this.txtBuscarArt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevoArticulo = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarArt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNuevoArticulo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +55,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvArticulo);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 441);
+            this.panel1.Size = new System.Drawing.Size(834, 425);
             this.panel1.TabIndex = 0;
             // 
             // dgvArticulo
@@ -80,59 +81,14 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dgvArticulo.Location = new System.Drawing.Point(3, 3);
+            this.dgvArticulo.Location = new System.Drawing.Point(3, 4);
+            this.dgvArticulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvArticulo.Name = "dgvArticulo";
             this.dgvArticulo.ReadOnly = true;
             this.dgvArticulo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvArticulo.Size = new System.Drawing.Size(828, 431);
+            this.dgvArticulo.Size = new System.Drawing.Size(828, 414);
             this.dgvArticulo.TabIndex = 0;
             this.dgvArticulo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvArticulo_CellMouseDoubleClick);
-            // 
-            // txtBuscarArt
-            // 
-            this.txtBuscarArt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarArt.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscarArt.Name = "txtBuscarArt";
-            this.txtBuscarArt.Size = new System.Drawing.Size(413, 25);
-            this.txtBuscarArt.TabIndex = 14;
-            this.txtBuscarArt.TextChanged += new System.EventHandler(this.txtBuscarArt_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 18);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Buscar articulo";
-            // 
-            // btnNuevoArticulo
-            // 
-            this.btnNuevoArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
-            this.btnNuevoArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoArticulo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoArticulo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoArticulo.Image")));
-            this.btnNuevoArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoArticulo.Location = new System.Drawing.Point(636, 23);
-            this.btnNuevoArticulo.Name = "btnNuevoArticulo";
-            this.btnNuevoArticulo.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoArticulo.TabIndex = 15;
-            this.btnNuevoArticulo.Text = "Nuevo";
-            this.btnNuevoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoArticulo.Click += new System.EventHandler(this.btnNuevoArticulo_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
-            this.panel2.TabIndex = 16;
             // 
             // Column1
             // 
@@ -196,9 +152,58 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // txtBuscarArt
+            // 
+            this.txtBuscarArt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarArt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscarArt.Location = new System.Drawing.Point(149, 33);
+            this.txtBuscarArt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscarArt.Name = "txtBuscarArt";
+            this.txtBuscarArt.Size = new System.Drawing.Size(413, 27);
+            this.txtBuscarArt.TabIndex = 14;
+            this.txtBuscarArt.TextChanged += new System.EventHandler(this.txtBuscarArt_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Buscar articulo";
+            // 
+            // btnNuevoArticulo
+            // 
+            this.btnNuevoArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
+            this.btnNuevoArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoArticulo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoArticulo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoArticulo.Image")));
+            this.btnNuevoArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoArticulo.Location = new System.Drawing.Point(636, 27);
+            this.btnNuevoArticulo.Name = "btnNuevoArticulo";
+            this.btnNuevoArticulo.Size = new System.Drawing.Size(147, 40);
+            this.btnNuevoArticulo.TabIndex = 15;
+            this.btnNuevoArticulo.Text = "Nuevo";
+            this.btnNuevoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoArticulo.Click += new System.EventHandler(this.btnNuevoArticulo_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(76)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 6);
+            this.panel2.TabIndex = 16;
+            // 
             // frmListArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel2);
@@ -206,9 +211,9 @@
             this.Controls.Add(this.txtBuscarArt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListArticulo";
             this.Text = "frmListArticulo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListArticulo_FormClosed);

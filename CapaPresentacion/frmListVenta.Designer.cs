@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListVenta));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNuevoVenta = new System.Windows.Forms.Label();
+            this.txtBuscarVenta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +50,6 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNuevoVenta = new System.Windows.Forms.Label();
-            this.txtBuscarVenta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +61,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvVenta);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 453);
+            this.panel1.Size = new System.Drawing.Size(832, 440);
             this.panel1.TabIndex = 28;
             // 
             // dgvVenta
@@ -91,8 +91,55 @@
             this.dgvVenta.Location = new System.Drawing.Point(3, 3);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
-            this.dgvVenta.Size = new System.Drawing.Size(824, 443);
+            this.dgvVenta.Size = new System.Drawing.Size(823, 430);
             this.dgvVenta.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 6);
+            this.panel2.TabIndex = 32;
+            // 
+            // btnNuevoVenta
+            // 
+            this.btnNuevoVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.btnNuevoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoVenta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoVenta.Image")));
+            this.btnNuevoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoVenta.Location = new System.Drawing.Point(641, 28);
+            this.btnNuevoVenta.Name = "btnNuevoVenta";
+            this.btnNuevoVenta.Size = new System.Drawing.Size(147, 40);
+            this.btnNuevoVenta.TabIndex = 31;
+            this.btnNuevoVenta.Text = "Nuevo";
+            this.btnNuevoVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoVenta.Click += new System.EventHandler(this.btnNuevoVenta_Click);
+            // 
+            // txtBuscarVenta
+            // 
+            this.txtBuscarVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscarVenta.Location = new System.Drawing.Point(135, 32);
+            this.txtBuscarVenta.Name = "txtBuscarVenta";
+            this.txtBuscarVenta.Size = new System.Drawing.Size(431, 27);
+            this.txtBuscarVenta.TabIndex = 30;
+            this.txtBuscarVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarVenta_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Buscar venta";
             // 
             // Column1
             // 
@@ -106,6 +153,7 @@
             this.Column2.HeaderText = "Comprobante";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
             // 
             // Column3
             // 
@@ -147,24 +195,24 @@
             // 
             // Column9
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column9.HeaderText = "Sub-total";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
             // Column10
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column10.HeaderText = "Igv";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
             // Column11
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column11.HeaderText = "Total";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
@@ -175,56 +223,9 @@
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
-            this.panel2.TabIndex = 32;
-            // 
-            // btnNuevoVenta
-            // 
-            this.btnNuevoVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.btnNuevoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoVenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoVenta.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoVenta.Image")));
-            this.btnNuevoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoVenta.Location = new System.Drawing.Point(641, 23);
-            this.btnNuevoVenta.Name = "btnNuevoVenta";
-            this.btnNuevoVenta.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoVenta.TabIndex = 31;
-            this.btnNuevoVenta.Text = "Nuevo";
-            this.btnNuevoVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoVenta.Click += new System.EventHandler(this.btnNuevoVenta_Click);
-            // 
-            // txtBuscarVenta
-            // 
-            this.txtBuscarVenta.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarVenta.Location = new System.Drawing.Point(135, 28);
-            this.txtBuscarVenta.Name = "txtBuscarVenta";
-            this.txtBuscarVenta.Size = new System.Drawing.Size(431, 25);
-            this.txtBuscarVenta.TabIndex = 30;
-            this.txtBuscarVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarVenta_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 18);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Buscar venta";
-            // 
             // frmListVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel1);
@@ -232,9 +233,9 @@
             this.Controls.Add(this.btnNuevoVenta);
             this.Controls.Add(this.txtBuscarVenta);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListVenta";
             this.Text = "frmListVenta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListVenta_FormClosed);
@@ -253,6 +254,7 @@
         private System.Windows.Forms.Label btnNuevoVenta;
         private System.Windows.Forms.TextBox txtBuscarVenta;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -265,6 +267,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        internal System.Windows.Forms.DataGridView dgvVenta;
     }
 }

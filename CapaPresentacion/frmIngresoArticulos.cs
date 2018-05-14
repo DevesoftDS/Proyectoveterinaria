@@ -101,8 +101,8 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvIngresoArticulo.DefaultCellStyle.Font = new Font("Arial", 9);
-            this.dgvIngresoArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.dgvIngresoArticulo.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            this.dgvIngresoArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             this.dgvIngresoArticulo.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvIngresoArticulo.DefaultCellStyle.BackColor = Color.White;
             this.dgvIngresoArticulo.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -302,7 +302,7 @@ namespace CapaPresentacion
             int id_articulo = IdArticulo;
 
             dgvIngresoArticulo.Rows.Add(
-                num_filas + 1, articulo, p_compra, p_venta, cantidad, f_produccion.ToString("dd/MM/yyyy"), f_vencimiento.ToString("dd/MM/yyyy"), "", id_articulo
+                num_filas + 1, articulo, p_compra, p_venta, cantidad, f_produccion.ToString("dd/MM/yyyy"), f_vencimiento.ToString("dd/mm/yyyy"), "", id_articulo
                 );
 
             decimal importe;

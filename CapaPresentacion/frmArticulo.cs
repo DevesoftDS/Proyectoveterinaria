@@ -108,8 +108,8 @@ namespace CapaPresentacion
             this.cboPresentacion.SelectedIndex = 0;
             this.txtNeto.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
-            this.pbImagen.Image = null;
-            //pbImagen.Image = Image.FromFile(@"C:..\\imgAplicacion\photo.png");
+            //this.pbImagen.Image = null;
+            pbImagen.Image = Image.FromFile(@"C:\\fotoSV\art_image.png");
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

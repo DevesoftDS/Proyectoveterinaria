@@ -8,6 +8,13 @@ namespace CapaPresentacion
 {
     static class Program
     {
+
+        public static int idUsuario;
+        public static string tipo;
+        public static int  idEmpleado;
+        public static string nombres;
+        public static string apellidos;
+        public static string correo;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

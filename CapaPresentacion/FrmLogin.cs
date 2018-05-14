@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -30,6 +31,65 @@ namespace CapaPresentacion
         private void lkblRecuperar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new frmRecuperarPassword().ShowDialog();
+        }
+
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text.Trim();
+            string password = txtPassword.Text.Trim();
+            if (string.IsNullOrEmpty(txtUsuario.Text.Trim()))
+            {
+                txtUsuario.Focus();
+                txtError.Text = "Campo requerido - Ingrese nombre usuario/Email";
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                txtPassword.Focus();
+                txtError.Text = "Campo requerido - Ingrese password. si se ha olvidado pulse He olvidado mi contraseña";
+            }
+            else
+            {
+                DataTable tabla = NAcceso.Acceso(usuario, password);
+                int numFilas = tabla.Rows.Count;
+                if (numFilas > 0)
+                {
+                    frmHome frm = new frmHome();
+                    Program.idUsuario = Convert.ToInt32(tabla.Rows[0]["idusuario"].ToString());
+                    Program.tipo = tabla.Rows[0]["tipo"].ToString();
+                    Program.idEmpleado = Convert.ToInt32(tabla.Rows[0]["idempleado"].ToString());
+                    Program.nombres = tabla.Rows[0]["nombres"].ToString();
+                    Program.apellidos = tabla.Rows[0]["apellidos"].ToString();
+                    Program.correo = tabla.Rows[0]["correo"].ToString();
+                    frm.ShowDialog();
+                    this.Hide();
+
+                }
+                else
+                    MessageBox.Show("Error cuenta usuario incorrecto ..... !!??","Error al iniciar sesiòn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtError.Text = string.Empty;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtError.Text = string.Empty;
+        }
+
+        private void btnFacebook_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/franz.programador");
+        }
+
+        private void btnGooglePlus_Click(object sender, EventArgs e)
+        {
+            //
+            System.Diagnostics.Process.Start("https://plus.google.com/u/0/107973794450007524146");
         }
     }
 }
