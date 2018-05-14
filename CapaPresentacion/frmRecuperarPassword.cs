@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmMenuVentas : Form
+    public partial class frmRecuperarPassword : Form
     {
-        public frmMenuVentas()
+        public frmRecuperarPassword()
         {
             InitializeComponent();
-        }
-
-        private void btnListaArticulos_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

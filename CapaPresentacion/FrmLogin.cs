@@ -26,5 +26,10 @@ namespace CapaPresentacion
         {
             txtPassword.UseSystemPasswordChar = true;
         }
+
+        private void lkblRecuperar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new frmRecuperarPassword().ShowDialog();
+        }
     }
 }

@@ -153,6 +153,7 @@
             this.btnListaArticulos.TabIndex = 0;
             this.btnListaArticulos.Text = "Listado ventas";
             this.btnListaArticulos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnListaArticulos.Click += new System.EventHandler(this.btnListaArticulos_Click);
             // 
             // frmMenuVentas
             // 
