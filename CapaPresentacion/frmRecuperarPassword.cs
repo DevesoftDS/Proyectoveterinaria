@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -15,6 +16,12 @@ namespace CapaPresentacion
         public frmRecuperarPassword()
         {
             InitializeComponent();
+        }
+
+        private void btnRecuperar_Click(object sender, EventArgs e)
+        {
+            string rpta = NRecuperar.RecuperarPassword(txtrecuperar.Text.Trim());
+            txtMensaje.Text = rpta;
         }
     }
 }

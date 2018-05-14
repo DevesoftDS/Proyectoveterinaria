@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtrecuperar = new System.Windows.Forms.TextBox();
+            this.btnRecuperar = new System.Windows.Forms.Button();
+            this.txtMensaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -43,33 +43,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingrese su DNI:";
             // 
-            // textBox1
+            // txtrecuperar
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtrecuperar.Location = new System.Drawing.Point(200, 35);
+            this.txtrecuperar.Name = "txtrecuperar";
+            this.txtrecuperar.Size = new System.Drawing.Size(294, 27);
+            this.txtrecuperar.TabIndex = 1;
             // 
-            // button1
+            // btnRecuperar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(203)))), ((int)(((byte)(32)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(511, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Recuperar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(203)))), ((int)(((byte)(32)))));
+            this.btnRecuperar.FlatAppearance.BorderSize = 0;
+            this.btnRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecuperar.Location = new System.Drawing.Point(511, 30);
+            this.btnRecuperar.Name = "btnRecuperar";
+            this.btnRecuperar.Size = new System.Drawing.Size(171, 37);
+            this.btnRecuperar.TabIndex = 2;
+            this.btnRecuperar.Text = "Recuperar";
+            this.btnRecuperar.UseVisualStyleBackColor = false;
+            this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
             // 
-            // label2
+            // txtMensaje
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(150, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(452, 62);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Estimado Soto Gomez T. Se ha enviado su contraseña a su correo sotogomez2015@gmai" +
+            this.txtMensaje.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMensaje.Location = new System.Drawing.Point(150, 115);
+            this.txtMensaje.Name = "txtMensaje";
+            this.txtMensaje.Size = new System.Drawing.Size(452, 62);
+            this.txtMensaje.TabIndex = 0;
+            this.txtMensaje.Text = "Estimado Soto Gomez T. Se ha enviado su contraseña a su correo sotogomez2015@gmai" +
     "l.com - Verifique su bandeja de entrada";
             // 
             // frmRecuperarPassword
@@ -78,9 +79,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(752, 224);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnRecuperar);
+            this.Controls.Add(this.txtrecuperar);
+            this.Controls.Add(this.txtMensaje);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -95,8 +96,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtrecuperar;
+        private System.Windows.Forms.Button btnRecuperar;
+        private System.Windows.Forms.Label txtMensaje;
     }
 }

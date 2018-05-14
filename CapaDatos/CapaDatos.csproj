@@ -60,6 +60,7 @@
     <Compile Include="DPresentacion.cs" />
     <Compile Include="DProveedor.cs" />
     <Compile Include="DRaza.cs" />
+    <Compile Include="DRecuperar.cs" />
     <Compile Include="DSeguridad.cs" />
     <Compile Include="DServicio.cs" />
     <Compile Include="DUsuario.cs" />

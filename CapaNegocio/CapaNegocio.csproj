@@ -58,6 +58,7 @@
     <Compile Include="NPresentacion.cs" />
     <Compile Include="NProveedor.cs" />
     <Compile Include="NRaza.cs" />
+    <Compile Include="NRecuperar.cs" />
     <Compile Include="NServicio.cs" />
     <Compile Include="NUsusario.cs" />
     <Compile Include="NVenta.cs" />
