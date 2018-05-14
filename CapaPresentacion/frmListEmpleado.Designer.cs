@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListEmpleado));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEmpleado = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNuevoEmpleado = new System.Windows.Forms.Label();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +52,10 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
             this.idarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnNuevoEmpleado = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +67,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvEmpleado);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Location = new System.Drawing.Point(0, 71);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 23;
@@ -92,59 +99,15 @@
             this.Eliminar,
             this.Ver,
             this.idarea});
-            this.dgvEmpleado.Location = new System.Drawing.Point(3, 3);
+            this.dgvEmpleado.Location = new System.Drawing.Point(3, 4);
+            this.dgvEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvEmpleado.Name = "dgvEmpleado";
             this.dgvEmpleado.ReadOnly = true;
             this.dgvEmpleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvEmpleado.Size = new System.Drawing.Size(824, 431);
+            this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleado.Size = new System.Drawing.Size(824, 430);
             this.dgvEmpleado.TabIndex = 0;
             this.dgvEmpleado.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmpleado_CellMouseDoubleClick);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
-            this.panel2.TabIndex = 27;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(431, 25);
-            this.txtBuscar.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 18);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Buscar empleado";
-            // 
-            // btnNuevoEmpleado
-            // 
-            this.btnNuevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmpleado.Image")));
-            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoEmpleado.Location = new System.Drawing.Point(636, 23);
-            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
-            this.btnNuevoEmpleado.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoEmpleado.TabIndex = 26;
-            this.btnNuevoEmpleado.Text = "Nuevo";
-            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoEmpleado.Click += new System.EventHandler(this.btnNuevoEmpleado_Click);
             // 
             // item
             // 
@@ -163,6 +126,8 @@
             // 
             // nombres
             // 
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.nombres.DefaultCellStyle = dataGridViewCellStyle13;
             this.nombres.HeaderText = "Nombres";
             this.nombres.Name = "nombres";
             this.nombres.ReadOnly = true;
@@ -170,6 +135,8 @@
             // 
             // apellidos
             // 
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.apellidos.DefaultCellStyle = dataGridViewCellStyle14;
             this.apellidos.HeaderText = "Apellidos";
             this.apellidos.Name = "apellidos";
             this.apellidos.ReadOnly = true;
@@ -177,6 +144,8 @@
             // 
             // dni
             // 
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dni.DefaultCellStyle = dataGridViewCellStyle15;
             this.dni.HeaderText = "Dni";
             this.dni.Name = "dni";
             this.dni.ReadOnly = true;
@@ -191,6 +160,8 @@
             // 
             // telefono
             // 
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.telefono.DefaultCellStyle = dataGridViewCellStyle16;
             this.telefono.HeaderText = "Teléfono";
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
@@ -198,6 +169,8 @@
             // 
             // correo
             // 
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.correo.DefaultCellStyle = dataGridViewCellStyle17;
             this.correo.HeaderText = "Correo";
             this.correo.Name = "correo";
             this.correo.ReadOnly = true;
@@ -206,6 +179,8 @@
             // 
             // Direccion
             // 
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle18;
             this.Direccion.HeaderText = "Dirección";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
@@ -257,9 +232,59 @@
             this.idarea.ReadOnly = true;
             this.idarea.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 7);
+            this.panel2.TabIndex = 27;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscar.MaxLength = 8;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(431, 25);
+            this.txtBuscar.TabIndex = 25;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 18);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Buscar empleado";
+            // 
+            // btnNuevoEmpleado
+            // 
+            this.btnNuevoEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoEmpleado.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoEmpleado.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoEmpleado.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmpleado.Image")));
+            this.btnNuevoEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoEmpleado.Location = new System.Drawing.Point(636, 23);
+            this.btnNuevoEmpleado.Name = "btnNuevoEmpleado";
+            this.btnNuevoEmpleado.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoEmpleado.TabIndex = 26;
+            this.btnNuevoEmpleado.Text = "Nuevo";
+            this.btnNuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoEmpleado.Click += new System.EventHandler(this.btnNuevoEmpleado_Click);
+            // 
             // frmListEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel1);
@@ -267,9 +292,9 @@
             this.Controls.Add(this.btnNuevoEmpleado);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListEmpleado";
             this.Text = "frmListEmpleado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListEmpleado_FormClosed);

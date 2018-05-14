@@ -29,41 +29,48 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCita));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNuevaCita = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.crearCuenta = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCita = new System.Windows.Forms.DataGridView();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(50)))), ((int)(((byte)(38)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(154)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
+            this.panel2.Size = new System.Drawing.Size(834, 8);
             this.panel2.TabIndex = 32;
             // 
             // btnNuevaCita
             // 
-            this.btnNuevaCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(50)))), ((int)(((byte)(38)))));
+            this.btnNuevaCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(154)))));
             this.btnNuevaCita.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevaCita.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevaCita.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,113 +88,25 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtBuscar.Location = new System.Drawing.Point(149, 32);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(431, 25);
+            this.txtBuscar.Size = new System.Drawing.Size(204, 25);
             this.txtBuscar.TabIndex = 30;
-            // 
-            // Ver
-            // 
-            this.Ver.HeaderText = "Ver";
-            this.Ver.LinkColor = System.Drawing.Color.Green;
-            this.Ver.Name = "Ver";
-            this.Ver.ReadOnly = true;
-            this.Ver.Width = 150;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 150;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(173)))), ((int)(((byte)(226)))));
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 150;
-            // 
-            // crearCuenta
-            // 
-            this.crearCuenta.HeaderText = "Crear Cuenta";
-            this.crearCuenta.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(137)))), ((int)(((byte)(16)))));
-            this.crearCuenta.Name = "crearCuenta";
-            this.crearCuenta.ReadOnly = true;
-            this.crearCuenta.Width = 150;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Visible = false;
-            this.Direccion.Width = 200;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Location = new System.Drawing.Point(5, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 18);
+            this.label1.Size = new System.Drawing.Size(87, 18);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Buscar empleado";
-            // 
-            // correo
-            // 
-            this.correo.HeaderText = "Correo";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Visible = false;
-            this.correo.Width = 250;
-            // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.Name = "sexo";
-            this.sexo.ReadOnly = true;
-            this.sexo.Width = 60;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "Dni";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 150;
-            // 
-            // apellidos
-            // 
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            this.apellidos.Width = 200;
-            // 
-            // nombres
-            // 
-            this.nombres.HeaderText = "Nombres";
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            this.nombres.Width = 150;
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Visible = false;
-            this.codigo.Width = 60;
-            // 
-            // item
-            // 
-            this.item.HeaderText = "#";
-            this.item.Name = "item";
-            this.item.ReadOnly = true;
-            this.item.Width = 50;
+            this.label1.Text = "Buscar cita";
             // 
             // dgvCita
             // 
@@ -202,23 +121,60 @@
             this.dgvCita.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.item,
             this.codigo,
+            this.fechaCita,
             this.nombres,
-            this.apellidos,
             this.dni,
-            this.sexo,
             this.telefono,
             this.correo,
             this.Direccion,
-            this.crearCuenta,
-            this.Editar,
-            this.Eliminar,
-            this.Ver});
-            this.dgvCita.Location = new System.Drawing.Point(3, 3);
+            this.fecha,
+            this.hora,
+            this.servicio,
+            this.importe,
+            this.total});
+            this.dgvCita.Location = new System.Drawing.Point(3, 4);
+            this.dgvCita.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCita.Name = "dgvCita";
             this.dgvCita.ReadOnly = true;
             this.dgvCita.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvCita.Size = new System.Drawing.Size(824, 431);
+            this.dgvCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCita.Size = new System.Drawing.Size(825, 431);
             this.dgvCita.TabIndex = 0;
+            // 
+            // item
+            // 
+            this.item.HeaderText = "#";
+            this.item.Name = "item";
+            this.item.ReadOnly = true;
+            this.item.Width = 50;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 60;
+            // 
+            // fechaCita
+            // 
+            this.fechaCita.HeaderText = "F_Cita";
+            this.fechaCita.Name = "fechaCita";
+            this.fechaCita.ReadOnly = true;
+            // 
+            // nombres
+            // 
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.nombres.DefaultCellStyle = dataGridViewCellStyle1;
+            this.nombres.HeaderText = "Cliente";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            this.nombres.Width = 250;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "Dni";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
             // 
             // telefono
             // 
@@ -226,6 +182,63 @@
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             this.telefono.Width = 120;
+            // 
+            // correo
+            // 
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.correo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Visible = false;
+            this.correo.Width = 150;
+            // 
+            // Direccion
+            // 
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Visible = false;
+            this.Direccion.Width = 200;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "F_Atencion";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // hora
+            // 
+            this.hora.HeaderText = "Hora";
+            this.hora.Name = "hora";
+            this.hora.ReadOnly = true;
+            // 
+            // servicio
+            // 
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.servicio.DefaultCellStyle = dataGridViewCellStyle4;
+            this.servicio.HeaderText = "Servicio";
+            this.servicio.Name = "servicio";
+            this.servicio.ReadOnly = true;
+            this.servicio.Width = 150;
+            // 
+            // importe
+            // 
+            dataGridViewCellStyle5.NullValue = null;
+            this.importe.DefaultCellStyle = dataGridViewCellStyle5;
+            this.importe.HeaderText = "importe";
+            this.importe.Name = "importe";
+            this.importe.ReadOnly = true;
+            this.importe.Width = 150;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 150;
             // 
             // panel1
             // 
@@ -235,26 +248,40 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvCita);
             this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 28;
             // 
+            // dtpBuscar
+            // 
+            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
+            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBuscar.Location = new System.Drawing.Point(373, 32);
+            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpBuscar.Name = "dtpBuscar";
+            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
+            this.dtpBuscar.TabIndex = 33;
+            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
+            // 
             // frmListCita
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.dtpBuscar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevaCita);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmListCita";
             this.Text = "frmListCita";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListCita_FormClosed);
+            this.Load += new System.EventHandler(this.frmListCita_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -267,21 +294,22 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label btnNuevaCita;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridViewLinkColumn Ver;
-        private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
-        private System.Windows.Forms.DataGridViewLinkColumn Editar;
-        private System.Windows.Forms.DataGridViewLinkColumn crearCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn item;
         public System.Windows.Forms.DataGridView dgvCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dtpBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

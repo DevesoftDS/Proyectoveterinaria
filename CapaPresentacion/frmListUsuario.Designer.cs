@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,9 +58,9 @@
             this.panel2.BackColor = System.Drawing.Color.Green;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 7);
+            this.panel2.Size = new System.Drawing.Size(834, 8);
             this.panel2.TabIndex = 32;
             // 
             // txtBuscar
@@ -63,7 +68,8 @@
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(431, 25);
             this.txtBuscar.TabIndex = 30;
@@ -103,12 +109,12 @@
             this.Editar,
             this.Eliminar,
             this.Ver});
-            this.dgvUsuario.Location = new System.Drawing.Point(3, 3);
-            this.dgvUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUsuario.Location = new System.Drawing.Point(3, 4);
+            this.dgvUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.ReadOnly = true;
             this.dgvUsuario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvUsuario.Size = new System.Drawing.Size(822, 430);
+            this.dgvUsuario.Size = new System.Drawing.Size(822, 429);
             this.dgvUsuario.TabIndex = 0;
             this.dgvUsuario.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsuario_CellMouseDoubleClick);
             // 
@@ -129,6 +135,8 @@
             // 
             // personal
             // 
+            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.personal.DefaultCellStyle = dataGridViewCellStyle41;
             this.personal.HeaderText = "Personal";
             this.personal.Name = "personal";
             this.personal.ReadOnly = true;
@@ -136,6 +144,8 @@
             // 
             // usuario
             // 
+            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle42;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -143,6 +153,8 @@
             // 
             // password
             // 
+            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.password.DefaultCellStyle = dataGridViewCellStyle43;
             this.password.HeaderText = "Password";
             this.password.Name = "password";
             this.password.ReadOnly = true;
@@ -150,6 +162,8 @@
             // 
             // tipo
             // 
+            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.tipo.DefaultCellStyle = dataGridViewCellStyle44;
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
@@ -157,6 +171,8 @@
             // 
             // idEmpleado
             // 
+            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.idEmpleado.DefaultCellStyle = dataGridViewCellStyle45;
             this.idEmpleado.HeaderText = "IdEmpleado";
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
@@ -202,23 +218,23 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvUsuario);
             this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 28;
             // 
             // frmListUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListUsuario";
             this.Text = "frmListUsuario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListUsuario_FormClosed);

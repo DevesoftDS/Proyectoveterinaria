@@ -57,20 +57,22 @@ namespace CapaPresentacion
             estiloDgv();
 
             dgvEmpleado.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvEmpleado.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvEmpleado.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvEmpleado.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[12].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvEmpleado.Columns[13].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             dgvEmpleado.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvEmpleado.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleado.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEmpleado.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvEmpleado.Columns[13].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvEmpleado.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvEmpleado.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
 
 
@@ -78,7 +80,7 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvEmpleado.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvEmpleado.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvEmpleado.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvEmpleado.DefaultCellStyle.BackColor = Color.White;
             this.dgvEmpleado.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -99,17 +101,34 @@ namespace CapaPresentacion
             {
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Crear cuenta"))
                 {
-                    int idempplead = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString());
-                    /* DialogResult rspta = MessageBox.Show("Desea crear cuenta de usuario?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                     if (DialogResult.Yes == rspta)
-                     {*/
                     frmUsuario frmUser = new frmUsuario();
-                    frmUser.Show();
-                    var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
+                    int idempplead = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    var user = NUsusario.BuscarUsuarioIdEmpleado(idempplead);
+                    if (user.Rows.Count>0)
+                    {
+                        if (idempplead==Convert.ToInt32(user.Rows[0]["idempleado"].ToString()))
+                        {
+                            MessageBox.Show("ya tiene una cuenta");
+                        }
+                        else
+                        {
+                            frmUser.Show();
+                            var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
 
-                    frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
-                    frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
-                    //}
+                            frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
+                            frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        frmUser.Show();
+                        var tabla = NEmpleado.BuscarEmpleadoId(idempplead);
+
+                        frmUsuario.MiFormUsuario._idEmpleado = int.Parse(tabla.Rows[0]["idempleado"].ToString());
+                        frmUsuario.MiFormUsuario.txtUsuario.Text = tabla.Rows[0]["correo"].ToString();
+                    }                   
+                   
+
                 }
 
                 if (dgvEmpleado.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Editar"))
@@ -198,6 +217,13 @@ namespace CapaPresentacion
                    
                 }
             }
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NEmpleado objCliente = new NEmpleado();
+            objCliente.ListarBusquedaEmpleado(dgvEmpleado, txtBuscar.Text);
+
         }
     }
 }

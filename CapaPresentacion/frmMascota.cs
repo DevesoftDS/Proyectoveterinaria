@@ -109,7 +109,7 @@ namespace CapaPresentacion
             txtDescripcion.Text = string.Empty;
             cboEspecie.SelectedItem = 0;
             cboRaza.SelectedItem = 0;
-            pbFoto.Image = null;
+            pbFoto.Image = Image.FromFile(@"C:\\fotoSV\art_image.png");
 
         }
         public byte[] ImageToByteArray(Image imageIn)
@@ -131,14 +131,27 @@ namespace CapaPresentacion
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 txtBuscar.Focus();
-                epMascota.SetError(txtBuscar, "Ingrese dato a buscar: dni y/o nombre del cliente");
+                epMascota.SetError(txtCliente, "Ingrese dato a buscar: dni y/o nombre del cliente");
+                txtCliente.Text = "";
             }
             else
             {
                 var tablaCli = NCliente.BuscarCliente(txtBuscar.Text);
-                _idCliente = int.Parse(tablaCli.Rows[0]["codigo"].ToString());
-                txtCliente.Text = tablaCli.Rows[0]["nombres"].ToString() + " " + tablaCli.Rows[0]["apellidos"].ToString();
-                epMascota.Clear();
+                if (tablaCli.Rows.Count > 0)
+                {
+
+                    _idCliente = int.Parse(tablaCli.Rows[0]["codigo"].ToString());
+                    txtCliente.Text = tablaCli.Rows[0]["nombres"].ToString() + " " + tablaCli.Rows[0]["apellidos"].ToString();
+                    epMascota.Clear();
+
+                }
+                else
+                {
+                    epMascota.Clear();
+                    txtBuscar.Focus();
+                    epMascota.SetError(txtCliente, "No encontrado pulse en + para registrarlo");
+                    txtCliente.Text = string.Empty;
+                }
             }
         }
         private void InsertarMascota()
@@ -301,6 +314,8 @@ namespace CapaPresentacion
                 NMascota objMascota = new NMascota();
                 objMascota.ListadoDgv(frmListMascota.MiFormListMascota.dgvMascota);
                 frmListMascota.MiFormListMascota.dgvMascota.Refresh();
+                label1.Visible = false;
+                txtCodigo.Visible = false;
             }
         }
 
@@ -351,6 +366,40 @@ namespace CapaPresentacion
             cboEspecie.Enabled = true;
             cboRaza.Enabled = true;
             cboSexo.Enabled = true;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            new frmCliente().ShowDialog();
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                txtBuscar.Focus();
+                epMascota.SetError(txtCliente, "Ingrese dato a buscar: dni y/o nombre del cliente");
+                txtCliente.Text = "";
+            }
+            else
+            {
+                var tablaCli = NCliente.BuscarCliente(txtBuscar.Text);
+                if (tablaCli.Rows.Count > 0)
+                {
+
+                    _idCliente = int.Parse(tablaCli.Rows[0]["codigo"].ToString());
+                    txtCliente.Text = tablaCli.Rows[0]["nombres"].ToString() + " " + tablaCli.Rows[0]["apellidos"].ToString();
+                    epMascota.Clear();
+
+                }
+                else
+                {
+                    epMascota.Clear();
+                    txtBuscar.Focus();
+                    epMascota.SetError(txtCliente, "No encontrado pulse en + para registrarlo");
+                    txtCliente.Text = string.Empty;
+                }
+            }
         }
     }
 }

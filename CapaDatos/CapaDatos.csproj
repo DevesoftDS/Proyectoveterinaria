@@ -49,7 +49,11 @@
     <Compile Include="DCita.cs" />
     <Compile Include="DCliente.cs" />
     <Compile Include="DConexion.cs" />
+    <Compile Include="DDetalleCita.cs" />
+    <Compile Include="DPagoServicio.cs" />
+    <Compile Include="DDetalleIngresoArticulo.cs" />
     <Compile Include="DEmpleado.cs" />
+    <Compile Include="DIngresoArticulo.cs" />
     <Compile Include="DEspecie.cs" />
     <Compile Include="DMascota.cs" />
     <Compile Include="DPresentacion.cs" />

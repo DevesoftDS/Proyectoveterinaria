@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListMascota));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMascota = new System.Windows.Forms.DataGridView();
@@ -36,8 +46,8 @@
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mascota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.especie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.raza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +75,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvMascota);
             this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 33;
@@ -86,8 +96,8 @@
             this.codigo,
             this.mascota,
             this.edad,
-            this.sexo,
             this.peso,
+            this.sexo,
             this.especie,
             this.raza,
             this.Cliente,
@@ -99,12 +109,13 @@
             this.Ver,
             this.idRaza,
             this.idCliente});
-            this.dgvMascota.Location = new System.Drawing.Point(3, 3);
-            this.dgvMascota.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMascota.Location = new System.Drawing.Point(3, 4);
+            this.dgvMascota.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvMascota.Name = "dgvMascota";
             this.dgvMascota.ReadOnly = true;
             this.dgvMascota.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvMascota.Size = new System.Drawing.Size(822, 430);
+            this.dgvMascota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMascota.Size = new System.Drawing.Size(822, 429);
             this.dgvMascota.TabIndex = 0;
             this.dgvMascota.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMascota_CellMouseDoubleClick);
             // 
@@ -131,39 +142,51 @@
             // 
             // mascota
             // 
+            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.mascota.DefaultCellStyle = dataGridViewCellStyle31;
             this.mascota.HeaderText = "Mascota";
             this.mascota.Name = "mascota";
             this.mascota.ReadOnly = true;
             // 
             // edad
             // 
+            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.edad.DefaultCellStyle = dataGridViewCellStyle32;
             this.edad.HeaderText = "Edad";
             this.edad.Name = "edad";
             this.edad.ReadOnly = true;
             this.edad.Width = 80;
             // 
-            // sexo
-            // 
-            this.sexo.HeaderText = "Sexo";
-            this.sexo.Name = "sexo";
-            this.sexo.ReadOnly = true;
-            this.sexo.Width = 80;
-            // 
             // peso
             // 
+            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.peso.DefaultCellStyle = dataGridViewCellStyle33;
             this.peso.HeaderText = "Peso";
             this.peso.Name = "peso";
             this.peso.ReadOnly = true;
             this.peso.Width = 80;
             // 
+            // sexo
+            // 
+            dataGridViewCellStyle34.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.sexo.DefaultCellStyle = dataGridViewCellStyle34;
+            this.sexo.HeaderText = "Sexo";
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            this.sexo.Width = 80;
+            // 
             // especie
             // 
+            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.especie.DefaultCellStyle = dataGridViewCellStyle35;
             this.especie.HeaderText = "Especie";
             this.especie.Name = "especie";
             this.especie.ReadOnly = true;
             // 
             // raza
             // 
+            dataGridViewCellStyle36.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.raza.DefaultCellStyle = dataGridViewCellStyle36;
             this.raza.HeaderText = "Raza";
             this.raza.Name = "raza";
             this.raza.ReadOnly = true;
@@ -171,6 +194,8 @@
             // 
             // Cliente
             // 
+            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Cliente.DefaultCellStyle = dataGridViewCellStyle37;
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
             this.Cliente.ReadOnly = true;
@@ -178,12 +203,16 @@
             // 
             // telefono
             // 
+            dataGridViewCellStyle38.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.telefono.DefaultCellStyle = dataGridViewCellStyle38;
             this.telefono.HeaderText = "Telèfono";
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             // 
             // Correo
             // 
+            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Correo.DefaultCellStyle = dataGridViewCellStyle39;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
@@ -191,6 +220,8 @@
             // 
             // Direccion
             // 
+            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle40;
             this.Direccion.HeaderText = "Direcciòn";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
@@ -200,7 +231,7 @@
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
-            this.Editar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(173)))), ((int)(((byte)(226)))));
+            this.Editar.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
             this.Editar.Width = 150;
@@ -252,7 +283,8 @@
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(431, 25);
             this.txtBuscar.TabIndex = 35;
@@ -260,17 +292,17 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(165)))), ((int)(((byte)(245)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 7);
+            this.panel2.Size = new System.Drawing.Size(834, 8);
             this.panel2.TabIndex = 36;
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(165)))), ((int)(((byte)(245)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,7 +320,7 @@
             // 
             // frmListMascota
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.btnNuevo);
@@ -296,9 +328,9 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListMascota";
             this.Text = "frmListMascota";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListMascota_FormClosed);
@@ -323,8 +355,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn mascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn especie;
         private System.Windows.Forms.DataGridViewTextBoxColumn raza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;

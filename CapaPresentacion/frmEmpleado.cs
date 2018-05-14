@@ -272,7 +272,7 @@ namespace CapaPresentacion
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             txtDireccion.Text = string.Empty;
-            pbFoto.Image = null;
+            pbFoto.Image = Image.FromFile(@"C:\\fotoSV\photo.png");
 
         }
 
@@ -290,8 +290,6 @@ namespace CapaPresentacion
                 NEmpleado objEmpleado = new NEmpleado();
                 objEmpleado.ListadoDgv(frmListEmpleado.MiFormListEmpleado.dgvEmpleado);
                 frmListEmpleado.MiFormListEmpleado.dgvEmpleado.Refresh();
-
-
             }
         }
 
@@ -309,6 +307,21 @@ namespace CapaPresentacion
             if (Char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
+                var tabla = NEmpleado.BuscarEmpleado(txtDni.Text);
+                if (tabla.Rows.Count > 0)
+                {
+                    if (txtDni.Text == tabla.Rows[0]["dni"].ToString())
+                    {
+                        txtDni.Focus();
+                        epEmpleado.Clear();
+                        epEmpleado.SetError(txtDni, "ya cuenta con un registro ");
+                    }
+                    else
+                    {
+                        epEmpleado.Clear();
+                    }
+                }
+
             }
         }
 
