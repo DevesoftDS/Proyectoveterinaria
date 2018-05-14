@@ -70,8 +70,7 @@
             this.txtMensaje.Name = "txtMensaje";
             this.txtMensaje.Size = new System.Drawing.Size(452, 62);
             this.txtMensaje.TabIndex = 0;
-            this.txtMensaje.Text = "Estimado Soto Gomez T. Se ha enviado su contraseña a su correo sotogomez2015@gmai" +
-    "l.com - Verifique su bandeja de entrada";
+            this.txtMensaje.Text = "...";
             // 
             // frmRecuperarPassword
             // 

@@ -41,7 +41,7 @@ namespace CapaDatos
                     {
                         Email = leer["correo"].ToString();
                         Nombres = leer["nombres"].ToString() + " " + leer["apellidos"].ToString();
-                        Password = leer["password"].ToString();
+                        Password = leer["pasword"].ToString();
                         EnviarEmail();
 
                         Mensaje = "Estimado Sr(a). " + Nombres + " , la contraseña fue enviada a su correo: " + Email + " : verifique su entrada de bandeja";
