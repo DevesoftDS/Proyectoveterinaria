@@ -39,21 +39,21 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCita = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -124,9 +124,9 @@
             this.fechaCita,
             this.nombres,
             this.dni,
+            this.Direccion,
             this.telefono,
             this.correo,
-            this.Direccion,
             this.fecha,
             this.hora,
             this.servicio,
@@ -140,6 +140,30 @@
             this.dgvCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCita.Size = new System.Drawing.Size(825, 431);
             this.dgvCita.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dgvCita);
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 441);
+            this.panel1.TabIndex = 28;
+            // 
+            // dtpBuscar
+            // 
+            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
+            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBuscar.Location = new System.Drawing.Point(373, 32);
+            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpBuscar.Name = "dtpBuscar";
+            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
+            this.dtpBuscar.TabIndex = 33;
+            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
             // 
             // item
             // 
@@ -176,32 +200,31 @@
             this.dni.Name = "dni";
             this.dni.ReadOnly = true;
             // 
+            // Direccion
+            // 
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Width = 200;
+            // 
             // telefono
             // 
-            this.telefono.HeaderText = "Teléfono";
+            this.telefono.HeaderText = "CodMascota";
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             this.telefono.Width = 120;
             // 
             // correo
             // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.correo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.correo.HeaderText = "Correo";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.correo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.correo.HeaderText = "Mascota";
             this.correo.Name = "correo";
             this.correo.ReadOnly = true;
             this.correo.Visible = false;
             this.correo.Width = 150;
-            // 
-            // Direccion
-            // 
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Direccion.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            this.Direccion.Visible = false;
-            this.Direccion.Width = 200;
             // 
             // fecha
             // 
@@ -240,30 +263,6 @@
             this.total.ReadOnly = true;
             this.total.Width = 150;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dgvCita);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 441);
-            this.panel1.TabIndex = 28;
-            // 
-            // dtpBuscar
-            // 
-            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
-            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBuscar.Location = new System.Drawing.Point(373, 32);
-            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpBuscar.Name = "dtpBuscar";
-            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
-            this.dtpBuscar.TabIndex = 33;
-            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
-            // 
             // frmListCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -277,7 +276,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmListCita";
             this.Text = "frmListCita";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListCita_FormClosed);
@@ -303,9 +302,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicio;

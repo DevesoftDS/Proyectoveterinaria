@@ -11,10 +11,9 @@ namespace CapaNegocio
 {
     public class NCita
     {
-        public static int InsertarCita(int idCliente, int idPagoServicio, int idUsuario,decimal total)
+        public static int InsertarCita(int idPagoServicio, int idUsuario,decimal total)
         {
             DCita objCita = new DCita();
-            objCita.IdCliente = idCliente;
             objCita.IdPagoServicio = idPagoServicio;
             objCita.IdUsuario = idUsuario;
             objCita.Total = total;
@@ -45,7 +44,7 @@ namespace CapaNegocio
             string total = "";
             string importe = "";
             char espacio = Convert.ToChar(" ");
-            int libre = 30;
+            int libre = 25;
         int numRow = tabla.Rows.Count;
             
             if (numRow > 0)
@@ -59,12 +58,12 @@ namespace CapaNegocio
                     string fechaCita = tabla.Rows[i]["fechacita"].ToString();
                     string cliente = tabla.Rows[i]["nombres"].ToString()+" " + tabla.Rows[i]["apellidos"].ToString();
                     string dni = tabla.Rows[i]["dni"].ToString();
-                    string telefono = tabla.Rows[i]["telefono"].ToString();
-                    string correo = tabla.Rows[i]["correo"].ToString();
-                    string direccion = tabla.Rows[i]["direccion"].ToString();                   
+                    string direccion = tabla.Rows[i]["direccion"].ToString();
+                    string codigoM = tabla.Rows[i]["codigo"].ToString();
+                    string mascota = tabla.Rows[i]["mascota"].ToString();                                     
                     string fechaAtencion = tabla.Rows[i]["fecha"].ToString();
                     string hora = tabla.Rows[i]["hora"].ToString();
-                    string servicio = tabla.Rows[i]["nombre"].ToString();
+                    string servicio = tabla.Rows[i]["servicio"].ToString();
                     //total = simbolo.PadRight(libre,espacio)+ tabla.Rows[i]["total"].ToString();
                    // string importe = simbolo.PadRight(libre, espacio) + tabla.Rows[i]["importe"].ToString();
 
@@ -83,10 +82,8 @@ namespace CapaNegocio
                     else if (tabla.Rows[i]["importe"].ToString().Length > 4)
                     {
                         importe = simbolo.PadRight(libre - tabla.Rows[i]["importe"].ToString().Length, espacio) + tabla.Rows[i]["importe"].ToString();
-                    }
-
-                    int idcliente = Convert.ToInt32(tabla.Rows[i]["idcliente"].ToString());
-                    dgv.Rows.Add(i + 1, codigo, fechaCita,cliente, dni, telefono, correo, direccion,fechaAtencion,hora,servicio, importe, total,idcliente);
+                    }                    
+                    dgv.Rows.Add(i + 1, codigo, fechaCita,cliente, dni, direccion,codigoM, mascota,fechaAtencion,hora,servicio, importe, total);
                 }
                 
             }                    

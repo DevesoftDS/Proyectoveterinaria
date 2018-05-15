@@ -7,7 +7,6 @@ C:\Users\Telesforo Soto\Documents\Visual Studio 2015\Projects\ProyectoVeterinari
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\bin\Debug\CapaDatos.dll.config
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\bin\Debug\CapaDatos.dll
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\bin\Debug\CapaDatos.pdb
-C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaDatos\bin\Debug\CapaDatos.dll.config

@@ -11,36 +11,28 @@ namespace CapaDatos
 {
     public class DCita
     {
-        
-
         public int IdCita { get; set; }
-        public DateTime FechaCita { get; set; }
-        public int IdCliente { get; set; }
+        public DateTime FechaCita { get; set; }      
         public int IdPagoServicio { get; set; }
         public int IdUsuario { get; set; }
         public decimal Total { get; set; }
         public int UltimoId { get; set; }
         public string TextoBuscar { get; set; }
         public DCita() { }
-
-        public DCita(int idCliente, int idPagoServicio, int idUsuario,decimal total)
+        public DCita(int idPagoServicio, int idUsuario,decimal total)
         {
-            this.IdCliente = idCliente;
             this.IdPagoServicio = idPagoServicio;
             this.IdUsuario = idUsuario;
             this.Total = total;
-        }
-      
+        }      
         public DCita(string textoBuscar)
         {
             this.TextoBuscar = textoBuscar;
         }
-
         public DCita(DateTime fechaCita)
         {
             this.FechaCita = fechaCita;
         }
-
         public int InsertarCita(DCita cita)
         {
             int ultimoId = 0;
@@ -52,8 +44,7 @@ namespace CapaDatos
                 cn.Open();
 
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
-                {
-                    cmd.Parameters.AddWithValue("@idcliente", cita.IdCliente);
+                {                    
                     cmd.Parameters.AddWithValue("@idpagoservicio", cita.IdPagoServicio);
                     cmd.Parameters.AddWithValue("@idusuario", cita.IdUsuario);
                      cmd.Parameters.AddWithValue("@total", cita.Total);
@@ -80,7 +71,6 @@ namespace CapaDatos
             }
             return ultimoId;
         }
-
         public DataTable ListarCitas()
         {
             string sql = "sp_lista_cita";
@@ -112,7 +102,7 @@ namespace CapaDatos
 
         public DataTable BuscarCita(DCita cita)
         {
-            string sql = "sp_buscar_cita_dnicli";
+            string sql = "sp_buscar_cita_dni";
             DataTable tabla = new DataTable();
             SqlConnection cn = new SqlConnection();
             try

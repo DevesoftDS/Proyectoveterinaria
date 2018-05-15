@@ -93,8 +93,7 @@ namespace CapaPresentacion
             this.dgvListaHorario.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvListaHorario.DefaultCellStyle.BackColor = Color.White;
             this.dgvListaHorario.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.dgvListaHorario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128, 203, 196);
-
+            this.dgvListaHorario.DefaultCellStyle.SelectionBackColor = Color.FromArgb(197, 225, 165);
         }
 
         private void dtpBuscar_ValueChanged(object sender, EventArgs e)
@@ -106,20 +105,26 @@ namespace CapaPresentacion
         private void frmListHorarioDisponible_Load(object sender, EventArgs e)
         {
             estiloDgv();
-            //var tabla = new NDetalleCita();
-            //tabla.ListarBuscarFecha(dgvListaHorario, Convert.ToDateTime(dtpBuscar.Text));
+            var tabla = new NDetalleCita();
+            tabla.ListarBuscarFecha(dgvListaHorario, Convert.ToDateTime(dtpBuscar.Text));
             dgvListaHorario.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvListaHorario.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvListaHorario.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvListaHorario.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomLeft;
             dgvListaHorario.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvListaHorario.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            
+            dgvListaHorario.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomLeft;
+            dgvListaHorario.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomLeft;
+            dgvListaHorario.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvListaHorario.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+
             dgvListaHorario.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvListaHorario.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvListaHorario.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvListaHorario.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvListaHorario.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-           
+            dgvListaHorario.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvListaHorario.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvListaHorario.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvListaHorario.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             dgvListaHorario.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }

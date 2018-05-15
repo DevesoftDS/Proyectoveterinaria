@@ -213,8 +213,7 @@ namespace CapaPresentacion
         private void dgvMacota_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             posicion = dgvMacota.CurrentRow.Index;
-            _idMascota = Convert.ToInt32(dgvMacota[6, posicion].Value.ToString());
-            //_codigoMascota = dgvMacota[0, posicion].Value.ToString();
+            _idMascota = Convert.ToInt32(dgvMacota[6, posicion].Value.ToString());          
             txtId.Text = dgvMacota[6, posicion].Value.ToString();
             txtMascota.Text = dgvMacota[1, posicion].Value.ToString();
             txtCodigo.Text = dgvMacota[0, posicion].Value.ToString();
@@ -263,7 +262,7 @@ namespace CapaPresentacion
                 epCita.Clear();
                 txtDescuento.Focus();
                 epCita.SetError(label13, "ingrese un descuento no mayor del costo del servicio");
-            }           
+            }         
 
             else
             {               
@@ -280,8 +279,7 @@ namespace CapaPresentacion
 
                     txtTotal.Text = "" + _suma;
                     dgvDetalleCita.Rows[i].Cells[0].Value = i + 1;
-                }
-                dgvMacota.Rows.Remove(dgvMacota.Rows[posicion]);
+                }                
             }
         }
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -310,8 +308,8 @@ namespace CapaPresentacion
             else
             {
                 int num_filas = dgvDetalleCita.Rows.Count;
-
-                if (num_filas == 0)
+               
+                if (num_filas == 0 )
                 {
                     AgregarGrillaDetalle();
                     LimpiarAgregar();
@@ -567,7 +565,7 @@ namespace CapaPresentacion
             {
                 int ultimoPagoServicio = NPagoServicio.InsertarPagoServicio(cboTipoDoc.Text, txtSerie.Text);              
 
-                int ultimoidCita = NCita.InsertarCita(Convert.ToInt16(dgvDetalleCita.Rows[0].Cells[12].Value.ToString()), ultimoPagoServicio, 1,Convert.ToDecimal(txtTotal.Text));
+                int ultimoidCita = NCita.InsertarCita(ultimoPagoServicio, 1,Convert.ToDecimal(txtTotal.Text));
 
                 int numfilas = dgvDetalleCita.Rows.Count;
                
@@ -581,8 +579,9 @@ namespace CapaPresentacion
                     string motivo = dgvDetalleCita.Rows[i].Cells[9].Value.ToString();
                     string sintoma = dgvDetalleCita.Rows[i].Cells[10].Value.ToString();
                     int idservis = Convert.ToInt32(dgvDetalleCita.Rows[i].Cells[13].Value.ToString());
+                    int idmascota = Convert.ToInt32(dgvDetalleCita.Rows[i].Cells[11].Value.ToString());
 
-                    rptadetalle = NDetalleCita.insertarDetalleCita(id, idservis, fecha, hora, motivo, sintoma, dscto, importe);
+                    rptadetalle = NDetalleCita.insertarDetalleCita(id, idmascota,idservis, fecha, hora, motivo, sintoma, dscto, importe);
                     if (rptadetalle!="Ok")
                     {
                         MessageBox.Show("Error");
@@ -599,10 +598,10 @@ namespace CapaPresentacion
         }
         private void btnGeneraComprobante_Click(object sender, EventArgs e)
         {
-            int idComprobante = IdComprobante;
-            var frm = new frmComprobanteServicio();
-            frm.IdComprobante = IdComprobante;
-            frm.Show();
+            //int idComprobante = IdComprobante;
+            //var frm = new frmComprobanteServicio();
+            //frm.IdComprobante = IdComprobante;
+            //frm.Show();
 
         }
 

@@ -12,6 +12,7 @@ namespace CapaDatos
     {
         public int IdDetalleCita { get; set; }
         public int IdCita { get; set; }
+        public int IdMascota { get; set; }
         public int IdServicio { get; set; }
         public string Fecha { get; set; }
         public string Hora { get; set; }
@@ -24,9 +25,11 @@ namespace CapaDatos
 
         public DDetalleCita() { }
 
-        public DDetalleCita(int idCita,int idServicio, string fecha, string hora, string motivo, string sintoma, decimal descuento, decimal importe)
+        public DDetalleCita(int idCita,int idMascota,int idServicio, string fecha, string hora, string motivo, string sintoma, decimal descuento, decimal importe)
         {
+            
             this.IdCita = idCita;
+            this.IdMascota = idMascota;
             this.IdServicio = idServicio;
             this.Fecha = fecha;
             this.Hora = hora;
@@ -47,6 +50,7 @@ namespace CapaDatos
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
                     cmd.Parameters.AddWithValue("@idcita", detalle.IdCita);
+                    cmd.Parameters.AddWithValue("@idmascota", detalle.IdMascota);
                     cmd.Parameters.AddWithValue("@idservicio", detalle.IdServicio);
                     cmd.Parameters.AddWithValue("@fecha", detalle.Fecha);
                     cmd.Parameters.AddWithValue("@hora", detalle.Hora);
