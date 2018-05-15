@@ -49,12 +49,12 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvIngresoArt.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvIngresoArt.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvIngresoArt.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvIngresoArt.DefaultCellStyle.BackColor = Color.White;
             this.dgvIngresoArt.DefaultCellStyle.SelectionForeColor = Color.Black;
             this.dgvIngresoArt.DefaultCellStyle.SelectionBackColor = Color.Orange;
-            this.dgvIngresoArt.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.dgvIngresoArt.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
         }
 
@@ -125,11 +125,11 @@ namespace CapaPresentacion
                             string p_venta = tabla.Rows[i]["precioventa"].ToString();
                             string p_compra = tabla.Rows[i]["preciocompra"].ToString();
                             string cantidad = tabla.Rows[i]["stockactual"].ToString();
-                            string f_produccion = tabla.Rows[i]["fechaproduccion"].ToString();
-                            string f_venc = tabla.Rows[i]["fechavencimiento"].ToString();
+                            DateTime f_produccion = Convert.ToDateTime(tabla.Rows[i]["fechaproduccion"].ToString());
+                            DateTime f_venc = Convert.ToDateTime(tabla.Rows[i]["fechavencimiento"].ToString());
 
                             frmIngresoArticulos.MyformIngresoArt.dgvIngresoArticulo.Rows.Add(
-                                i + 1, articulo, p_venta, p_compra, cantidad, f_produccion, f_venc
+                                i + 1, articulo, p_venta, p_compra, cantidad, f_produccion.ToString("dd/MM/yyyy"), f_venc.ToString("dd/MM/yyyy")
                                 );
                         }
                         frmIngresoArticulos.MyformIngresoArt.habilitar(true);

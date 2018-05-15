@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +55,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAcerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcerca.Designer.cs">
+      <DependentUpon>frmAcerca.cs</DependentUpon>
     </Compile>
     <Compile Include="frmArticulo.cs">
       <SubType>Form</SubType>
@@ -97,11 +110,23 @@
     <Compile Include="frmIngresoArticulos.Designer.cs">
       <DependentUpon>frmIngresoArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaArticulosAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaArticulosAlmacen.Designer.cs">
+      <DependentUpon>frmListaArticulosAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListadoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmListadoArticulo.Designer.cs">
       <DependentUpon>FrmListadoArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoArticuloIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoArticuloIngreso.Designer.cs">
+      <DependentUpon>FrmListadoArticuloIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListArticulo.cs">
       <SubType>Form</SubType>
@@ -175,6 +200,12 @@
     <Compile Include="frmListVenta.Designer.cs">
       <DependentUpon>frmListVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +248,18 @@
     <Compile Include="frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubMenuIngresoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubMenuIngresoArticulo.Designer.cs">
+      <DependentUpon>frmSubMenuIngresoArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubMenuMantenimientoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +283,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcerca.resx">
+      <DependentUpon>frmAcerca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,8 +310,14 @@
     <EmbeddedResource Include="frmIngresoArticulos.resx">
       <DependentUpon>frmIngresoArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListaArticulosAlmacen.resx">
+      <DependentUpon>frmListaArticulosAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoArticulo.resx">
       <DependentUpon>FrmListadoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoArticuloIngreso.resx">
+      <DependentUpon>FrmListadoArticuloIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListArticulo.resx">
       <DependentUpon>frmListArticulo.cs</DependentUpon>
@@ -300,6 +355,9 @@
     <EmbeddedResource Include="frmListVenta.resx">
       <DependentUpon>frmListVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMascota.resx">
       <DependentUpon>frmMascota.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +378,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubMenuIngresoArticulo.resx">
+      <DependentUpon>frmSubMenuIngresoArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubMenuMantenimientoArticulo.resx">
       <DependentUpon>frmSubMenuMantenimientoArticulo.cs</DependentUpon>
@@ -380,11 +444,16 @@
     <Content Include="imgAplicacion\Close-WF.png" />
     <Content Include="imgAplicacion\Doctor.png" />
     <Content Include="imgAplicacion\empleado.png" />
+    <Content Include="imgAplicacion\Facebook.png" />
+    <Content Include="imgAplicacion\Facebook2.png" />
+    <Content Include="imgAplicacion\Google Plus.png" />
+    <Content Include="imgAplicacion\Google Plus2.png" />
     <Content Include="imgAplicacion\Help - 02.png" />
     <Content Include="imgAplicacion\Home.png" />
     <Content Include="imgAplicacion\imageres_98.ico" />
     <Content Include="imgAplicacion\imageres_99.ico" />
     <Content Include="imgAplicacion\list.png" />
+    <Content Include="imgAplicacion\Lock.png" />
     <Content Include="imgAplicacion\Maximize-WF.png" />
     <Content Include="imgAplicacion\Menu.png" />
     <Content Include="imgAplicacion\Minimize-WF.png" />
@@ -403,12 +472,16 @@
     <Content Include="imgAplicacion\Settings-02.png" />
     <Content Include="imgAplicacion\Shape Square 2-WF.png" />
     <Content Include="imgAplicacion\Shopping-Bag.png" />
+    <Content Include="imgAplicacion\sofvet.jpeg" />
     <Content Include="imgAplicacion\Tools - 02.png" />
+    <Content Include="imgAplicacion\User-login2.png" />
+    <Content Include="imgAplicacion\User-login3.png" />
     <Content Include="imgAplicacion\User.png" />
     <Content Include="imgAplicacion\User2.png" />
     <Content Include="imgAplicacion\User3.png" />
     <Content Include="imgAplicacion\User4.png" />
     <Content Include="imgAplicacion\User_ini.png" />
+    <Content Include="imgAplicacion\user_login.png" />
     <Content Include="imgAplicacion\venta_infor.png" />
     <Content Include="imgAplicacion\ver_mas.png" />
   </ItemGroup>

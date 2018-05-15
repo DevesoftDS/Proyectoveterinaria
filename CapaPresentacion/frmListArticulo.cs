@@ -55,19 +55,19 @@ namespace CapaPresentacion
             estiloDgv();
 
             dgvArticulo.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvArticulo.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvArticulo.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvArticulo.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             dgvArticulo.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvArticulo.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvArticulo.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvArticulo.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
 
         private void estiloDgv()
         {
-            this.dgvArticulo.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvArticulo.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvArticulo.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvArticulo.DefaultCellStyle.BackColor = Color.White;
             this.dgvArticulo.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -95,6 +95,13 @@ namespace CapaPresentacion
                 MostrarArticulo();
         }
 
+        //public static Image ByteArrayToImage(byte[] byteArrayIn)
+        //{
+        //    MemoryStream ms = new MemoryStream(byteArrayIn);
+        //    return Image.FromStream(ms);
+        //}
+
+
         private void dgvArticulo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -104,7 +111,7 @@ namespace CapaPresentacion
 
                 if (dgvArticulo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Editar"))
                 {
-                    int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[7].Value);
+                    int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[8].Value);
                     tabla = NArticulo.BuscarCodigo(idarticulo);
                     new frmArticulo().Show();
                     int numFilas = tabla.Rows.Count;
@@ -116,16 +123,24 @@ namespace CapaPresentacion
                         frmArticulo.MyFormArt.cboPresentacion.SelectedValue = tabla.Rows[0]["idpresentacion"].ToString();
                         frmArticulo.MyFormArt.txtNeto.Text = tabla.Rows[0]["neto"].ToString();
                         frmArticulo.MyFormArt.txtDescripcion.Text = tabla.Rows[0]["Descripcion"].ToString();
+                        //frmArticulo.MyFormArt.ImageToByteArray(tabla.Rows[0]["imagen"]);
                         byte[] img = (byte[])tabla.Rows[0]["imagen"];
                         var ms = new MemoryStream(img);
-                        frmArticulo.MyFormArt.pbImagen.Image = Image.FromStream(ms);
+                        if (ms != null)
+                        {
+                            frmArticulo.MyFormArt.pbImagen.Image = Image.FromStream(ms);
+                        }
+                        else
+                        {
+                            frmArticulo.MyFormArt.pbImagen.Image = null;
+                        }
                         frmArticulo.MyFormArt.idArticulo = int.Parse(tabla.Rows[0]["idarticulo"].ToString());
                         frmArticulo.MyFormArt._IsNew = false;
                     }
                 }
                 if (dgvArticulo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Equals("Eliminar"))
                 {
-                    int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[7].Value);
+                    int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[8].Value);
                     DialogResult rspta = MessageBox.Show("Desea Eliminar", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (DialogResult.Yes == rspta)
                     {

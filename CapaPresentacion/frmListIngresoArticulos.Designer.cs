@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListIngresoArticulos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvIngresoArt = new System.Windows.Forms.DataGridView();
@@ -56,9 +56,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvIngresoArt);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Location = new System.Drawing.Point(0, 85);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 453);
+            this.panel1.Size = new System.Drawing.Size(834, 439);
             this.panel1.TabIndex = 23;
             // 
             // dgvIngresoArt
@@ -81,11 +82,12 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dgvIngresoArt.Location = new System.Drawing.Point(3, 3);
+            this.dgvIngresoArt.Location = new System.Drawing.Point(3, 4);
+            this.dgvIngresoArt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvIngresoArt.Name = "dgvIngresoArt";
             this.dgvIngresoArt.ReadOnly = true;
             this.dgvIngresoArt.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvIngresoArt.Size = new System.Drawing.Size(824, 443);
+            this.dgvIngresoArt.Size = new System.Drawing.Size(824, 428);
             this.dgvIngresoArt.TabIndex = 0;
             this.dgvIngresoArt.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvIngresoArt_CellMouseDoubleClick);
             // 
@@ -123,8 +125,8 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "Total";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -155,8 +157,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 5);
+            this.panel2.Size = new System.Drawing.Size(834, 6);
             this.panel2.TabIndex = 27;
             // 
             // btnNuevoIngresoArticulo
@@ -168,9 +171,9 @@
             this.btnNuevoIngresoArticulo.ForeColor = System.Drawing.Color.White;
             this.btnNuevoIngresoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoIngresoArticulo.Image")));
             this.btnNuevoIngresoArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoIngresoArticulo.Location = new System.Drawing.Point(675, 23);
+            this.btnNuevoIngresoArticulo.Location = new System.Drawing.Point(662, 25);
             this.btnNuevoIngresoArticulo.Name = "btnNuevoIngresoArticulo";
-            this.btnNuevoIngresoArticulo.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoIngresoArticulo.Size = new System.Drawing.Size(147, 40);
             this.btnNuevoIngresoArticulo.TabIndex = 26;
             this.btnNuevoIngresoArticulo.Text = "Nuevo";
             this.btnNuevoIngresoArticulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,28 +181,29 @@
             // 
             // txtBuscarIngreso
             // 
-            this.txtBuscarIngreso.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarIngreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarIngreso.Location = new System.Drawing.Point(215, 28);
+            this.txtBuscarIngreso.Location = new System.Drawing.Point(215, 33);
+            this.txtBuscarIngreso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarIngreso.Name = "txtBuscarIngreso";
-            this.txtBuscarIngreso.Size = new System.Drawing.Size(431, 25);
+            this.txtBuscarIngreso.Size = new System.Drawing.Size(431, 27);
             this.txtBuscarIngreso.TabIndex = 25;
             this.txtBuscarIngreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarIngreso_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 18);
+            this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 24;
             this.label1.Text = "Buscar ingreso de articulos";
             // 
             // frmListIngresoArticulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel1);
@@ -207,9 +211,9 @@
             this.Controls.Add(this.btnNuevoIngresoArticulo);
             this.Controls.Add(this.txtBuscarIngreso);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListIngresoArticulos";
             this.Text = "frmListIngresoArticulos";
             this.Load += new System.EventHandler(this.frmListIngresoArticulos_Load);

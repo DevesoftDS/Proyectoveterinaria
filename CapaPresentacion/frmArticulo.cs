@@ -108,7 +108,8 @@ namespace CapaPresentacion
             this.cboPresentacion.SelectedIndex = 0;
             this.txtNeto.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
-            this.pbImagen.Image = null;
+            //this.pbImagen.Image = null;
+            pbImagen.Image = Image.FromFile(@"C:\\fotoSV\art_image.png");
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -127,7 +128,7 @@ namespace CapaPresentacion
         {
             MostrarCategoria();
 
-            var tabla = NArticulo.ListarPresentacion();
+            DataTable tabla = NArticulo.ListarPresentacion();
             if (tabla.Rows.Count > 0)
             {
                 cboPresentacion.DataSource = tabla;
@@ -138,7 +139,7 @@ namespace CapaPresentacion
 
         private void MostrarCategoria()
         {
-            var tabla = NArticulo.ListarCategoria();
+            DataTable tabla = NArticulo.ListarCategoria();
             if (tabla.Rows.Count > 0)
             {
                 cboCategoria.DataSource = tabla;
@@ -150,67 +151,104 @@ namespace CapaPresentacion
         public byte[] ImageToByteArray(Image imageIn)
         {
 
-            using (var ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream())
             {
-                imageIn.Save(ms, ImageFormat.Gif);
+                if (imageIn != null)
+                {
+                    imageIn.Save(ms, ImageFormat.Jpeg);
+                }
                 return ms.ToArray();
             }
         }
 
+        //public static Image ByteArrayToImage(byte[] byteArrayIn)
+        //{
+        //    MemoryStream ms = new MemoryStream(byteArrayIn);
+        //    return Image.FromStream(ms);
+        //}
+
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (_IsNew)
             {
-                if (string.IsNullOrEmpty(txtNombre.Text))
+                InsertarArticulo();
+                objNA.ListarDataGridViewArticulo(frmListArticulo.MyFormListArt.dgvArticulo);
+                frmListArticulo.MyFormListArt.dgvArticulo.Refresh();
+            }
+            else
+            {
+                ActualizarArticulo();
+                objNA.ListarDataGridViewArticulo(frmListArticulo.MyFormListArt.dgvArticulo);
+                frmListArticulo.MyFormListArt.dgvArticulo.Refresh();
+                _IsNew = true;
+
+            }
+        }
+
+        private void ActualizarArticulo()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                txtNombre.Focus();
+                epArticulo.SetError(txtNombre, "Campo obligatorio - ingrese nombre del articulo");
+            }
+            else if (string.IsNullOrEmpty(txtNeto.Text))
+            {
+                txtNeto.Focus();
+                epArticulo.SetError(txtNeto, "Campo obligatorio - ingrese neto de la presentacion: ejm. Kg 200");
+            }
+            else
+            {
+                bool rpta2 = NArticulo.Actualizar(
+                txtCodigo.Text.Trim(), txtNombre.Text.Trim(),
+                Convert.ToInt32(cboCategoria.SelectedValue), Convert.ToInt32(cboPresentacion.SelectedValue), txtNeto.Text.Trim(),
+                txtDescripcion.Text.Trim(), ImageToByteArray(pbImagen.Image), idArticulo
+                );
+                if (rpta2)
                 {
-                    txtNombre.Focus();
-                    epArticulo.SetError(txtNombre, "Campo obligatorio - ingrese nombre del articulo");
-                }
-                else if (string.IsNullOrEmpty(txtNeto.Text))
-                {
-                    txtNeto.Focus();
-                    epArticulo.SetError(txtNeto, "Campo obligatorio - ingrese neto de la presentacion: ejm. Kg 200");
+                    mensajeYes("Articulo actualizado correctamente");
+                    Limpiar();
+                    txtCodigo.Focus();
                 }
                 else
                 {
-                    if (_IsNew)
-                    {
-                        bool rpta = NArticulo.Insertar(
-                            txtCodigo.Text.Trim(), txtNombre.Text.Trim(), 
-                            Convert.ToInt32(cboCategoria.SelectedValue), Convert.ToInt32(cboPresentacion.SelectedValue), txtNeto.Text.Trim(), 
-                            txtDescripcion.Text.Trim(), ImageToByteArray(pbImagen.Image)
-                            );
-
-                        mensajeYes("Articulo insertado correctamente");
-                        Limpiar();
-                        txtCodigo.Focus();
-                        objNA.ListarDataGridViewArticulo(frmListArticulo.MyFormListArt.dgvArticulo);
-                        frmListArticulo.MyFormListArt.dgvArticulo.Refresh();
-                        
-                    }
-                    else
-                    {
-                        bool rpta2 = NArticulo.Actualizar(
-                            txtCodigo.Text.Trim(), txtNombre.Text.Trim(),
-                            Convert.ToInt32(cboCategoria.SelectedValue), Convert.ToInt32(cboPresentacion.SelectedValue), txtNeto.Text.Trim(),
-                            txtDescripcion.Text.Trim(), ImageToByteArray(pbImagen.Image), idArticulo
-                            );
-
-                        mensajeYes("Articulo actualizado correctamente");
-                        Limpiar();
-                        txtCodigo.Focus();
-                        objNA.ListarDataGridViewArticulo(frmListArticulo.MyFormListArt.dgvArticulo);
-                        frmListArticulo.MyFormListArt.dgvArticulo.Refresh();
-                        _IsNew = true;
-
-                    }
+                    mensajeError("Error al actualizar articulo");
                 }
             }
-            catch (Exception ex)
+        }
+
+        private void InsertarArticulo()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show(ex.Message, "Error........!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                txtNombre.Focus();
+                epArticulo.SetError(txtNombre, "Campo obligatorio - ingrese nombre del articulo");
             }
+            else if (string.IsNullOrEmpty(txtNeto.Text))
+            {
+                txtNeto.Focus();
+                epArticulo.SetError(txtNeto, "Campo obligatorio - ingrese neto de la presentacion: ejm. Kg 200");
+            }
+            else
+            {
+                bool rpta = NArticulo.Insertar(
+                txtCodigo.Text.Trim(), txtNombre.Text.Trim(),
+                Convert.ToInt32(cboCategoria.SelectedValue), Convert.ToInt32(cboPresentacion.SelectedValue), txtNeto.Text.Trim(),
+                txtDescripcion.Text.Trim(), ImageToByteArray(pbImagen.Image)
+                );
+                if (rpta)
+                {
+                    mensajeYes("Articulo insertado correctamente");
+                    Limpiar();
+                    txtCodigo.Focus();
+                }
+                else
+                {
+                    mensajeError("Error al insertar el articulo");
+                }
+            }
+            
         }
 
         private void frmArticulo_FormClosed(object sender, FormClosedEventArgs e)

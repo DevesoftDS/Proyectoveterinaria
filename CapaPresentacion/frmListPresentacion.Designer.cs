@@ -33,35 +33,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvPresentacion = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNuevoPresentacion = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNuevoPresentacion = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresentacion)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscarPresentacion
             // 
+            this.txtBuscarPresentacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPresentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarPresentacion.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscarPresentacion.Location = new System.Drawing.Point(149, 33);
+            this.txtBuscarPresentacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarPresentacion.Name = "txtBuscarPresentacion";
-            this.txtBuscarPresentacion.Size = new System.Drawing.Size(349, 25);
+            this.txtBuscarPresentacion.Size = new System.Drawing.Size(349, 27);
             this.txtBuscarPresentacion.TabIndex = 17;
             this.txtBuscarPresentacion.TextChanged += new System.EventHandler(this.txtBuscarPresentacion_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Location = new System.Drawing.Point(6, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 18);
+            this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Buscar categoria";
             // 
@@ -72,9 +74,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dgvPresentacion);
-            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Location = new System.Drawing.Point(0, 85);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 453);
+            this.panel2.Size = new System.Drawing.Size(834, 439);
             this.panel2.TabIndex = 15;
             // 
             // dgvPresentacion
@@ -94,39 +97,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dgvPresentacion.Location = new System.Drawing.Point(7, 3);
+            this.dgvPresentacion.Location = new System.Drawing.Point(7, 4);
+            this.dgvPresentacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPresentacion.Name = "dgvPresentacion";
             this.dgvPresentacion.ReadOnly = true;
             this.dgvPresentacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvPresentacion.Size = new System.Drawing.Size(824, 436);
+            this.dgvPresentacion.Size = new System.Drawing.Size(824, 420);
             this.dgvPresentacion.TabIndex = 0;
             this.dgvPresentacion.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPresentacion_CellMouseDoubleClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 5);
-            this.panel1.TabIndex = 19;
-            // 
-            // btnNuevoPresentacion
-            // 
-            this.btnNuevoPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
-            this.btnNuevoPresentacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoPresentacion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoPresentacion.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoPresentacion.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoPresentacion.Image")));
-            this.btnNuevoPresentacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoPresentacion.Location = new System.Drawing.Point(533, 22);
-            this.btnNuevoPresentacion.Name = "btnNuevoPresentacion";
-            this.btnNuevoPresentacion.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoPresentacion.TabIndex = 20;
-            this.btnNuevoPresentacion.Text = "Nuevo";
-            this.btnNuevoPresentacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoPresentacion.Click += new System.EventHandler(this.btnNuevoPresentacion_Click);
             // 
             // Column1
             // 
@@ -172,9 +150,36 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 6);
+            this.panel1.TabIndex = 19;
+            // 
+            // btnNuevoPresentacion
+            // 
+            this.btnNuevoPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(57)))), ((int)(((byte)(37)))));
+            this.btnNuevoPresentacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoPresentacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoPresentacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPresentacion.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoPresentacion.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoPresentacion.Image")));
+            this.btnNuevoPresentacion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoPresentacion.Location = new System.Drawing.Point(533, 26);
+            this.btnNuevoPresentacion.Name = "btnNuevoPresentacion";
+            this.btnNuevoPresentacion.Size = new System.Drawing.Size(147, 40);
+            this.btnNuevoPresentacion.TabIndex = 20;
+            this.btnNuevoPresentacion.Text = "Nuevo";
+            this.btnNuevoPresentacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoPresentacion.Click += new System.EventHandler(this.btnNuevoPresentacion_Click);
+            // 
             // frmListPresentacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.btnNuevoPresentacion);
@@ -182,9 +187,9 @@
             this.Controls.Add(this.txtBuscarPresentacion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListPresentacion";
             this.Text = "frmListPresentacion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListPresentacion_FormClosed);

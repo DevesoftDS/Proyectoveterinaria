@@ -87,8 +87,8 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvArticulo.DefaultCellStyle.Font = new Font("Arial", 9);
-            this.dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            this.dgvArticulo.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            this.dgvArticulo.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             this.dgvArticulo.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvArticulo.DefaultCellStyle.BackColor = Color.White;
             this.dgvArticulo.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -146,13 +146,16 @@ namespace CapaPresentacion
             {
                 DataTable tabla = new DataTable();
 
-                int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[7].Value);
+                int idarticulo = Convert.ToInt32(dgvArticulo.Rows[e.RowIndex].Cells[8].Value);
                 tabla = NArticulo.BuscarCodigo(idarticulo);
                 int numFilas = tabla.Rows.Count;
                 if (numFilas == 1)
                 {
                     frmIngresoArticulos.MyformIngresoArt.IdArticulo = idarticulo;
                     frmIngresoArticulos.MyformIngresoArt.txtArticulo.Text = tabla.Rows[0]["nombre"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtCategoria.Text = tabla.Rows[0]["categoria"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtNeto.Text = tabla.Rows[0]["neto"].ToString();
+                    frmIngresoArticulos.MyformIngresoArt.txtPresentacion.Text = tabla.Rows[0]["presentacion"].ToString();
                     this.Close();
                 }
             }

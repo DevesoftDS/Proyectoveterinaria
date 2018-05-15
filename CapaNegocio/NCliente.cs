@@ -53,6 +53,13 @@ namespace CapaNegocio
             objCliente.IdCliente = idCliente;
             return objCliente.BuscarClienteId(objCliente);
         }
+        // buscar cliente por dni a venta
+        public static DataTable BuscarClienteDNI(string dni)
+        {
+            DCliente objCliente = new DCliente();
+            objCliente.Dni = dni;
+            return objCliente.BuscarClienteDni(objCliente);
+        }
         public static DataTable ListarCliente()
         {
             return new DCliente().ListarCliente();
@@ -93,6 +100,13 @@ namespace CapaNegocio
         {
 
             var tabla = ListarCliente();
+            ListarGriv(dgv, tabla);
+        }
+
+        public void ListarClientePorDni(DataGridView dgv, string dni)
+        {
+
+            var tabla = BuscarClienteDNI(dni);
             ListarGriv(dgv, tabla);
         }
 

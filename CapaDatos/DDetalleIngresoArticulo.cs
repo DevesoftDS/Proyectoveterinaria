@@ -22,6 +22,9 @@ namespace CapaDatos
         public DateTime FechaProduccion { get; set; }
         public DateTime FechaVencimiento { get; set; }
 
+        public string Nombre { get; set; }
+        public int IdCategoria { get; set; }
+
         public DDetalleIngresoArticulo()
         {
 
@@ -83,6 +86,93 @@ namespace CapaDatos
                 if (cn.State == ConnectionState.Open) cn.Close();
             }
             return false;
+        }
+
+        public DataTable Listar()
+        {
+            string cadena = "sp_listar_ingreso_articulos";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
+        }
+
+
+        public DataTable BuscarNombre(DDetalleIngresoArticulo ingresodetalle)
+        {
+            string cadena = "sp_listar_ingreso_articulos_por_nombre";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@nombre", ingresodetalle.Nombre);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
+        }
+
+        public DataTable BuscarNombreAndCategoria(DDetalleIngresoArticulo ingresodetalle)
+        {
+            string cadena = "sp_listar_ingreso_articulos_por_nombre";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (SqlDataAdapter da = new SqlDataAdapter(cadena, cn))
+                {
+                    da.SelectCommand.Parameters.AddWithValue("@nombre", ingresodetalle.Nombre);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+            }
+            catch (Exception)
+            {
+                return tabla;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+            }
+            return tabla;
         }
     }
 }
