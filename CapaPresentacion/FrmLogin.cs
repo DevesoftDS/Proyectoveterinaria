@@ -67,10 +67,8 @@ namespace CapaPresentacion
                     Program.nombres = tabla.Rows[0]["nombres"].ToString();
                     Program.apellidos = tabla.Rows[0]["apellidos"].ToString();
                     Program.correo = tabla.Rows[0]["correo"].ToString();
-                    frm.ShowDialog();
-                    
+                    frm.Show();
                     this.Hide();
-                    this.Dispose();
 
                 }
                 else
