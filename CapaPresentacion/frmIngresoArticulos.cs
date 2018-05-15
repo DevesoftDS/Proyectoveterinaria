@@ -202,11 +202,11 @@ namespace CapaPresentacion
                         decimal precio_venta = Convert.ToDecimal(dgvIngresoArticulo.Rows[i].Cells[3].Value.ToString());
                         int stock_inicial = Convert.ToInt32(dgvIngresoArticulo.Rows[i].Cells[4].Value.ToString());
                         int stock_actual = Convert.ToInt32(dgvIngresoArticulo.Rows[i].Cells[4].Value.ToString());
-                        DateTime fecha_produccion = Convert.ToDateTime(dgvIngresoArticulo.Rows[i].Cells[5].Value.ToString());
-                        DateTime fecha_vencimiento = Convert.ToDateTime(dgvIngresoArticulo.Rows[i].Cells[6].Value.ToString());
+                        string fecha_produccion = Convert.ToString(dgvIngresoArticulo.Rows[i].Cells[5].Value.ToString());
+                        string fecha_vencimiento = Convert.ToString(dgvIngresoArticulo.Rows[i].Cells[6].Value.ToString());
 
                         bool rpta = NDetalleIngresoArticulo.Insertar(
-                            id_ingreso, id_articulo, precio_compra, precio_venta, stock_inicial, stock_actual, fecha_produccion, fecha_vencimiento
+                            id_ingreso, id_articulo, precio_compra, precio_venta, stock_inicial, stock_actual, Convert.ToDateTime(fecha_produccion), Convert.ToDateTime(fecha_vencimiento)
                             );
 
                         if (!rpta)
@@ -302,7 +302,7 @@ namespace CapaPresentacion
             int id_articulo = IdArticulo;
 
             dgvIngresoArticulo.Rows.Add(
-                num_filas + 1, articulo, p_compra, p_venta, cantidad, f_produccion.ToString("dd/MM/yyyy"), f_vencimiento.ToString("dd/mm/yyyy"), "", id_articulo
+                num_filas + 1, articulo, p_compra, p_venta, cantidad, f_produccion.ToString("dd/MM/yyyy"), f_vencimiento.ToString("dd/MM/yyyy"), "", id_articulo
                 );
 
             decimal importe;
