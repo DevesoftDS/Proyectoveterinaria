@@ -41,13 +41,13 @@
             this.lblTipoUser = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.menuVertical = new System.Windows.Forms.Panel();
             this.subLogo = new System.Windows.Forms.Label();
             this.pictureLogo = new System.Windows.Forms.Label();
             this.btnAcerca = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnAlmacen = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -57,7 +57,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.barraSection = new System.Windows.Forms.Panel();
             this.barraSubMenu = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.barraTitulo.SuspendLayout();
             this.panel4.SuspendLayout();
             this.barraHeader.SuspendLayout();
@@ -186,6 +185,17 @@
             this.label1.TabIndex = 2;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(79)))));
+            this.label2.Location = new System.Drawing.Point(12, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 59);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "SV";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,7 +214,6 @@
             this.menuVertical.Controls.Add(this.pictureLogo);
             this.menuVertical.Controls.Add(this.btnAcerca);
             this.menuVertical.Controls.Add(this.btnReportes);
-            this.menuVertical.Controls.Add(this.btnConfiguracion);
             this.menuVertical.Controls.Add(this.btnAlmacen);
             this.menuVertical.Controls.Add(this.btnServicios);
             this.menuVertical.Controls.Add(this.btnMenu);
@@ -249,13 +258,14 @@
             this.btnAcerca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAcerca.Image = ((System.Drawing.Image)(resources.GetObject("btnAcerca.Image")));
             this.btnAcerca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcerca.Location = new System.Drawing.Point(0, 502);
+            this.btnAcerca.Location = new System.Drawing.Point(0, 448);
             this.btnAcerca.Name = "btnAcerca";
             this.btnAcerca.Size = new System.Drawing.Size(267, 48);
             this.btnAcerca.TabIndex = 1;
             this.btnAcerca.TabStop = false;
             this.btnAcerca.Text = "Acerca de ...";
             this.btnAcerca.UseVisualStyleBackColor = false;
+            this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
             // 
             // btnReportes
             // 
@@ -275,24 +285,6 @@
             this.btnReportes.Text = "Reportes";
             this.toolTip1.SetToolTip(this.btnReportes, "Acerca y ayuda del software");
             this.btnReportes.UseVisualStyleBackColor = false;
-            // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
-            this.btnConfiguracion.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.btnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
-            this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 448);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(267, 48);
-            this.btnConfiguracion.TabIndex = 1;
-            this.btnConfiguracion.TabStop = false;
-            this.btnConfiguracion.Text = "Configuraciòn";
-            this.btnConfiguracion.UseVisualStyleBackColor = false;
             // 
             // btnAlmacen
             // 
@@ -429,17 +421,6 @@
             this.barraSubMenu.Size = new System.Drawing.Size(834, 65);
             this.barraSubMenu.TabIndex = 3;
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(79)))));
-            this.label2.Location = new System.Drawing.Point(12, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 59);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "SV";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,7 +474,6 @@
         public System.Windows.Forms.Panel barraSubMenu;
         public System.Windows.Forms.Panel barraSection;
         private System.Windows.Forms.Button btnAcerca;
-        private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Label label2;
     }
 }

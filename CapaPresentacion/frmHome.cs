@@ -150,8 +150,9 @@ namespace CapaPresentacion
 
         private void btnAlmacen_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new frmListIngresoArticulos());
             this.barraSubMenu.Controls.Clear();
+            AbrirSubMenu(new frmSubMenuIngresoArticulo());
+            AbrirFormHija(new frmListIngresoArticulos());
         }
 
         private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
@@ -163,6 +164,11 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new frmListCita());
             this.barraSubMenu.Controls.Clear();
+        }
+
+        private void btnAcerca_Click(object sender, EventArgs e)
+        {
+            new frmAcerca().ShowDialog();
         }
     }
 }

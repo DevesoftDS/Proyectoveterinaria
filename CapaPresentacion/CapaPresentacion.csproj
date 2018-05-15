@@ -65,6 +65,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAcerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcerca.Designer.cs">
+      <DependentUpon>frmAcerca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </Compile>
     <Compile Include="frmIngresoArticulos.Designer.cs">
       <DependentUpon>frmIngresoArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListaArticulosAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaArticulosAlmacen.Designer.cs">
+      <DependentUpon>frmListaArticulosAlmacen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListadoArticulo.cs">
       <SubType>Form</SubType>
@@ -245,6 +263,12 @@
     <Compile Include="frmRecuperarPassword.Designer.cs">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSubMenuIngresoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubMenuIngresoArticulo.Designer.cs">
+      <DependentUpon>frmSubMenuIngresoArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubMenuMantenimientoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +296,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcerca.resx">
+      <DependentUpon>frmAcerca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmArticulo.resx">
       <DependentUpon>frmArticulo.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoArticulos.resx">
       <DependentUpon>frmIngresoArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListaArticulosAlmacen.resx">
+      <DependentUpon>frmListaArticulosAlmacen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoArticulo.resx">
       <DependentUpon>FrmListadoArticulo.cs</DependentUpon>
@@ -361,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecuperarPassword.resx">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubMenuIngresoArticulo.resx">
+      <DependentUpon>frmSubMenuIngresoArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubMenuMantenimientoArticulo.resx">
       <DependentUpon>frmSubMenuMantenimientoArticulo.cs</DependentUpon>

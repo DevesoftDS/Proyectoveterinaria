@@ -138,3 +138,7 @@ C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\bin\Debug\s
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmComprobante.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.FrmLogin.resources
 C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmRecuperarPassword.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmSubMenuIngresoArticulo.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaArticulosAlmacen.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmAbout.resources
+C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaPresentacion\obj\Debug\CapaPresentacion.frmAcerca.resources

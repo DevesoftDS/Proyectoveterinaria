@@ -47,9 +47,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Label();
+            this.txtError = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.txtError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -203,6 +203,7 @@
             this.txtPassword.Size = new System.Drawing.Size(265, 27);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsuario
             // 
@@ -260,6 +261,16 @@
             this.btnClose.Text = "X";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtError
+            // 
+            this.txtError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtError.ForeColor = System.Drawing.Color.Red;
+            this.txtError.Location = new System.Drawing.Point(51, 43);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(341, 41);
+            this.txtError.TabIndex = 3;
+            this.txtError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,16 +294,6 @@
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // txtError
-            // 
-            this.txtError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtError.ForeColor = System.Drawing.Color.Red;
-            this.txtError.Location = new System.Drawing.Point(51, 43);
-            this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(341, 41);
-            this.txtError.TabIndex = 3;
-            this.txtError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmLogin
             // 

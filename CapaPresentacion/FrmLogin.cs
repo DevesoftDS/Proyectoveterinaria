@@ -36,6 +36,12 @@ namespace CapaPresentacion
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            Logear();
+
+        }
+
+        private void Logear()
+        {
             string usuario = txtUsuario.Text.Trim();
             string password = txtPassword.Text.Trim();
             if (string.IsNullOrEmpty(txtUsuario.Text.Trim()))
@@ -62,13 +68,14 @@ namespace CapaPresentacion
                     Program.apellidos = tabla.Rows[0]["apellidos"].ToString();
                     Program.correo = tabla.Rows[0]["correo"].ToString();
                     frm.ShowDialog();
+                    
                     this.Hide();
+                    this.Dispose();
 
                 }
                 else
-                    MessageBox.Show("Error cuenta usuario incorrecto ..... !!??","Error al iniciar sesiòn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error cuenta usuario incorrecto ..... !!??", "Error al iniciar sesiòn", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -90,6 +97,14 @@ namespace CapaPresentacion
         {
             //
             System.Diagnostics.Process.Start("https://plus.google.com/u/0/107973794450007524146");
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                Logear();
+            }
         }
     }
 }
