@@ -59,7 +59,7 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvCliente.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvCliente.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvCliente.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvCliente.DefaultCellStyle.BackColor = Color.White;
             this.dgvCliente.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -72,18 +72,18 @@ namespace CapaPresentacion
             estiloDgv();
 
             dgvCliente.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
-            dgvCliente.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
+            dgvCliente.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvCliente.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvCliente.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvCliente.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             dgvCliente.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvCliente.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCliente.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvCliente.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvCliente.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvCliente.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -154,34 +154,41 @@ namespace CapaPresentacion
                     frmPerfil perfil = new frmPerfil();
                     perfil.Show();
 
-                    var tabla = NEmpleado.BuscarEmpleadoId(idCliente);
-                    
+                    var tabla = NCliente.BuscarClienteId(idCliente);
 
-                    sexo = tabla.Rows[0]["sexo"].ToString();
-                    if (sexo == "M") sexo = "Masculino";
-                    else sexo = "Femenino";
-                    
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Nombre:     " + tabla.Rows[0]["nombres"].ToString());
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Apellidos:  " + tabla.Rows[0]["apellidos"].ToString());
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Dni:        " + tabla.Rows[0]["dni"].ToString());
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Sexo:       " + sexo);
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Teléfono:   " + tabla.Rows[0]["telefono"].ToString());
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Correo:     " + tabla.Rows[0]["correo"].ToString());
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("");
-                    frmPerfil.MiFormPerfil.listDatos.Items.Add("Dirección:  " + tabla.Rows[0]["direccion"].ToString());
+                    if (tabla.Rows.Count > 0)
+                    {
+                        sexo = tabla.Rows[0]["sexo"].ToString();
+                        if (sexo == "M") sexo = "Masculino";
+                        else sexo = "Femenino";
 
-                    byte[] img = (byte[])tabla.Rows[0]["foto"];
-                    var ms = new MemoryStream(img);
-                    frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
-                    frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Cliente";                
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Nombre:     " + tabla.Rows[0]["nombres"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Apellidos:  " + tabla.Rows[0]["apellidos"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Dni:        " + tabla.Rows[0]["dni"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Sexo:       " + sexo);
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Teléfono:   " + tabla.Rows[0]["telefono"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Correo:     " + tabla.Rows[0]["correo"].ToString());
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("");
+                        frmPerfil.MiFormPerfil.listDatos.Items.Add("Dirección:  " + tabla.Rows[0]["direccion"].ToString());
 
+                        byte[] img = (byte[])tabla.Rows[0]["foto"];
+                        var ms = new MemoryStream(img);
+                        frmPerfil.MiFormPerfil.pbFoto.Image = Image.FromStream(ms);
+                        frmPerfil.MiFormPerfil.lblTitulo.Text = "Datos Cliente";
+                    }
                 }
             }
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NCliente objCliente = new NCliente();
+            objCliente.ListarBusquedaCliente(dgvCliente, txtBuscar.Text);
         }
     }
 }

@@ -57,7 +57,7 @@ namespace CapaPresentacion
 
         private void estiloDgv()
         {
-            this.dgvUsuario.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvUsuario.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvUsuario.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvUsuario.DefaultCellStyle.BackColor = Color.White;
             this.dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.Black;
@@ -81,7 +81,7 @@ namespace CapaPresentacion
             dgvUsuario.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvUsuario.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvUsuario.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvUsuario.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
 
         

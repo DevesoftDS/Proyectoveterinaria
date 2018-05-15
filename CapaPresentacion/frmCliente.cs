@@ -256,8 +256,8 @@ namespace CapaPresentacion
             cboSexo.SelectedIndex = 0;
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
-            txtDireccion.Text = string.Empty;
-            pbFoto.Image = null;
+            txtDireccion.Text = string.Empty;            
+            pbFoto.Image = Image.FromFile(@"C:\\fotoSV\photo.png");
 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -291,6 +291,7 @@ namespace CapaPresentacion
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (Char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsSeparator(e.KeyChar) || char.IsPunctuation(e.KeyChar))
             {
                 e.Handled = true;
@@ -298,6 +299,20 @@ namespace CapaPresentacion
             if (Char.IsNumber(e.KeyChar))
             {
                 e.Handled = false;
+                var tabla = NCliente.BuscarCliente(txtDni.Text);
+                if (tabla.Rows.Count>0)
+                {
+                    if (txtDni.Text== tabla.Rows[0]["dni"].ToString())
+                    {                       
+                        txtDni.Focus();
+                        epCliente.Clear();
+                        epCliente.SetError(txtDni, "ya cuenta con un registro ");
+                    }
+                    else
+                    {
+                        epCliente.Clear();
+                    }
+                }
             }          
             
             

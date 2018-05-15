@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnNuevoCliente = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +52,11 @@
             this.Editar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnNuevoCliente = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +69,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dgvCliente);
             this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 0;
@@ -87,64 +97,15 @@
             this.Editar,
             this.Eliminar,
             this.Ver});
-            this.dgvCliente.Location = new System.Drawing.Point(3, 3);
-            this.dgvCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCliente.Location = new System.Drawing.Point(3, 4);
+            this.dgvCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgvCliente.Size = new System.Drawing.Size(822, 429);
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCliente.Size = new System.Drawing.Size(834, 441);
             this.dgvCliente.TabIndex = 0;
             this.dgvCliente.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCliente_CellMouseDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Buscar cliente";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(413, 25);
-            this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btnNuevoCliente
-            // 
-            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCliente.Image")));
-            this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(636, 23);
-            this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(147, 34);
-            this.btnNuevoCliente.TabIndex = 21;
-            this.btnNuevoCliente.Text = "Nuevo";
-            this.btnNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 7);
-            this.panel2.TabIndex = 22;
             // 
             // Item
             // 
@@ -155,6 +116,8 @@
             // 
             // Codigo
             // 
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle57;
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
@@ -163,6 +126,9 @@
             // 
             // Nombres
             // 
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle58.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Nombres.DefaultCellStyle = dataGridViewCellStyle58;
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
@@ -170,6 +136,8 @@
             // 
             // Apellidos
             // 
+            dataGridViewCellStyle59.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Apellidos.DefaultCellStyle = dataGridViewCellStyle59;
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
@@ -177,12 +145,17 @@
             // 
             // Dni
             // 
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle60.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Dni.DefaultCellStyle = dataGridViewCellStyle60;
             this.Dni.HeaderText = "Dni";
             this.Dni.Name = "Dni";
             this.Dni.ReadOnly = true;
             // 
             // Sexo
             // 
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Sexo.DefaultCellStyle = dataGridViewCellStyle61;
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
             this.Sexo.ReadOnly = true;
@@ -190,12 +163,16 @@
             // 
             // Telefono
             // 
+            dataGridViewCellStyle62.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Telefono.DefaultCellStyle = dataGridViewCellStyle62;
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
             // 
             // Correo
             // 
+            dataGridViewCellStyle63.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Correo.DefaultCellStyle = dataGridViewCellStyle63;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
@@ -203,6 +180,8 @@
             // 
             // Direccion
             // 
+            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle64;
             this.Direccion.HeaderText = "Dirección";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
@@ -236,9 +215,64 @@
             this.Ver.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Ver.Width = 150;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Buscar cliente";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtBuscar.Location = new System.Drawing.Point(149, 28);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscar.MaxLength = 8;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(413, 25);
+            this.txtBuscar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.txtBuscar, "Buscar por Dni");
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            // 
+            // btnNuevoCliente
+            // 
+            this.btnNuevoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnNuevoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCliente.Image")));
+            this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoCliente.Location = new System.Drawing.Point(636, 23);
+            this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnNuevoCliente.Name = "btnNuevoCliente";
+            this.btnNuevoCliente.Size = new System.Drawing.Size(147, 34);
+            this.btnNuevoCliente.TabIndex = 21;
+            this.btnNuevoCliente.Text = "Nuevo";
+            this.btnNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnNuevoCliente, "Nuevo");
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 7);
+            this.panel2.TabIndex = 22;
+            // 
             // frmListCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
             this.Controls.Add(this.panel2);
@@ -246,9 +280,9 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F);
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmListCliente";
             this.Text = "frmListCliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListCliente_FormClosed);
@@ -280,5 +314,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Editar;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -11,6 +11,7 @@ namespace CapaNegocio
 {
     public class NMascota
     {
+        public NMascota() { }
         public static string InsertarMascota(string nombre, string edad, string sexo, string peso, string descripcion, int idRaza, int idCliente, byte[] foto)
         {
             DMascota objMascota = new DMascota();

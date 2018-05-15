@@ -57,16 +57,17 @@ namespace CapaPresentacion
         }
         private void estiloDgv()
         {
-            this.dgvMascota.DefaultCellStyle.Font = new Font("Arial", 9);
+            this.dgvMascota.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             this.dgvMascota.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvMascota.DefaultCellStyle.BackColor = Color.White;
             this.dgvMascota.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.dgvMascota.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 231, 117);
+            this.dgvMascota.DefaultCellStyle.SelectionBackColor = Color.FromArgb(77, 182, 172);
         }
         private void frmListMascota_Load(object sender, EventArgs e)
         {
             NMascota objMascota = new NMascota();
             objMascota.ListadoDgv(dgvMascota);
+            estiloDgv();
 
             dgvMascota.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
             dgvMascota.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
@@ -80,7 +81,7 @@ namespace CapaPresentacion
             dgvMascota.Columns[14].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvMascota.Columns[15].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
 
-            dgvMascota.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dgvMascota.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
         }
         
 
@@ -119,7 +120,9 @@ namespace CapaPresentacion
                     frmMascota.MiFormMascota.pbFoto.Image = Image.FromStream(ms);
                     frmMascota.MiFormMascota._idMascota = idmascota;
                     frmMascota.MiFormMascota._idCliente = Convert.ToInt32(tabla.Rows[0]["idcliente"].ToString());
-                   /* frmMascota.MiFormMascota._idRaza = Convert.ToInt32(tabla.Rows[0]["idraza"].ToString());*/
+                    /* frmMascota.MiFormMascota._idRaza = Convert.ToInt32(tabla.Rows[0]["idraza"].ToString());*/
+                    frmMascota.MiFormMascota.txtCodigo.Visible = true;
+                    frmMascota.MiFormMascota.label1.Visible = true;
                     frmMascota.MiFormMascota._IsNew = false;
                     frmMascota.MiFormMascota.txtBuscar.Enabled = false;
                     frmMascota.MiFormMascota.cboEspecie.Enabled = false;

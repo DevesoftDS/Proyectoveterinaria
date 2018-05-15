@@ -51,6 +51,8 @@
     <Compile Include="DCita.cs" />
     <Compile Include="DCliente.cs" />
     <Compile Include="DConexion.cs" />
+    <Compile Include="DDetalleCita.cs" />
+    <Compile Include="DPagoServicio.cs" />
     <Compile Include="DDetalleIngresoArticulo.cs" />
     <Compile Include="DDetalleVenta.cs" />
     <Compile Include="DEmpleado.cs" />

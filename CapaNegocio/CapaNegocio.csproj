@@ -49,6 +49,8 @@
     <Compile Include="NCategoria.cs" />
     <Compile Include="NCita.cs" />
     <Compile Include="NCliente.cs" />
+    <Compile Include="NDetalleCita.cs" />
+    <Compile Include="NPagoServicio.cs" />
     <Compile Include="NDetalleIngresoArticulo.cs" />
     <Compile Include="NDetalleVenta.cs" />
     <Compile Include="NEmpleado.cs" />
