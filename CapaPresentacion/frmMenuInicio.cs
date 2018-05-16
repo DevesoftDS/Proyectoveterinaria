@@ -17,6 +17,16 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
         private void timerHoraFecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
