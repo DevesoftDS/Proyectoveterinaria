@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCita));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,6 +55,8 @@
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
+            this.btnRefresh = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,12 +80,13 @@
             this.btnNuevaCita.ForeColor = System.Drawing.Color.White;
             this.btnNuevaCita.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaCita.Image")));
             this.btnNuevaCita.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevaCita.Location = new System.Drawing.Point(635, 27);
+            this.btnNuevaCita.Location = new System.Drawing.Point(609, 27);
             this.btnNuevaCita.Name = "btnNuevaCita";
             this.btnNuevaCita.Size = new System.Drawing.Size(147, 34);
             this.btnNuevaCita.TabIndex = 31;
             this.btnNuevaCita.Text = "Nueva Cita";
             this.btnNuevaCita.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.btnNuevaCita, "Nueva cita");
             this.btnNuevaCita.Click += new System.EventHandler(this.btnNuevaCita_Click);
             // 
             // txtBuscar
@@ -95,6 +99,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(204, 25);
             this.txtBuscar.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.txtBuscar, "bucsar");
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // label1
@@ -254,6 +259,7 @@
             // 
             // dtpBuscar
             // 
+            this.dtpBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
             this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBuscar.Location = new System.Drawing.Point(330, 32);
@@ -261,13 +267,28 @@
             this.dtpBuscar.Name = "dtpBuscar";
             this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
             this.dtpBuscar.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.dtpBuscar, "Buscar por Fecha");
             this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(773, 28);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmListCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dtpBuscar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevaCita);
@@ -310,5 +331,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }

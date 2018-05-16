@@ -225,5 +225,11 @@ namespace CapaPresentacion
             objCliente.ListarBusquedaEmpleado(dgvEmpleado, txtBuscar.Text);
 
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            NEmpleado objEmpleado = new NEmpleado();
+            objEmpleado.ListadoDgv(dgvEmpleado);
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace CapaPresentacion
             }
             if (citastotal.Rows.Count > 0)
             {
-                txtTotalCitas.Text = citastotal.Rows[0]["atender"].ToString();
+                txtTotalAtender.Text = citastotal.Rows[0]["atender"].ToString();
             }
         }
     }

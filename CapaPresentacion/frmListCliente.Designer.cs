@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
@@ -57,6 +57,7 @@
             this.btnNuevoCliente = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnRefresh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
@@ -116,8 +117,8 @@
             // 
             // Codigo
             // 
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle1;
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
@@ -126,9 +127,9 @@
             // 
             // Nombres
             // 
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle58.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Nombres.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Nombres.DefaultCellStyle = dataGridViewCellStyle2;
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
             this.Nombres.ReadOnly = true;
@@ -136,8 +137,8 @@
             // 
             // Apellidos
             // 
-            dataGridViewCellStyle59.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Apellidos.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Apellidos.DefaultCellStyle = dataGridViewCellStyle3;
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
@@ -145,17 +146,17 @@
             // 
             // Dni
             // 
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Dni.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Dni.DefaultCellStyle = dataGridViewCellStyle4;
             this.Dni.HeaderText = "Dni";
             this.Dni.Name = "Dni";
             this.Dni.ReadOnly = true;
             // 
             // Sexo
             // 
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Sexo.DefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Sexo.DefaultCellStyle = dataGridViewCellStyle5;
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
             this.Sexo.ReadOnly = true;
@@ -163,16 +164,16 @@
             // 
             // Telefono
             // 
-            dataGridViewCellStyle62.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Telefono.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Telefono.DefaultCellStyle = dataGridViewCellStyle6;
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
             // 
             // Correo
             // 
-            dataGridViewCellStyle63.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Correo.DefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Correo.DefaultCellStyle = dataGridViewCellStyle7;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
@@ -180,8 +181,8 @@
             // 
             // Direccion
             // 
-            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.Direccion.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle8;
             this.Direccion.HeaderText = "Dirección";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
@@ -235,7 +236,7 @@
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(413, 25);
+            this.txtBuscar.Size = new System.Drawing.Size(330, 25);
             this.txtBuscar.TabIndex = 2;
             this.toolTip1.SetToolTip(this.txtBuscar, "Buscar por Dni");
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
@@ -250,7 +251,7 @@
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
             this.btnNuevoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCliente.Image")));
             this.btnNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(636, 23);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(574, 23);
             this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(147, 34);
@@ -270,11 +271,25 @@
             this.panel2.Size = new System.Drawing.Size(834, 7);
             this.panel2.TabIndex = 22;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(748, 24);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 35;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmListCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.txtBuscar);
@@ -315,5 +330,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }

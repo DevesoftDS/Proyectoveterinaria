@@ -190,5 +190,11 @@ namespace CapaPresentacion
             NCliente objCliente = new NCliente();
             objCliente.ListarBusquedaCliente(dgvCliente, txtBuscar.Text);
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            NCliente objCliente = new NCliente();
+            objCliente.ListadoDgv(dgvCliente);
+        }
     }
 }

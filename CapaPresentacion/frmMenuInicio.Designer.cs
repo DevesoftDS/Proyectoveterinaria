@@ -48,7 +48,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtTotalCitas = new System.Windows.Forms.Label();
+            this.txtTotalAtender = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -224,7 +224,7 @@
             this.panel7.Controls.Add(this.label11);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.txtTotalCitas);
+            this.panel7.Controls.Add(this.txtTotalAtender);
             this.panel7.Location = new System.Drawing.Point(553, 33);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(247, 135);
@@ -274,16 +274,16 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "Citas a Atender Hoy";
             // 
-            // txtTotalCitas
+            // txtTotalAtender
             // 
-            this.txtTotalCitas.AutoSize = true;
-            this.txtTotalCitas.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCitas.ForeColor = System.Drawing.Color.White;
-            this.txtTotalCitas.Location = new System.Drawing.Point(22, 35);
-            this.txtTotalCitas.Name = "txtTotalCitas";
-            this.txtTotalCitas.Size = new System.Drawing.Size(49, 37);
-            this.txtTotalCitas.TabIndex = 6;
-            this.txtTotalCitas.Text = "00";
+            this.txtTotalAtender.AutoSize = true;
+            this.txtTotalAtender.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAtender.ForeColor = System.Drawing.Color.White;
+            this.txtTotalAtender.Location = new System.Drawing.Point(22, 35);
+            this.txtTotalAtender.Name = "txtTotalAtender";
+            this.txtTotalAtender.Size = new System.Drawing.Size(49, 37);
+            this.txtTotalAtender.TabIndex = 6;
+            this.txtTotalAtender.Text = "00";
             // 
             // panel3
             // 
@@ -470,7 +470,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label txtTotalCitas;
+        private System.Windows.Forms.Label txtTotalAtender;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.LinkLabel linkLabel2;

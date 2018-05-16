@@ -178,6 +178,7 @@
             // 
             // label1
             // 
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
@@ -186,6 +187,8 @@
             this.label1.Size = new System.Drawing.Size(51, 51);
             this.label1.TabIndex = 2;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.label1, "Cerrar Sesión");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

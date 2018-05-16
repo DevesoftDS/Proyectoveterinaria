@@ -65,8 +65,9 @@ namespace CapaPresentacion
         private void frmListCita_Load(object sender, EventArgs e)
         {
            
-            var tabla = new NCita();
+            var tabla = new NCita();            
             tabla.ListadoDgv(dgvCita);
+
             estiloDgv();
 
             dgvCita.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomCenter;
@@ -119,6 +120,12 @@ namespace CapaPresentacion
             {
                 objcita.ListadoDgv(dgvCita);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            var tabla = new NCita();
+            tabla.ListadoDgv(dgvCita);
         }
     }
 }

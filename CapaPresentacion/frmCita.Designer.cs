@@ -309,7 +309,6 @@
             this.cboTipoDoc.ForeColor = System.Drawing.Color.Black;
             this.cboTipoDoc.FormattingEnabled = true;
             this.cboTipoDoc.Items.AddRange(new object[] {
-            "--SELECCIONE--",
             "BOLETA"});
             this.cboTipoDoc.Location = new System.Drawing.Point(767, 70);
             this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

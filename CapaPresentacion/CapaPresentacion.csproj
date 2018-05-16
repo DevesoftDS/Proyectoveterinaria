@@ -444,6 +444,7 @@
     <Content Include="imgAplicacion\art_image.png" />
     <Content Include="imgAplicacion\back_frm.png" />
     <Content Include="imgAplicacion\Caduceus.png" />
+    <Content Include="imgAplicacion\calendar.png" />
     <Content Include="imgAplicacion\Cancel.png" />
     <Content Include="imgAplicacion\Category.png" />
     <Content Include="imgAplicacion\Circle.png" />

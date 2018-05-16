@@ -179,5 +179,12 @@ namespace CapaPresentacion
             AbrirFormHija(new frmSubMenuReportes());
             this.barraSubMenu.Controls.Clear();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            new FrmLogin().Show();
+            this.Close();
+
+        }
     }
 }

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListUsuario));
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +51,8 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRefrech = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +77,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(431, 25);
             this.txtBuscar.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.txtBuscar, "Buscar  dni empleado");
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label1
@@ -224,25 +228,25 @@
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 28;
             // 
-            // btnRefrech
+            // btnRefresh
             // 
-            this.btnRefrech.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefrech.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRefrech.Location = new System.Drawing.Point(613, 28);
-            this.btnRefrech.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.btnRefrech.Name = "btnRefrech";
-            this.btnRefrech.Size = new System.Drawing.Size(60, 25);
-            this.btnRefrech.TabIndex = 33;
-            this.btnRefrech.Text = "u";
-            this.btnRefrech.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(615, 28);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 25);
+            this.btnRefresh.TabIndex = 39;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmListUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
-            this.Controls.Add(this.btnRefrech);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
@@ -278,6 +282,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn Editar;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
-        private System.Windows.Forms.Label btnRefrech;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }

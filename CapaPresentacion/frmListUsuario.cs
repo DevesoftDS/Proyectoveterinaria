@@ -214,9 +214,10 @@ namespace CapaPresentacion
             objUser.ListarBusquedaUsuario(dgvUsuario, txtBuscar.Text.Trim());
         }
 
-        private void btnRefrech_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             NUsusario objUser = new NUsusario();
+
             objUser.ListadoDgv(dgvUsuario);
         }
     }

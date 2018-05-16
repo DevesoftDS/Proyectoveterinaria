@@ -126,7 +126,7 @@ namespace CapaPresentacion
         }
         private void frmCita_Load(object sender, EventArgs e)
         {
-            
+            dtpFecha.Value = DateTime.Now;
             var tabla = NArea.ListarArea();
 
             if (tabla.Rows.Count > 0)
@@ -138,6 +138,7 @@ namespace CapaPresentacion
             cboTipoDoc.SelectedIndex = 0;
             txtCorrelativo.Text = "";
             estiloDgv();
+            NumeroComprobante();
             dgvMacota.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgvDetalleCita.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
            
@@ -428,9 +429,13 @@ namespace CapaPresentacion
         int quit = 0;
         private void cboTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DateTime AnioActual = DateTime.Today;           
-            string cadena = string.Format("{0}",AnioActual.Year).ToString();
-            string extraer = cadena.Substring(cadena.Length-2);
+            NumeroComprobante();
+        }
+        private void NumeroComprobante()
+        {
+            DateTime AnioActual = DateTime.Today;
+            string cadena = string.Format("{0}", AnioActual.Year).ToString();
+            string extraer = cadena.Substring(cadena.Length - 2);
 
             string simbolo = "0";
             char espacio = Convert.ToChar("0");
@@ -442,17 +447,17 @@ namespace CapaPresentacion
                 if (cboTipoDoc.SelectedItem.Equals("BOLETA"))
                 {
                     epCita.Clear();
-                    txtSerie.Text = "00000"+extraer;
+                    txtSerie.Text = "00000" + extraer;
                     txtCorrelativo.Text = "000000001";
                 }
-               /* else if (cboTipoDoc.SelectedItem.Equals("FACTURA"))
-                {
-                    epCita.Clear();
-                    txtSerie.Text = "0000002";
-                    txtCorrelativo.Text = "000000001";
-                }*/
+                /* else if (cboTipoDoc.SelectedItem.Equals("FACTURA"))
+                 {
+                     epCita.Clear();
+                     txtSerie.Text = "0000002";
+                     txtCorrelativo.Text = "000000001";
+                 }*/
                 else
-                {                   
+                {
                     txtSerie.Text = "";
                     txtCorrelativo.Text = "";
 
@@ -465,10 +470,10 @@ namespace CapaPresentacion
                     epCita.Clear();
                     txtSerie.Text = "00000" + extraer;
                     var capcorrelativo = NPagoServicio.GenerarCorrelativo(cboTipoDoc.Text, txtSerie.Text);
-                                        
+
                     if (capcorrelativo.Rows.Count > 0)
                     {
-                        if (capcorrelativo.Rows[0]["correlativo"].ToString().Length==0)
+                        if (capcorrelativo.Rows[0]["correlativo"].ToString().Length == 0)
                         {
                             txtCorrelativo.Text = "000000001";
                         }
@@ -510,8 +515,8 @@ namespace CapaPresentacion
                 {
                     txtSerie.Text = "";
                     txtCorrelativo.Text = "";
-                    
-                }             
+
+                }
 
             }
         }
