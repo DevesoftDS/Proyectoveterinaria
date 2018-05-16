@@ -66,6 +66,7 @@ namespace CapaPresentacion
         private void frmListUsuario_Load(object sender, EventArgs e)
         {
             NUsusario objUser = new NUsusario();
+            
             objUser.ListadoDgv(dgvUsuario);
             estiloDgv();
 
@@ -82,9 +83,7 @@ namespace CapaPresentacion
             dgvUsuario.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvUsuario.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-        }
-
-        
+        }       
 
         private void dgvUsuario_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -213,6 +212,12 @@ namespace CapaPresentacion
         {
             NUsusario objUser = new NUsusario();
             objUser.ListarBusquedaUsuario(dgvUsuario, txtBuscar.Text.Trim());
+        }
+
+        private void btnRefrech_Click(object sender, EventArgs e)
+        {
+            NUsusario objUser = new NUsusario();
+            objUser.ListadoDgv(dgvUsuario);
         }
     }
 }

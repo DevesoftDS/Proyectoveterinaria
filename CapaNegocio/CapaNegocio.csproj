@@ -50,6 +50,7 @@
     <Compile Include="NCita.cs" />
     <Compile Include="NCliente.cs" />
     <Compile Include="NDetalleCita.cs" />
+    <Compile Include="NEstadistica.cs" />
     <Compile Include="NPagoServicio.cs" />
     <Compile Include="NDetalleIngresoArticulo.cs" />
     <Compile Include="NDetalleVenta.cs" />

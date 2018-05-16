@@ -164,18 +164,7 @@ namespace CapaPresentacion
                 epEmpleado.Clear();
                 epEmpleado.SetError(cboSexo, "Indique sexo del cliente");
             }
-            else if (string.IsNullOrEmpty(txtTelefono.Text))
-            {
-                txtTelefono.Focus();
-                epEmpleado.Clear();
-                epEmpleado.SetError(txtTelefono, "Ingrese telefono del cliente");
-            }
-            else if (string.IsNullOrEmpty(txtDireccion.Text))
-            {
-                txtDireccion.Focus();
-                epEmpleado.Clear();
-                epEmpleado.SetError(txtDireccion, "Ingrese dirección del cliente");
-            }            
+                        
 
             else
             {
@@ -227,18 +216,7 @@ namespace CapaPresentacion
                 epEmpleado.Clear();
                 epEmpleado.SetError(cboSexo, "Indique sexo del cliente");
             }
-            else if (string.IsNullOrEmpty(txtTelefono.Text))
-            {
-                txtTelefono.Focus();
-                epEmpleado.Clear();
-                epEmpleado.SetError(txtTelefono, "Ingrese telefono del cliente");
-            }
-            else if (string.IsNullOrEmpty(txtDireccion.Text))
-            {
-                txtDireccion.Focus();
-                epEmpleado.Clear();
-                epEmpleado.SetError(txtDireccion, "Ingrese dirección del cliente");
-            }
+            
 
             else
             {

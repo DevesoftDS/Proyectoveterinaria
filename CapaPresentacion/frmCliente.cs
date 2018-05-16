@@ -151,19 +151,7 @@ namespace CapaPresentacion
                 epCliente.Clear();
                 epCliente.SetError(cboSexo, "Indique sexo del cliente");
             }
-            else if (string.IsNullOrEmpty(txtTelefono.Text))
-            {
-                txtTelefono.Focus();
-                epCliente.Clear();
-                epCliente.SetError(txtTelefono, "Ingrese telefono del cliente");
-            }
-            else if (string.IsNullOrEmpty(txtDireccion.Text))
-            {
-                txtDireccion.Focus();
-                epCliente.Clear();
-                epCliente.SetError(txtDireccion, "Ingrese dirección del cliente");
-            }
-           
+                       
             else
             {
                 rpta = NCliente.InsertarCliente(
@@ -213,18 +201,7 @@ namespace CapaPresentacion
                 epCliente.Clear();
                 epCliente.SetError(cboSexo, "Indique sexo del cliente");
             }
-            else if (string.IsNullOrEmpty(txtTelefono.Text))
-            {
-                txtTelefono.Focus();
-                epCliente.Clear();
-                epCliente.SetError(txtTelefono, "Ingrese telefono del cliente");
-            }
-            else if (string.IsNullOrEmpty(txtDireccion.Text))
-            {
-                txtDireccion.Focus();
-                epCliente.Clear();
-                epCliente.SetError(txtDireccion, "Ingrese dirección del cliente");
-            }            
+                       
 
             else
             {

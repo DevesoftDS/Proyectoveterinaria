@@ -127,7 +127,7 @@
             this.panel2.Location = new System.Drawing.Point(66, 480);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(847, 205);
+            this.panel2.Size = new System.Drawing.Size(847, 155);
             this.panel2.TabIndex = 97;
             // 
             // dgvDetalleCita
@@ -153,12 +153,12 @@
             this.id_Cliente,
             this.idServicio,
             this.idEmpleado});
-            this.dgvDetalleCita.Location = new System.Drawing.Point(3, -4);
+            this.dgvDetalleCita.Location = new System.Drawing.Point(3, 3);
             this.dgvDetalleCita.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDetalleCita.Name = "dgvDetalleCita";
             this.dgvDetalleCita.ReadOnly = true;
             this.dgvDetalleCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleCita.Size = new System.Drawing.Size(835, 194);
+            this.dgvDetalleCita.Size = new System.Drawing.Size(835, 143);
             this.dgvDetalleCita.TabIndex = 1;
             this.dgvDetalleCita.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleCita_CellClick);
             // 
@@ -271,7 +271,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label30.Location = new System.Drawing.Point(708, 690);
+            this.label30.Location = new System.Drawing.Point(730, 640);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(65, 18);
@@ -305,7 +305,7 @@
             // cboTipoDoc
             // 
             this.cboTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoDoc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoDoc.ForeColor = System.Drawing.Color.Black;
             this.cboTipoDoc.FormattingEnabled = true;
             this.cboTipoDoc.Items.AddRange(new object[] {
@@ -314,7 +314,7 @@
             this.cboTipoDoc.Location = new System.Drawing.Point(767, 70);
             this.cboTipoDoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboTipoDoc.Name = "cboTipoDoc";
-            this.cboTipoDoc.Size = new System.Drawing.Size(146, 25);
+            this.cboTipoDoc.Size = new System.Drawing.Size(146, 24);
             this.cboTipoDoc.TabIndex = 90;
             this.cboTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cboTipoDoc_SelectedIndexChanged);
             // 
@@ -367,13 +367,13 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
             this.txtBuscar.Location = new System.Drawing.Point(192, 98);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(251, 25);
+            this.txtBuscar.Size = new System.Drawing.Size(251, 22);
             this.txtBuscar.TabIndex = 1;
             this.toolTip1.SetToolTip(this.txtBuscar, "Buscar por Dni");
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
@@ -383,7 +383,7 @@
             this.txtCorrelativo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCorrelativo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtCorrelativo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtCorrelativo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorrelativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorrelativo.ForeColor = System.Drawing.Color.Black;
             this.txtCorrelativo.Location = new System.Drawing.Point(767, 122);
             this.txtCorrelativo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -398,9 +398,9 @@
             this.txtCliente.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtCliente.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCliente.Location = new System.Drawing.Point(192, 131);
+            this.txtCliente.Location = new System.Drawing.Point(192, 127);
             this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(322, 25);
@@ -436,7 +436,7 @@
             this.txtSerie.BackColor = System.Drawing.Color.Gainsboro;
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtSerie.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtSerie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSerie.ForeColor = System.Drawing.Color.Black;
             this.txtSerie.Location = new System.Drawing.Point(767, 97);
             this.txtSerie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -453,13 +453,13 @@
             this.txtTotal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTotal.Location = new System.Drawing.Point(781, 687);
+            this.txtTotal.Location = new System.Drawing.Point(803, 637);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(125, 25);
+            this.txtTotal.Size = new System.Drawing.Size(103, 25);
             this.txtTotal.TabIndex = 84;
             this.txtTotal.Text = "00.00.00";
-            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgvMacota
             // 
@@ -556,7 +556,7 @@
             this.txtCosto.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCosto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtCosto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtCosto.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCosto.ForeColor = System.Drawing.Color.Black;
             this.txtCosto.Location = new System.Drawing.Point(585, 4);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -580,13 +580,13 @@
             // cboArea
             // 
             this.cboArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboArea.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboArea.ForeColor = System.Drawing.Color.Black;
             this.cboArea.FormattingEnabled = true;
             this.cboArea.Location = new System.Drawing.Point(82, 5);
             this.cboArea.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboArea.Name = "cboArea";
-            this.cboArea.Size = new System.Drawing.Size(173, 25);
+            this.cboArea.Size = new System.Drawing.Size(173, 24);
             this.cboArea.TabIndex = 3;
             this.cboArea.SelectedValueChanged += new System.EventHandler(this.cboArea_SelectedValueChanged);
             // 
@@ -617,13 +617,13 @@
             // cboServicio
             // 
             this.cboServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboServicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboServicio.ForeColor = System.Drawing.Color.Black;
             this.cboServicio.FormattingEnabled = true;
             this.cboServicio.Location = new System.Drawing.Point(335, 5);
             this.cboServicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboServicio.Name = "cboServicio";
-            this.cboServicio.Size = new System.Drawing.Size(160, 25);
+            this.cboServicio.Size = new System.Drawing.Size(160, 24);
             this.cboServicio.TabIndex = 4;
             // 
             // label12
@@ -644,11 +644,12 @@
             this.dtpFecha.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dtpFecha.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.dtpFecha.CustomFormat = "dd-MM-yyyy";
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(83, 34);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(173, 27);
+            this.dtpFecha.Size = new System.Drawing.Size(173, 22);
             this.dtpFecha.TabIndex = 7;
             this.dtpFecha.Value = new System.DateTime(2018, 5, 10, 0, 0, 0, 0);
             // 
@@ -684,12 +685,13 @@
             this.dtpHora.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dtpHora.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.dtpHora.CustomFormat = "hh:mm tt";
+            this.dtpHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHora.Location = new System.Drawing.Point(335, 34);
             this.dtpHora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpHora.Name = "dtpHora";
             this.dtpHora.ShowUpDown = true;
-            this.dtpHora.Size = new System.Drawing.Size(160, 27);
+            this.dtpHora.Size = new System.Drawing.Size(160, 22);
             this.dtpHora.TabIndex = 89;
             this.dtpHora.ValueChanged += new System.EventHandler(this.dtpHora_ValueChanged);
             // 
@@ -744,12 +746,12 @@
             // txtDescuento
             // 
             this.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescuento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescuento.ForeColor = System.Drawing.Color.Black;
             this.txtDescuento.Location = new System.Drawing.Point(585, 36);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(71, 25);
+            this.txtDescuento.Size = new System.Drawing.Size(71, 22);
             this.txtDescuento.TabIndex = 10;
             this.txtDescuento.Text = "00.00";
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -758,33 +760,33 @@
             // cboEmpleado
             // 
             this.cboEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEmpleado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEmpleado.ForeColor = System.Drawing.Color.Black;
             this.cboEmpleado.FormattingEnabled = true;
             this.cboEmpleado.Location = new System.Drawing.Point(82, 65);
             this.cboEmpleado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(173, 25);
+            this.cboEmpleado.Size = new System.Drawing.Size(173, 24);
             this.cboEmpleado.TabIndex = 11;
             // 
             // txtSintoma
             // 
-            this.txtSintoma.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSintoma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSintoma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSintoma.Location = new System.Drawing.Point(82, 94);
             this.txtSintoma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSintoma.Name = "txtSintoma";
-            this.txtSintoma.Size = new System.Drawing.Size(574, 25);
+            this.txtSintoma.Size = new System.Drawing.Size(574, 22);
             this.txtSintoma.TabIndex = 13;
             // 
             // txtMotivo
             // 
-            this.txtMotivo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.ForeColor = System.Drawing.Color.Black;
             this.txtMotivo.Location = new System.Drawing.Point(335, 65);
             this.txtMotivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(321, 25);
+            this.txtMotivo.Size = new System.Drawing.Size(321, 22);
             this.txtMotivo.TabIndex = 12;
             // 
             // label14
@@ -893,7 +895,7 @@
             this.btnGeneraComprobante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGeneraComprobante.Image = ((System.Drawing.Image)(resources.GetObject("btnGeneraComprobante.Image")));
             this.btnGeneraComprobante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneraComprobante.Location = new System.Drawing.Point(537, 727);
+            this.btnGeneraComprobante.Location = new System.Drawing.Point(537, 670);
             this.btnGeneraComprobante.Name = "btnGeneraComprobante";
             this.btnGeneraComprobante.Size = new System.Drawing.Size(187, 53);
             this.btnGeneraComprobante.TabIndex = 92;
@@ -911,7 +913,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(151, 727);
+            this.btnGuardar.Location = new System.Drawing.Point(151, 670);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(187, 53);
             this.btnGuardar.TabIndex = 94;
@@ -929,7 +931,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(344, 727);
+            this.btnCancelar.Location = new System.Drawing.Point(344, 670);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(187, 53);
             this.btnCancelar.TabIndex = 93;
@@ -942,7 +944,7 @@
             this.lblVerDetalle.AutoSize = true;
             this.lblVerDetalle.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVerDetalle.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(166)))), ((int)(((byte)(154)))));
-            this.lblVerDetalle.Location = new System.Drawing.Point(537, 135);
+            this.lblVerDetalle.Location = new System.Drawing.Point(537, 134);
             this.lblVerDetalle.Name = "lblVerDetalle";
             this.lblVerDetalle.Size = new System.Drawing.Size(71, 18);
             this.lblVerDetalle.TabIndex = 102;
@@ -970,7 +972,7 @@
             this.txtMascota.BackColor = System.Drawing.Color.Gainsboro;
             this.txtMascota.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtMascota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtMascota.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMascota.ForeColor = System.Drawing.Color.Black;
             this.txtMascota.Location = new System.Drawing.Point(335, 4);
             this.txtMascota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -984,7 +986,7 @@
             this.txtCodigo.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtCodigo.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.Black;
             this.txtCodigo.Location = new System.Drawing.Point(82, 4);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -998,7 +1000,7 @@
             this.txtId.BackColor = System.Drawing.Color.Gainsboro;
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.txtId.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.txtId.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtId.ForeColor = System.Drawing.Color.Black;
             this.txtId.Location = new System.Drawing.Point(585, 4);
             this.txtId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1047,7 +1049,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 824);
+            this.ClientSize = new System.Drawing.Size(979, 756);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.lblVerDetalle);
             this.Controls.Add(this.btnQuitar);

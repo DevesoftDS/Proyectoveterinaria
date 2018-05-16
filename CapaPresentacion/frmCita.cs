@@ -565,7 +565,7 @@ namespace CapaPresentacion
             {
                 int ultimoPagoServicio = NPagoServicio.InsertarPagoServicio(cboTipoDoc.Text, txtSerie.Text);              
 
-                int ultimoidCita = NCita.InsertarCita(ultimoPagoServicio, 1,Convert.ToDecimal(txtTotal.Text));
+                int ultimoidCita = NCita.InsertarCita(ultimoPagoServicio, Program.idUsuario,Convert.ToDecimal(txtTotal.Text));
 
                 int numfilas = dgvDetalleCita.Rows.Count;
                

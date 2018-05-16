@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -446,6 +445,7 @@
     <Content Include="imgAplicacion\empleado.png" />
     <Content Include="imgAplicacion\Facebook.png" />
     <Content Include="imgAplicacion\Facebook2.png" />
+    <Content Include="imgAplicacion\fondo2.jpg" />
     <Content Include="imgAplicacion\Google Plus.png" />
     <Content Include="imgAplicacion\Google Plus2.png" />
     <Content Include="imgAplicacion\Help - 02.png" />

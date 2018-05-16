@@ -39,8 +39,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCita = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +52,8 @@
             this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.btnNuevaCita.ForeColor = System.Drawing.Color.White;
             this.btnNuevaCita.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaCita.Image")));
             this.btnNuevaCita.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevaCita.Location = new System.Drawing.Point(636, 23);
+            this.btnNuevaCita.Location = new System.Drawing.Point(635, 27);
             this.btnNuevaCita.Name = "btnNuevaCita";
             this.btnNuevaCita.Size = new System.Drawing.Size(147, 34);
             this.btnNuevaCita.TabIndex = 31;
@@ -89,7 +89,7 @@
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtBuscar.Location = new System.Drawing.Point(149, 32);
+            this.txtBuscar.Location = new System.Drawing.Point(106, 32);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscar.MaxLength = 8;
             this.txtBuscar.Name = "txtBuscar";
@@ -140,30 +140,6 @@
             this.dgvCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCita.Size = new System.Drawing.Size(825, 431);
             this.dgvCita.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dgvCita);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 441);
-            this.panel1.TabIndex = 28;
-            // 
-            // dtpBuscar
-            // 
-            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
-            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBuscar.Location = new System.Drawing.Point(373, 32);
-            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpBuscar.Name = "dtpBuscar";
-            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
-            this.dtpBuscar.TabIndex = 33;
-            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
             // 
             // item
             // 
@@ -262,6 +238,30 @@
             this.total.Name = "total";
             this.total.ReadOnly = true;
             this.total.Width = 150;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dgvCita);
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 441);
+            this.panel1.TabIndex = 28;
+            // 
+            // dtpBuscar
+            // 
+            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
+            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBuscar.Location = new System.Drawing.Point(330, 32);
+            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpBuscar.Name = "dtpBuscar";
+            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
+            this.dtpBuscar.TabIndex = 33;
+            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
             // 
             // frmListCita
             // 
