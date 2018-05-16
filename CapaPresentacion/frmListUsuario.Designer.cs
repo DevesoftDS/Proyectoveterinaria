@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Ver = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRefrech = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -135,8 +136,8 @@
             // 
             // personal
             // 
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.personal.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.personal.DefaultCellStyle = dataGridViewCellStyle1;
             this.personal.HeaderText = "Personal";
             this.personal.Name = "personal";
             this.personal.ReadOnly = true;
@@ -144,8 +145,8 @@
             // 
             // usuario
             // 
-            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle2;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -153,8 +154,8 @@
             // 
             // password
             // 
-            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.password.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.password.DefaultCellStyle = dataGridViewCellStyle3;
             this.password.HeaderText = "Password";
             this.password.Name = "password";
             this.password.ReadOnly = true;
@@ -162,8 +163,8 @@
             // 
             // tipo
             // 
-            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.tipo.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.tipo.DefaultCellStyle = dataGridViewCellStyle4;
             this.tipo.HeaderText = "Tipo";
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
@@ -171,8 +172,8 @@
             // 
             // idEmpleado
             // 
-            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.idEmpleado.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.idEmpleado.DefaultCellStyle = dataGridViewCellStyle5;
             this.idEmpleado.HeaderText = "IdEmpleado";
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
@@ -223,11 +224,25 @@
             this.panel1.Size = new System.Drawing.Size(834, 441);
             this.panel1.TabIndex = 28;
             // 
+            // btnRefrech
+            // 
+            this.btnRefrech.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefrech.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefrech.Location = new System.Drawing.Point(613, 28);
+            this.btnRefrech.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btnRefrech.Name = "btnRefrech";
+            this.btnRefrech.Size = new System.Drawing.Size(60, 25);
+            this.btnRefrech.TabIndex = 33;
+            this.btnRefrech.Text = "u";
+            this.btnRefrech.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
+            // 
             // frmListUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.btnRefrech);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
@@ -263,5 +278,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Editar;
         private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
         private System.Windows.Forms.DataGridViewLinkColumn Ver;
+        private System.Windows.Forms.Label btnRefrech;
     }
 }
