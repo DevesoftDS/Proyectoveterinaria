@@ -45,6 +45,7 @@
             this.btnNuevoIngresoArticulo = new System.Windows.Forms.Label();
             this.txtBuscarIngreso = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresoArt)).BeginInit();
             this.SuspendLayout();
@@ -171,7 +172,7 @@
             this.btnNuevoIngresoArticulo.ForeColor = System.Drawing.Color.White;
             this.btnNuevoIngresoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoIngresoArticulo.Image")));
             this.btnNuevoIngresoArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoIngresoArticulo.Location = new System.Drawing.Point(662, 25);
+            this.btnNuevoIngresoArticulo.Location = new System.Drawing.Point(562, 27);
             this.btnNuevoIngresoArticulo.Name = "btnNuevoIngresoArticulo";
             this.btnNuevoIngresoArticulo.Size = new System.Drawing.Size(147, 40);
             this.btnNuevoIngresoArticulo.TabIndex = 26;
@@ -186,7 +187,7 @@
             this.txtBuscarIngreso.Location = new System.Drawing.Point(215, 33);
             this.txtBuscarIngreso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarIngreso.Name = "txtBuscarIngreso";
-            this.txtBuscarIngreso.Size = new System.Drawing.Size(431, 27);
+            this.txtBuscarIngreso.Size = new System.Drawing.Size(331, 27);
             this.txtBuscarIngreso.TabIndex = 25;
             this.txtBuscarIngreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarIngreso_KeyPress);
             // 
@@ -201,11 +202,23 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Buscar ingreso de articulos";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(759, 30);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 28;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmListIngresoArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevoIngresoArticulo);
@@ -241,5 +254,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }

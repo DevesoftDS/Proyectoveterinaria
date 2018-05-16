@@ -141,5 +141,10 @@ namespace CapaPresentacion
         {
             _myFormListProv = null;
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            MostarProveedor();
+        }
     }
 }

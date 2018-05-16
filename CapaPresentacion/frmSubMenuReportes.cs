@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmAcerca : Form
+    public partial class frmSubMenuReportes : Form
     {
-        public frmAcerca()
+        public frmSubMenuReportes()
         {
             InitializeComponent();
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevoArticulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +157,7 @@
             // 
             this.txtBuscarArt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarArt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarArt.Location = new System.Drawing.Point(149, 33);
+            this.txtBuscarArt.Location = new System.Drawing.Point(131, 34);
             this.txtBuscarArt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscarArt.Name = "txtBuscarArt";
             this.txtBuscarArt.Size = new System.Drawing.Size(413, 27);
@@ -168,7 +169,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(6, 36);
+            this.label1.Location = new System.Drawing.Point(12, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 20);
             this.label1.TabIndex = 13;
@@ -183,7 +184,7 @@
             this.btnNuevoArticulo.ForeColor = System.Drawing.Color.White;
             this.btnNuevoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoArticulo.Image")));
             this.btnNuevoArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoArticulo.Location = new System.Drawing.Point(636, 27);
+            this.btnNuevoArticulo.Location = new System.Drawing.Point(574, 27);
             this.btnNuevoArticulo.Name = "btnNuevoArticulo";
             this.btnNuevoArticulo.Size = new System.Drawing.Size(147, 40);
             this.btnNuevoArticulo.TabIndex = 15;
@@ -201,6 +202,17 @@
             this.panel2.Size = new System.Drawing.Size(834, 6);
             this.panel2.TabIndex = 16;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(776, 30);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmListArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -209,6 +221,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevoArticulo);
             this.Controls.Add(this.txtBuscarArt);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,5 +255,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }

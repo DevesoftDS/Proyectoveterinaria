@@ -154,25 +154,27 @@
             // 
             // lblTipoUser
             // 
-            this.lblTipoUser.AutoSize = true;
             this.lblTipoUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoUser.ForeColor = System.Drawing.Color.Black;
-            this.lblTipoUser.Location = new System.Drawing.Point(245, 32);
+            this.lblTipoUser.Location = new System.Drawing.Point(188, 33);
             this.lblTipoUser.Name = "lblTipoUser";
-            this.lblTipoUser.Size = new System.Drawing.Size(0, 20);
+            this.lblTipoUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTipoUser.Size = new System.Drawing.Size(185, 20);
             this.lblTipoUser.TabIndex = 3;
-            this.lblTipoUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTipoUser.Text = "Administrador";
+            this.lblTipoUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNombreUsuario
             // 
-            this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(200, 12);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(188, 12);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 20);
+            this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblNombreUsuario.Size = new System.Drawing.Size(185, 20);
             this.lblNombreUsuario.TabIndex = 3;
-            this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNombreUsuario.Text = "Soto Gomez T";
+            this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -189,9 +191,9 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(118)))), ((int)(((byte)(79)))));
-            this.label2.Location = new System.Drawing.Point(12, 0);
+            this.label2.Location = new System.Drawing.Point(12, -5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 59);
+            this.label2.Size = new System.Drawing.Size(100, 58);
             this.label2.TabIndex = 2;
             this.label2.Text = "SV";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +202,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label5.Location = new System.Drawing.Point(105, 5);
+            this.label5.Location = new System.Drawing.Point(104, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(255, 57);
             this.label5.TabIndex = 2;
@@ -264,6 +266,7 @@
             this.btnAcerca.TabIndex = 1;
             this.btnAcerca.TabStop = false;
             this.btnAcerca.Text = "Acerca de ...";
+            this.toolTip1.SetToolTip(this.btnAcerca, "Informaciòn del sistema");
             this.btnAcerca.UseVisualStyleBackColor = false;
             this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
             // 
@@ -283,8 +286,9 @@
             this.btnReportes.TabIndex = 1;
             this.btnReportes.TabStop = false;
             this.btnReportes.Text = "Reportes";
-            this.toolTip1.SetToolTip(this.btnReportes, "Acerca y ayuda del software");
+            this.toolTip1.SetToolTip(this.btnReportes, "Reportes");
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnAlmacen
             // 
@@ -302,7 +306,7 @@
             this.btnAlmacen.TabIndex = 1;
             this.btnAlmacen.TabStop = false;
             this.btnAlmacen.Text = "Almacen";
-            this.toolTip1.SetToolTip(this.btnAlmacen, "Configuracion del sistema");
+            this.toolTip1.SetToolTip(this.btnAlmacen, "Almacen - ingreso de articulos");
             this.btnAlmacen.UseVisualStyleBackColor = false;
             this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
@@ -440,7 +444,6 @@
             this.panel4.ResumeLayout(false);
             this.barraHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.menuVertical.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -468,12 +471,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTipoUser;
-        private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.Panel barraSubMenu;
         public System.Windows.Forms.Panel barraSection;
         private System.Windows.Forms.Button btnAcerca;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNombreUsuario;
     }
 }

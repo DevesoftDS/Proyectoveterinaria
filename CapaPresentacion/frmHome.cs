@@ -86,9 +86,9 @@ namespace CapaPresentacion
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+            
             btnMaximize.Visible = false;
             btnNormal.Visible = true;
-            
 
         }
 
@@ -101,9 +101,12 @@ namespace CapaPresentacion
         
         private void frmHome_Load(object sender, EventArgs e)
         {
+            //this.StartPosition = FormStartPosition.CenterScreen;
+            btnMaximize.Visible = true;
+            btnNormal.Visible = false;
             btnHome_Click(null, e);
-            lblNombreUsuario.Text ="->  "+ Program.nombres + " " + Program.apellidos;
-            lblTipoUser.Text = "->  " + Program.tipo;
+            lblNombreUsuario.Text = Program.nombres + " " + Program.apellidos;
+            lblTipoUser.Text = Program.tipo;
         }
 
         public void AbrirFormHija(object formHija)
@@ -169,6 +172,12 @@ namespace CapaPresentacion
         private void btnAcerca_Click(object sender, EventArgs e)
         {
             new frmAcerca().ShowDialog();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new frmSubMenuReportes());
+            this.barraSubMenu.Controls.Clear();
         }
     }
 }

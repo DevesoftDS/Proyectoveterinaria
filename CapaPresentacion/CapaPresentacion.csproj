@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -266,6 +265,12 @@
     <Compile Include="frmSubMenuMantenimientoArticulo.Designer.cs">
       <DependentUpon>frmSubMenuMantenimientoArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSubMenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubMenuReportes.Designer.cs">
+      <DependentUpon>frmSubMenuReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +393,9 @@
     <EmbeddedResource Include="frmSubMenuMantenimientoArticulo.resx">
       <DependentUpon>frmSubMenuMantenimientoArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSubMenuReportes.resx">
+      <DependentUpon>frmSubMenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +451,7 @@
     <Content Include="imgAplicacion\Close WF2.png" />
     <Content Include="imgAplicacion\Close-WF.png" />
     <Content Include="imgAplicacion\Doctor.png" />
+    <Content Include="imgAplicacion\edison.jpeg" />
     <Content Include="imgAplicacion\empleado.png" />
     <Content Include="imgAplicacion\Facebook.png" />
     <Content Include="imgAplicacion\Facebook2.png" />
@@ -464,6 +473,7 @@
     <Content Include="imgAplicacion\presentacion.png" />
     <Content Include="imgAplicacion\Product2-WF.png" />
     <Content Include="imgAplicacion\proveedor.png" />
+    <Content Include="imgAplicacion\refresh.png" />
     <Content Include="imgAplicacion\remove.png" />
     <Content Include="imgAplicacion\report.png" />
     <Content Include="imgAplicacion\Sales Order-WF.png" />
@@ -473,6 +483,7 @@
     <Content Include="imgAplicacion\Shape Square 2-WF.png" />
     <Content Include="imgAplicacion\Shopping-Bag.png" />
     <Content Include="imgAplicacion\sofvet.jpeg" />
+    <Content Include="imgAplicacion\soto.jpg" />
     <Content Include="imgAplicacion\Tools - 02.png" />
     <Content Include="imgAplicacion\User-login2.png" />
     <Content Include="imgAplicacion\User-login3.png" />

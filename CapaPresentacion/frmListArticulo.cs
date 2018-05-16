@@ -158,5 +158,10 @@ namespace CapaPresentacion
             }
             //finish
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            MostrarArticulo();
+        }
     }
 }

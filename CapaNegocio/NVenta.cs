@@ -78,7 +78,7 @@ namespace CapaNegocio
                     int idventa = Convert.ToInt32(tabla.Rows[i]["idventas"].ToString());
 
                     dgv.Rows.Add(
-                        i + 1, comprobante, serie, correlativo, cliente, razon_social, ruc, fecha.ToString("dd/MM/yyyy"), subtotal, igv, total, idventa
+                        i + 1, comprobante, serie, correlativo, cliente, razon_social, ruc, fecha.ToString("dd/MM/yyyy"), subtotal, igv, total, idventa, "Ver"
                         );
                 }
             }

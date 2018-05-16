@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListVenta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListVenta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnNuevoVenta = new System.Windows.Forms.Label();
-            this.txtBuscarVenta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +46,12 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNuevoVenta = new System.Windows.Forms.Label();
+            this.txtBuscarVenta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +75,7 @@
             this.dgvVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVenta.BackgroundColor = System.Drawing.Color.White;
             this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -87,59 +90,14 @@
             this.Column9,
             this.Column10,
             this.Column11,
-            this.Column12});
+            this.Column12,
+            this.Column13});
             this.dgvVenta.Location = new System.Drawing.Point(3, 3);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvVenta.Size = new System.Drawing.Size(823, 430);
             this.dgvVenta.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 6);
-            this.panel2.TabIndex = 32;
-            // 
-            // btnNuevoVenta
-            // 
-            this.btnNuevoVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
-            this.btnNuevoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevoVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoVenta.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoVenta.Image")));
-            this.btnNuevoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoVenta.Location = new System.Drawing.Point(641, 28);
-            this.btnNuevoVenta.Name = "btnNuevoVenta";
-            this.btnNuevoVenta.Size = new System.Drawing.Size(147, 40);
-            this.btnNuevoVenta.TabIndex = 31;
-            this.btnNuevoVenta.Text = "Nuevo";
-            this.btnNuevoVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNuevoVenta.Click += new System.EventHandler(this.btnNuevoVenta_Click);
-            // 
-            // txtBuscarVenta
-            // 
-            this.txtBuscarVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscarVenta.Location = new System.Drawing.Point(135, 32);
-            this.txtBuscarVenta.Name = "txtBuscarVenta";
-            this.txtBuscarVenta.Size = new System.Drawing.Size(431, 27);
-            this.txtBuscarVenta.TabIndex = 30;
-            this.txtBuscarVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarVenta_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(12, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Buscar venta";
             // 
             // Column1
             // 
@@ -223,11 +181,77 @@
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Ver";
+            this.Column13.LinkColor = System.Drawing.Color.Green;
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(834, 6);
+            this.panel2.TabIndex = 32;
+            // 
+            // btnNuevoVenta
+            // 
+            this.btnNuevoVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(90)))));
+            this.btnNuevoVenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevoVenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoVenta.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoVenta.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoVenta.Image")));
+            this.btnNuevoVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoVenta.Location = new System.Drawing.Point(515, 25);
+            this.btnNuevoVenta.Name = "btnNuevoVenta";
+            this.btnNuevoVenta.Size = new System.Drawing.Size(147, 40);
+            this.btnNuevoVenta.TabIndex = 31;
+            this.btnNuevoVenta.Text = "Nuevo";
+            this.btnNuevoVenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNuevoVenta.Click += new System.EventHandler(this.btnNuevoVenta_Click);
+            // 
+            // txtBuscarVenta
+            // 
+            this.txtBuscarVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuscarVenta.Location = new System.Drawing.Point(135, 32);
+            this.txtBuscarVenta.Name = "txtBuscarVenta";
+            this.txtBuscarVenta.Size = new System.Drawing.Size(338, 27);
+            this.txtBuscarVenta.TabIndex = 30;
+            this.txtBuscarVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarVenta_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Buscar venta";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(739, 28);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 33;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmListVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnNuevoVenta);
@@ -267,5 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewLinkColumn Column13;
+        private System.Windows.Forms.Label btnRefresh;
     }
 }
