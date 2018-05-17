@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuMantenimiento));
             this.pArticulos = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnArticulos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pUsuario = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             // 
             this.pArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pArticulos.BackColor = System.Drawing.Color.Green;
-            this.pArticulos.Controls.Add(this.label7);
+            this.pArticulos.Controls.Add(this.btnArticulos);
             this.pArticulos.Controls.Add(this.label1);
             this.pArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pArticulos.Location = new System.Drawing.Point(12, 42);
@@ -68,15 +68,15 @@
             this.pArticulos.TabIndex = 0;
             this.pArticulos.Click += new System.EventHandler(this.pArticulos_Click);
             // 
-            // label7
+            // btnArticulos
             // 
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
-            this.label7.Location = new System.Drawing.Point(92, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 39);
-            this.label7.TabIndex = 1;
+            this.btnArticulos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArticulos.ForeColor = System.Drawing.Color.White;
+            this.btnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulos.Image")));
+            this.btnArticulos.Location = new System.Drawing.Point(92, 41);
+            this.btnArticulos.Name = "btnArticulos";
+            this.btnArticulos.Size = new System.Drawing.Size(62, 39);
+            this.btnArticulos.TabIndex = 1;
             // 
             // label1
             // 
@@ -273,6 +273,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuMantenimiento";
             this.Text = "frmMenuMantenimiento";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuMantenimiento_FormClosed);
+            this.Load += new System.EventHandler(this.frmMenuMantenimiento_Load);
             this.pArticulos.ResumeLayout(false);
             this.pArticulos.PerformLayout();
             this.pUsuario.ResumeLayout(false);
@@ -303,7 +305,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pCliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label btnArticulos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

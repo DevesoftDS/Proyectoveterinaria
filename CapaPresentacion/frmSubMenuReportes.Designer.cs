@@ -44,11 +44,15 @@
             this.pArticulos = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pCitas = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.pCliente.SuspendLayout();
             this.pPaciente.SuspendLayout();
             this.pPersonal.SuspendLayout();
             this.pUsuario.SuspendLayout();
             this.pArticulos.SuspendLayout();
+            this.pCitas.SuspendLayout();
             this.SuspendLayout();
             // 
             // pCliente
@@ -128,6 +132,7 @@
             this.pPersonal.Name = "pPersonal";
             this.pPersonal.Size = new System.Drawing.Size(246, 120);
             this.pPersonal.TabIndex = 3;
+            this.pPersonal.Click += new System.EventHandler(this.pPersonal_Click);
             // 
             // label10
             // 
@@ -216,11 +221,45 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Reporte Articulos";
             // 
+            // pCitas
+            // 
+            this.pCitas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pCitas.Controls.Add(this.label3);
+            this.pCitas.Controls.Add(this.label9);
+            this.pCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pCitas.Location = new System.Drawing.Point(576, 59);
+            this.pCitas.Name = "pCitas";
+            this.pCitas.Size = new System.Drawing.Size(246, 120);
+            this.pCitas.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.Location = new System.Drawing.Point(118, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 78);
+            this.label3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(14, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Reporte Citas";
+            // 
             // frmSubMenuReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 525);
+            this.Controls.Add(this.pCitas);
             this.Controls.Add(this.pCliente);
             this.Controls.Add(this.pPaciente);
             this.Controls.Add(this.pPersonal);
@@ -231,6 +270,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmSubMenuReportes";
             this.Text = "frmSubMenuReportes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSubMenuReportes_FormClosed);
+            this.Load += new System.EventHandler(this.frmSubMenuReportes_Load);
             this.pCliente.ResumeLayout(false);
             this.pCliente.PerformLayout();
             this.pPaciente.ResumeLayout(false);
@@ -241,26 +282,30 @@
             this.pUsuario.PerformLayout();
             this.pArticulos.ResumeLayout(false);
             this.pArticulos.PerformLayout();
+            this.pCitas.ResumeLayout(false);
+            this.pCitas.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pCliente;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel pPaciente;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pPersonal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel pUsuario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pArticulos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Panel pCliente;
+        internal System.Windows.Forms.Panel pPaciente;
+        internal System.Windows.Forms.Panel pPersonal;
+        internal System.Windows.Forms.Panel pUsuario;
+        internal System.Windows.Forms.Panel pArticulos;
+        internal System.Windows.Forms.Panel pCitas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
     }
 }

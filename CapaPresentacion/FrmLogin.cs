@@ -20,7 +20,7 @@ namespace CapaPresentacion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

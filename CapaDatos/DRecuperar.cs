@@ -66,7 +66,7 @@ namespace CapaDatos
         {
             //correo
             MailMessage correo = new MailMessage();
-            correo.From = new MailAddress("devesoft23@gmail.com");
+            correo.From = new MailAddress("sofvet2018@gmail.com");
             correo.To.Add(Email);
             correo.Subject = ("RECUPERAR CONTRASEÑA SOFVET");
             correo.Body = "HOLA " + Nombres + " usted ha solicitado recuperar su contraseña para poder acceder al sistema, obvie y elimine este mensaje. (O_O) - SU CONTRASEÑA ES: " + Password + " Gracias el equipo de SofVet";
@@ -75,7 +75,7 @@ namespace CapaDatos
             //SMTP
 
             SmtpClient serverMail = new SmtpClient();
-            serverMail.Credentials = new NetworkCredential("devesoft23@gmail.com", "encinas123");
+            serverMail.Credentials = new NetworkCredential("sofvet2018@gmail.com", "sistemasofvet2018");
             serverMail.Host = "smtp.gmail.com";
             serverMail.Port = 587;
             serverMail.EnableSsl = true;

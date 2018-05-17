@@ -12,9 +12,33 @@ namespace CapaPresentacion
 {
     public partial class frmMenuMantenimiento : Form
     {
+        public string TipoUser { get; set; }
         public frmMenuMantenimiento()
         {
             InitializeComponent();
+            if (_myFormMant == null)
+            {
+                _myFormMant = this;
+            }
+        }
+
+        private static frmMenuMantenimiento _myFormMant;
+
+        public static frmMenuMantenimiento MyFormMant
+        {
+            get
+            {
+                if (_myFormMant == null)
+                {
+                    _myFormMant = new frmMenuMantenimiento();
+                }
+                return _myFormMant;
+            }
+
+            set
+            {
+                _myFormMant = value;
+            }
         }
 
         private void AbrirSubMenu2(object formHija)
@@ -63,6 +87,43 @@ namespace CapaPresentacion
         {
             frmHome.MyForm.AbrirFormHija(new frmListMascota());
             frmHome.MyForm.barraSubMenu.Controls.Clear();
+        }
+
+        private void frmMenuMantenimiento_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _myFormMant = null;
+        }
+
+        private void frmMenuMantenimiento_Load(object sender, EventArgs e)
+        {
+            TipoUser = Program.tipo;
+
+            if (TipoUser == "Invitado")
+            {
+
+            }
+            else if (TipoUser == "Vendedor")
+            {
+                
+            }
+            else if (TipoUser == "Almacenero")
+            {
+                pUsuario.Enabled = false;
+                pArticulos.Enabled = false;
+                pPersonal.Enabled = false;
+                pPaciente.Enabled = false;
+                pCliente.Enabled = false;
+                pProveedor.Enabled = true;
+            }
+            else
+            {
+                pUsuario.Enabled = true;
+                pArticulos.Enabled = true;
+                pPersonal.Enabled = true;
+                pPaciente.Enabled = true;
+                pCliente.Enabled = true;
+                pProveedor.Enabled = true;
+            }
         }
     }
 }

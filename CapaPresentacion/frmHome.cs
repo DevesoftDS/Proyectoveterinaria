@@ -13,10 +13,16 @@ namespace CapaPresentacion
 {
     public partial class frmHome : Form
     {
+        public int Idusuario { get; set; }
+        public string TipoUsuario { get; set; }
+
+        #region MyRegion
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int Wparam, int lParam);
+        #endregion
+
 
         public frmHome()
         {
@@ -123,6 +129,8 @@ namespace CapaPresentacion
         {
             if (barraSection.Controls.Count > 0)
                 this.barraSection.Controls.RemoveAt(0);
+
+            Privilegio();
             Form fh = formHija as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
@@ -188,6 +196,7 @@ namespace CapaPresentacion
         {
             AbrirFormHija(new frmSubMenuReportes());
             this.barraSubMenu.Controls.Clear();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -195,6 +204,45 @@ namespace CapaPresentacion
             new FrmLogin().Show();
             this.Close();
 
+        }
+
+        private void Privilegio()
+        {
+            //vendedor
+
+            TipoUsuario = Program.tipo;
+            if (TipoUsuario == "Invitado")
+            {
+                btnVentas.Enabled = false;
+                btnServicios.Enabled = false;
+                btnAlmacen.Enabled = false;
+                btnReportes.Enabled = false;
+            }
+            else if (TipoUsuario == "Vendedor")
+            {
+                btnMantenimiento.Enabled = false;
+                btnVentas.Enabled = true;
+                btnServicios.Enabled = true;
+                btnAlmacen.Enabled = false;
+                btnReportes.Enabled = true;
+            }
+            else if (TipoUsuario == "Almacenero")
+            {
+                btnMantenimiento.Enabled = false;
+                btnVentas.Enabled = false;
+                btnServicios.Enabled = false;
+                btnAlmacen.Enabled = true;
+                btnReportes.Enabled = false;
+            }
+            else
+            {
+                btnMantenimiento.Enabled = true;
+                btnVentas.Enabled = true;
+                btnServicios.Enabled = true;
+                btnAlmacen.Enabled = true;
+                btnReportes.Enabled = true;
+            }
+            
         }
     }
 }
