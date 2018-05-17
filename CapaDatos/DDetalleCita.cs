@@ -101,5 +101,33 @@ namespace CapaDatos
             }
             return tabla;
         }
+        public DataTable ListarDetalleCita()
+        {
+            string sql = "sp_listar_detallecita";
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conexion.conectar;
+                cn.Open();
+                using (var da = new SqlDataAdapter(sql, cn))
+                {
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.Fill(tabla);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                tabla = null;
+                throw;
+            }
+            finally
+            {
+                if (cn.State == ConnectionState.Open) cn.Close();
+            }
+            return tabla;
+        }
     }
 }

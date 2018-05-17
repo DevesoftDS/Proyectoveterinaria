@@ -40,6 +40,10 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCita = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
+            this.btnRefresh = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +57,6 @@
             this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dtpBuscar = new System.Windows.Forms.DateTimePicker();
-            this.btnRefresh = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -145,6 +145,45 @@
             this.dgvCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCita.Size = new System.Drawing.Size(825, 431);
             this.dgvCita.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dgvCita);
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(834, 441);
+            this.panel1.TabIndex = 28;
+            // 
+            // dtpBuscar
+            // 
+            this.dtpBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
+            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBuscar.Location = new System.Drawing.Point(330, 32);
+            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpBuscar.Name = "dtpBuscar";
+            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
+            this.dtpBuscar.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.dtpBuscar, "Buscar por Fecha");
+            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(773, 28);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
+            this.btnRefresh.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // item
             // 
@@ -242,46 +281,8 @@
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             this.total.ReadOnly = true;
+            this.total.Visible = false;
             this.total.Width = 150;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dgvCita);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 441);
-            this.panel1.TabIndex = 28;
-            // 
-            // dtpBuscar
-            // 
-            this.dtpBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpBuscar.CustomFormat = "dd-MM-yyyy";
-            this.dtpBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBuscar.Location = new System.Drawing.Point(330, 32);
-            this.dtpBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpBuscar.Name = "dtpBuscar";
-            this.dtpBuscar.Size = new System.Drawing.Size(201, 27);
-            this.dtpBuscar.TabIndex = 33;
-            this.toolTip1.SetToolTip(this.dtpBuscar, "Buscar por Fecha");
-            this.dtpBuscar.ValueChanged += new System.EventHandler(this.dtpBuscar_ValueChanged);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(773, 28);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(34, 33);
-            this.btnRefresh.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.btnRefresh, "Refresh");
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmListCita
             // 
@@ -318,6 +319,8 @@
         public System.Windows.Forms.DataGridView dgvCita;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpBuscar;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn item;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCita;
@@ -331,7 +334,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label btnRefresh;
     }
 }

@@ -195,7 +195,7 @@
             this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
-            this.fecha.Width = 80;
+            this.fecha.Width = 110;
             // 
             // hora
             // 
@@ -213,16 +213,17 @@
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Descuento";
+            this.Column5.HeaderText = "Dscto";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 90;
+            this.Column5.Width = 80;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Importe";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Width = 90;
             // 
             // motivo
             // 
@@ -650,7 +651,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(173, 22);
             this.dtpFecha.TabIndex = 7;
-            this.dtpFecha.Value = new System.DateTime(2018, 5, 10, 0, 0, 0, 0);
+            this.dtpFecha.Value = new System.DateTime(2018, 5, 16, 0, 0, 0, 0);
             // 
             // panel4
             // 
@@ -894,7 +895,7 @@
             this.btnGeneraComprobante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGeneraComprobante.Image = ((System.Drawing.Image)(resources.GetObject("btnGeneraComprobante.Image")));
             this.btnGeneraComprobante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneraComprobante.Location = new System.Drawing.Point(537, 670);
+            this.btnGeneraComprobante.Location = new System.Drawing.Point(540, 662);
             this.btnGeneraComprobante.Name = "btnGeneraComprobante";
             this.btnGeneraComprobante.Size = new System.Drawing.Size(187, 53);
             this.btnGeneraComprobante.TabIndex = 92;
@@ -912,7 +913,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(151, 670);
+            this.btnGuardar.Location = new System.Drawing.Point(154, 662);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(187, 53);
             this.btnGuardar.TabIndex = 94;
@@ -930,13 +931,14 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(344, 670);
+            this.btnCancelar.Location = new System.Drawing.Point(347, 662);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(187, 53);
             this.btnCancelar.TabIndex = 93;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.btnCancelar, "Cancelar");
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblVerDetalle
             // 
@@ -1155,6 +1157,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox cboEmpleado;
+        private System.Windows.Forms.DateTimePicker dtpHora;
+        private System.Windows.Forms.LinkLabel lblVerDetalle;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label txtMascota;
+        private System.Windows.Forms.Label txtCodigo;
+        private System.Windows.Forms.Label txtId;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codMascota;
         private System.Windows.Forms.DataGridViewTextBoxColumn area;
@@ -1170,15 +1182,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
-        private System.Windows.Forms.DateTimePicker dtpHora;
-        private System.Windows.Forms.LinkLabel lblVerDetalle;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label txtMascota;
-        private System.Windows.Forms.Label txtCodigo;
-        private System.Windows.Forms.Label txtId;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
