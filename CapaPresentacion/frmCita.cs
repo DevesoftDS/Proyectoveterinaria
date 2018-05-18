@@ -283,7 +283,6 @@ namespace CapaPresentacion
                 }                
             }
         }
-        DataTable ver = NDetalleCita.ListarDetalleCita();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -310,35 +309,17 @@ namespace CapaPresentacion
             else
             {
                 bool existe = false;
-                bool comparar = false;
+              
                
                 int num_filas = dgvDetalleCita.Rows.Count;
                 string fecha = dtpFecha.Text;
                 string hora = dtpHora.Text;
                 string codMascot = txtCodigo.Text;
                 string servicio = cboServicio.SelectedValue.ToString();
-                if (num_filas == 0 && ver.Rows.Count >= 0)
-                {
-
-                    for (int x = 0; x < ver.Rows.Count; x++)
-                    {
-                        if (fecha == ver.Rows[0]["fecha"].ToString() && hora == ver.Rows[0]["hora"].ToString() && servicio == ver.Rows[0]["idservicio"].ToString())
-                        {
-                            comparar = true;
-                        }
-                    }
-                    if (comparar)
-                    {
-                        MessageBox.Show("existe");
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("agregar");
-                    }
-                    
-                    //AgregarGrillaDetalle();
-                    //LimpiarAgregar();
+                if (num_filas == 0)
+                {                  
+                    AgregarGrillaDetalle();
+                    LimpiarAgregar();
                 }
                 else
                 {
