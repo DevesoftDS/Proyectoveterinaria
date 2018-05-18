@@ -77,9 +77,9 @@
             this.pbFoto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbFoto.BackgroundImage")));
             this.pbFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbFoto.Image = ((System.Drawing.Image)(resources.GetObject("pbFoto.Image")));
-            this.pbFoto.Location = new System.Drawing.Point(386, 79);
+            this.pbFoto.Location = new System.Drawing.Point(466, 79);
             this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(377, 346);
+            this.pbFoto.Size = new System.Drawing.Size(297, 346);
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 37;
             this.pbFoto.TabStop = false;
@@ -89,7 +89,7 @@
             this.lblEstadoUser.AutoSize = true;
             this.lblEstadoUser.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblEstadoUser.Location = new System.Drawing.Point(537, 443);
+            this.lblEstadoUser.Location = new System.Drawing.Point(595, 440);
             this.lblEstadoUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoUser.Name = "lblEstadoUser";
             this.lblEstadoUser.Size = new System.Drawing.Size(54, 17);
@@ -100,6 +100,7 @@
             // listDatos
             // 
             this.listDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listDatos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.listDatos.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.listDatos.FormattingEnabled = true;
@@ -108,7 +109,7 @@
             this.listDatos.MultiColumn = true;
             this.listDatos.Name = "listDatos";
             this.listDatos.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listDatos.Size = new System.Drawing.Size(307, 378);
+            this.listDatos.Size = new System.Drawing.Size(387, 378);
             this.listDatos.TabIndex = 43;
             // 
             // frmPerfil

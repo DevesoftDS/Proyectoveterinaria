@@ -64,7 +64,11 @@ namespace CapaNegocio
             ListarGriv(dgv, tabla);
         }
 
-
+        public static DataTable ListarDetalleCita()
+        {
+            DDetalleCita objDetalle = new DDetalleCita();
+            return objDetalle.ListarDetalleCita();
+        }
     }
 
     

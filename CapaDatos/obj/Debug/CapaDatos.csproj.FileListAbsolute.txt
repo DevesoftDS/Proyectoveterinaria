@@ -20,4 +20,4 @@ C:\Users\henryth\Desktop\Proyectoveterinaria\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Users\henryth\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
 C:\Users\henryth\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\henryth\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.pdb
-C:\Users\Telesforo Soto\Desktop\ProyectoVeterinaria\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Edison\Desktop\Proyectoveterinaria\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

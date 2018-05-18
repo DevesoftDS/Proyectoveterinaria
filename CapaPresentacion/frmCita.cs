@@ -308,28 +308,31 @@ namespace CapaPresentacion
 
             else
             {
-                int num_filas = dgvDetalleCita.Rows.Count;
+                bool existe = false;
+              
                
-                if (num_filas == 0 )
-                {
+                int num_filas = dgvDetalleCita.Rows.Count;
+                string fecha = dtpFecha.Text;
+                string hora = dtpHora.Text;
+                string codMascot = txtCodigo.Text;
+                string servicio = cboServicio.SelectedValue.ToString();
+                if (num_filas == 0)
+                {                  
                     AgregarGrillaDetalle();
                     LimpiarAgregar();
                 }
                 else
                 {
-                    string fecha = dtpFecha.Text;
-                    string hora = dtpHora.Text;
-                    string codMascot = txtCodigo.Text;
-                    string servicio = cboServicio.SelectedValue.ToString();
-                    bool existe = false;
+
                     for (int i = 0; i < num_filas; i++)
                     {
-                        if (codMascot.Equals(dgvDetalleCita.Rows[i].Cells[2].Value.ToString())&&fecha.Equals(dgvDetalleCita.Rows[i].Cells[4].Value.ToString()) && hora.Equals(dgvDetalleCita.Rows[i].Cells[5].Value.ToString()))
+
+                        if (codMascot.Equals(dgvDetalleCita.Rows[i].Cells[1].Value.ToString()) && fecha.Equals(dgvDetalleCita.Rows[i].Cells[4].Value.ToString()) && hora.Equals(dgvDetalleCita.Rows[i].Cells[5].Value.ToString()) && servicio.Equals(dgvDetalleCita.Rows[i].Cells[13].Value.ToString()))
                         {
                             existe = true;
                             break;
                         }
-                        else if(fecha.Equals(dgvDetalleCita.Rows[i].Cells[4].Value.ToString())&& hora.Equals(dgvDetalleCita.Rows[i].Cells[5].Value.ToString()))
+                        else if (fecha.Equals(dgvDetalleCita.Rows[i].Cells[4].Value.ToString()) && hora.Equals(dgvDetalleCita.Rows[i].Cells[5].Value.ToString()) && servicio.Equals(dgvDetalleCita.Rows[i].Cells[13].Value.ToString()))
                         {
                             existe = true;
                             break;
@@ -344,6 +347,7 @@ namespace CapaPresentacion
                         AgregarGrillaDetalle();
                         LimpiarAgregar();
                     }
+
                 }
 
 
@@ -439,22 +443,21 @@ namespace CapaPresentacion
 
             string simbolo = "0";
             char espacio = Convert.ToChar("0");
-            int libre = 8;
-            NPagoServicio objPago = new NPagoServicio();
+            int libre = 6;           
             var pago = NPagoServicio.ListarPagoServicio();
             if (pago.Rows.Count == 0)
             {
                 if (cboTipoDoc.SelectedItem.Equals("BOLETA"))
                 {
                     epCita.Clear();
-                    txtSerie.Text = "00000" + extraer;
-                    txtCorrelativo.Text = "000000001";
+                    txtSerie.Text = "00" + extraer;
+                    txtCorrelativo.Text = "0000001";
                 }
                 /* else if (cboTipoDoc.SelectedItem.Equals("FACTURA"))
                  {
                      epCita.Clear();
-                     txtSerie.Text = "0000002";
-                     txtCorrelativo.Text = "000000001";
+                     txtSerie.Text = "0002";
+                     txtCorrelativo.Text = "0000001";
                  }*/
                 else
                 {
@@ -468,14 +471,14 @@ namespace CapaPresentacion
                 if (cboTipoDoc.SelectedItem.Equals("BOLETA"))
                 {
                     epCita.Clear();
-                    txtSerie.Text = "00000" + extraer;
+                    txtSerie.Text = "00" + extraer;
                     var capcorrelativo = NPagoServicio.GenerarCorrelativo(cboTipoDoc.Text, txtSerie.Text);
 
                     if (capcorrelativo.Rows.Count > 0)
                     {
                         if (capcorrelativo.Rows[0]["correlativo"].ToString().Length == 0)
                         {
-                            txtCorrelativo.Text = "000000001";
+                            txtCorrelativo.Text = "0000001";
                         }
                         if (capcorrelativo.Rows[0]["correlativo"].ToString().Length == 1)
                         {
@@ -488,14 +491,14 @@ namespace CapaPresentacion
                     }
                     else
                     {
-                        txtCorrelativo.Text = "000000001";
+                        txtCorrelativo.Text = "0000001";
                     }
 
                 }
                 /*else if (cboTipoDoc.SelectedItem.Equals("FACTURA"))
                 {
                     epCita.Clear();
-                    txtSerie.Text = "0000002";
+                    txtSerie.Text = "0002";
                     var capcorrelativo = NPagoServicio.GenerarCorrelativo(cboTipoDoc.Text, txtSerie.Text);
                    
                     if (capcorrelativo.Rows.Count > 0)
@@ -596,6 +599,7 @@ namespace CapaPresentacion
                 MessageBox.Show("okk--"+rptadetalle);
                 btnGeneraComprobante.Enabled=true;               
                 LimpiarGuardar();
+                NumeroComprobante();
                 var tabla = new NCita();
                 tabla.ListadoDgv(frmListCita.MiFormListCita.dgvCita);
             }
@@ -610,5 +614,10 @@ namespace CapaPresentacion
 
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarAgregar();
+            LimpiarGuardar();
+        }
     }
 }
